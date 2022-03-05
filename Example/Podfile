@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'MKLoRaWAN-PB_Example' do
+  pod 'MKLoRaWAN-PB', :path => '../'
+
+  target 'MKLoRaWAN-PB_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
