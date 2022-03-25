@@ -115,6 +115,10 @@
         [self showAlertWithMsg:@"Reboot successfully!Please reconnect the device." title:@"Dismiss"];
         return;
     }
+    if ([type isEqualToString:@"05"]) {
+        [self showAlertWithMsg:@"Factory reset successfully!Please reconnect the device." title:@"Factory Reset"];
+        return;
+    }
 }
 
 - (void)centralManagerStateChanged{

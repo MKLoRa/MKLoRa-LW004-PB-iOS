@@ -806,7 +806,7 @@
         if (self.DRL < 0 || self.DRL > 6 || self.DRH < self.DRL || self.DRH > 6) {
             return NO;
         }
-        if (self.transmissions < 1 || self.transmissions > 2) {
+        if (self.transmissions < 0 || self.transmissions > 1) {
             return NO;
         }
         if (!ValidStr(self.ackLimit) || [self.ackLimit integerValue] < 1 || [self.ackLimit integerValue] > 100) {

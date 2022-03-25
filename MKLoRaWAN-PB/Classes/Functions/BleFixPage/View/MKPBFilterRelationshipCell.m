@@ -62,6 +62,8 @@
 
 #pragma mark - event method
 - (void)rightButtonPressed {
+    //如果想要键盘取消第一响应者，则需要发出MKTextFieldNeedHiddenKeyboard通知即可
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MKTextFieldNeedHiddenKeyboard" object:nil];
     if (!ValidArray(self.dataModel.dataList)) {
         return;
     }

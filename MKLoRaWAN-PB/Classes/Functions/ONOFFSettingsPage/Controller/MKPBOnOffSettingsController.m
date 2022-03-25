@@ -194,7 +194,7 @@ mk_textSwitchCellDelegate>
     [self.dataList addObject:cellModel2];
     
     MKTextSwitchCellModel *cellModel3 = [[MKTextSwitchCellModel alloc] init];
-    cellModel3.index = 0;
+    cellModel3.index = 2;
     cellModel3.msg = @"Power Off";
     cellModel3.isOn = YES;
     [self.dataList addObject:cellModel3];
