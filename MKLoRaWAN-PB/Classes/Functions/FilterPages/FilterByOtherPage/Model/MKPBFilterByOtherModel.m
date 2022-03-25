@@ -34,7 +34,9 @@
     if (self.minIndex < 0 || self.minIndex > 29 || self.maxIndex < 0 || self.maxIndex > 29) {
         return NO;
     }
-    
+    if (self.minIndex == 0 && self.maxIndex != 0) {
+        return NO;
+    }
     if (self.maxIndex < self.minIndex) {
         return NO;
     }
