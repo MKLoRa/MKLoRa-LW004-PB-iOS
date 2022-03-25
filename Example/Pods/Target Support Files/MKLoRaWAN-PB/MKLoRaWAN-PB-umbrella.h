@@ -10,6 +10,8 @@
 #endif
 #endif
 
+#import "CTMediator+MKPBAdd.h"
+#import "MKLoRaWANPBModuleKey.h"
 #import "MKPBConnectModel.h"
 #import "MKPBDatabaseManager.h"
 #import "MKPBFilterBeaconCell.h"
@@ -78,11 +80,11 @@
 #import "MKPBPeriodicModeController.h"
 #import "MKPBPeriodicModeModel.h"
 #import "MKPBPositionController.h"
+#import "MKPBSOSSettingsController.h"
+#import "MKPBSOSSettingsModel.h"
 #import "MKPBScanController.h"
 #import "MKPBScanPageModel.h"
 #import "MKPBScanPageCell.h"
-#import "MKPBSOSSettingsController.h"
-#import "MKPBSOSSettingsModel.h"
 #import "MKPBTabBarController.h"
 #import "MKPBTimingModeController.h"
 #import "MKPBTimingModeModel.h"
@@ -101,6 +103,7 @@
 #import "MKPBSDKDataAdopter.h"
 #import "MKPBSDKNormalDefines.h"
 #import "MKPBTaskAdopter.h"
+#import "Target_LoRaWANPB_Module.h"
 
 FOUNDATION_EXPORT double MKLoRaWAN_PBVersionNumber;
 FOUNDATION_EXPORT const unsigned char MKLoRaWAN_PBVersionString[];

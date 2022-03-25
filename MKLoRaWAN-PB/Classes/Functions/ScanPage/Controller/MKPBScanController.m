@@ -27,12 +27,11 @@
 
 #import "MKPBConnectModel.h"
 
-//#import "CTMediator+MKPBAdd.h"
+#import "CTMediator+MKPBAdd.h"
 
 #import "MKPBScanPageModel.h"
 #import "MKPBScanPageCell.h"
 
-#import "MKPBAboutController.h"
 #import "MKPBTabBarController.h"
 
 static NSString *const localPasswordKey = @"mk_pb_passwordKey";
@@ -100,10 +99,8 @@ MKPBTabBarControllerDelegate>
 #pragma mark - super method
 
 - (void)rightButtonMethod {
-    MKPBAboutController *vc = [[MKPBAboutController alloc] init];
+    UIViewController *vc = [[CTMediator sharedInstance] CTMediator_LORAWAN_PB_AboutPage];
     [self.navigationController pushViewController:vc animated:YES];
-//    UIViewController *vc = [[CTMediator sharedInstance] CTMediator_LORAWAN_pb_AboutPage];
-//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - UITableViewDataSource
