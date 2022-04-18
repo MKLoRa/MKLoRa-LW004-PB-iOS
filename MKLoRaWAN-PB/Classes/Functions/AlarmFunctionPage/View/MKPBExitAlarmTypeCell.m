@@ -46,6 +46,10 @@
         [self.contentView addSubview:self.pressLabel];
         [self.contentView addSubview:self.textField];
         [self.contentView addSubview:self.unitLabel];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(textFieldHiddenKeyboard)
+                                                     name:@"MKTextFieldNeedHiddenKeyboard"
+                                                   object:nil];
     }
     return self;
 }
@@ -76,6 +80,11 @@
         make.centerY.mas_equalTo(self.contentView.mas_centerY);
         make.height.mas_equalTo(MKFont(15.f).lineHeight);
     }];
+}
+
+#pragma mark - note
+- (void)textFieldHiddenKeyboard {
+    [self.textField resignFirstResponder];
 }
 
 #pragma mark - setter

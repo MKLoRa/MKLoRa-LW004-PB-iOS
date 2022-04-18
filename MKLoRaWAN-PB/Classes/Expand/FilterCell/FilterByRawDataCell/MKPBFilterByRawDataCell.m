@@ -107,6 +107,10 @@
         [self.contentView addSubview:self.characterLabel];
         [self.contentView addSubview:self.unitLabel];
         [self.contentView addSubview:self.rawDataField];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(textFieldHiddenKeyboard)
+                                                     name:@"MKTextFieldNeedHiddenKeyboard"
+                                                   object:nil];
     }
     return self;
 }
@@ -157,7 +161,15 @@
     }];
 }
 
-#pragma mark -
+#pragma mark - note
+- (void)textFieldHiddenKeyboard {
+    [self.typeTextField resignFirstResponder];
+    [self.minTextField resignFirstResponder];
+    [self.maxTextField resignFirstResponder];
+    [self.rawDataField resignFirstResponder];
+}
+
+#pragma mark - event method
 - (void)textFieldValueChanged:(NSString *)text textType:(mk_pb_filterRawAdvDataTextType)type {
     if ([self.delegate respondsToSelector:@selector(pb_rawFilterDataChanged:index:textValue:)]) {
         [self.delegate pb_rawFilterDataChanged:type index:self.dataModel.index textValue:text];

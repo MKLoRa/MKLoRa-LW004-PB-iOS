@@ -245,7 +245,7 @@ MKPBFilterEditSectionHeaderViewDelegate>
         cellModel.index = i;
         cellModel.msg = [NSString stringWithFormat:@"ADV Name %ld",(long)(i + 1)];
         cellModel.textPlaceholder = @"1-20 Characters";
-        cellModel.textFieldType = mk_hexCharOnly;
+        cellModel.textFieldType = mk_normal;
         cellModel.textFieldValue = self.dataModel.nameList[i];
         cellModel.maxLength = 20;
         [self.section1List addObject:cellModel];

@@ -174,11 +174,11 @@
     positionPage.tabBarItem.selectedImage = LOADICON(@"MKLoRaWAN-PB", @"MKPBTabBarController", @"pb_position_tabBarSelected.png");
     MKBaseNavigationController *positionNav = [[MKBaseNavigationController alloc] initWithRootViewController:positionPage];
 
-    MKPBGeneralController *setting = [[MKPBGeneralController alloc] init];
-    setting.tabBarItem.title = @"GENERAL";
-    setting.tabBarItem.image = LOADICON(@"MKLoRaWAN-PB", @"MKPBTabBarController", @"pb_setting_tabBarUnselected.png");
-    setting.tabBarItem.selectedImage = LOADICON(@"MKLoRaWAN-PB", @"MKPBTabBarController", @"pb_setting_tabBarSelected.png");
-    MKBaseNavigationController *settingPage = [[MKBaseNavigationController alloc] initWithRootViewController:setting];
+    MKPBGeneralController *settingPage = [[MKPBGeneralController alloc] init];
+    settingPage.tabBarItem.title = @"GENERAL";
+    settingPage.tabBarItem.image = LOADICON(@"MKLoRaWAN-PB", @"MKPBTabBarController", @"pb_setting_tabBarUnselected.png");
+    settingPage.tabBarItem.selectedImage = LOADICON(@"MKLoRaWAN-PB", @"MKPBTabBarController", @"pb_setting_tabBarSelected.png");
+    MKBaseNavigationController *settingNav = [[MKBaseNavigationController alloc] initWithRootViewController:settingPage];
     
     MKPBDeviceSettingController *deviceInfo = [[MKPBDeviceSettingController alloc] init];
     deviceInfo.tabBarItem.title = @"DEVICE";
@@ -186,7 +186,7 @@
     deviceInfo.tabBarItem.selectedImage = LOADICON(@"MKLoRaWAN-PB", @"MKPBTabBarController", @"pb_device_tabBarSelected.png");
     MKBaseNavigationController *deviceInfoPage = [[MKBaseNavigationController alloc] initWithRootViewController:deviceInfo];
     
-    self.viewControllers = @[advNav,positionNav,settingPage,deviceInfoPage];
+    self.viewControllers = @[advNav,positionNav,settingNav,deviceInfoPage];
 }
 
 @end

@@ -13,10 +13,13 @@
 #import "MKMacroDefines.h"
 #import "MKBaseTableView.h"
 #import "UIView+MKAdd.h"
+#import "UITableView+MKAdd.h"
 
 #import "MKHudManager.h"
 #import "MKTextSwitchCell.h"
 #import "MKTextButtonCell.h"
+
+#import "MKPBInterface+MKPBConfig.h"
 
 #import "MKPBFilterByTLMModel.h"
 
@@ -44,11 +47,6 @@ mk_textSwitchCellDelegate>
     [super viewDidLoad];
     [self loadSubViews];
     [self readDataFromDevice];
-}
-
-#pragma mark - super method
-- (void)rightButtonMethod {
-    [self configDataToDevice];
 }
 
 #pragma mark - UITableViewDelegate
@@ -90,10 +88,8 @@ mk_textSwitchCellDelegate>
 /// @param index 当前cell所在的index
 - (void)mk_textSwitchCellStatusChanged:(BOOL)isOn index:(NSInteger)index {
     if (index == 0) {
-        //
-        self.dataModel.isOn = isOn;
-        MKTextSwitchCellModel *cellModel = self.section0List[0];
-        cellModel.isOn = isOn;
+        //Status
+        [self configFilterStatus:isOn];
         return;
     }
 }
@@ -107,9 +103,7 @@ mk_textSwitchCellDelegate>
                                 value:(NSString *)value {
     if (index == 0) {
         //TLM Version
-        self.dataModel.tlm = dataListIndex;
-        MKTextButtonCellModel *cellModel = self.section1List[0];
-        cellModel.dataListIndex = dataListIndex;
+        [self configTLMVersion:dataListIndex];
         return;
     }
 }
@@ -124,6 +118,33 @@ mk_textSwitchCellDelegate>
         [self loadSectionDatas];
     } failedBlock:^(NSError * _Nonnull error) {
         @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+        [self.tableView mk_reloadSection:0 withRowAnimation:UITableViewRowAnimationNone];
+    }];
+}
+
+- (void)configFilterStatus:(BOOL)isOn {
+    [[MKHudManager share] showHUDWithTitle:@"Config..." inView:self.view isPenetration:NO];
+    [MKPBInterface pb_configFilterByTLMStatus:isOn sucBlock:^{
+        [[MKHudManager share] hide];
+        self.dataModel.isOn = isOn;
+        MKTextSwitchCellModel *cellModel = self.section0List[0];
+        cellModel.isOn = isOn;
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+- (void)configTLMVersion:(NSInteger)version {
+    [[MKHudManager share] showHUDWithTitle:@"Config..." inView:self.view isPenetration:NO];
+    [MKPBInterface pb_configFilterByTLMVersion:version sucBlock:^{
+        [[MKHudManager share] hide];
+        self.dataModel.tlm = version;
+        MKTextButtonCellModel *cellModel = self.section1List[0];
+        cellModel.dataListIndex = version;
+    } failedBlock:^(NSError * _Nonnull error) {
         [[MKHudManager share] hide];
         [self.view showCentralToast:error.userInfo[@"errorInfo"]];
     }];
@@ -171,7 +192,6 @@ mk_textSwitchCellDelegate>
 #pragma mark - UI
 - (void)loadSubViews {
     self.defaultTitle = @"Filter by Raw Data";
-    [self.rightButton setImage:LOADICON(@"MKLoRaWAN-PB", @"MKPBFilterByTLMController", @"pb_slotSaveIcon.png") forState:UIControlStateNormal];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);

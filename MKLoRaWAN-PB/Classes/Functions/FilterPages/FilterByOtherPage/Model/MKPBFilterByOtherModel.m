@@ -102,16 +102,16 @@
                      sucBlock:(void (^)(void))sucBlock
                   failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.readQueue, ^{
+        if (![self configConditions:list]) {
+            [self operationFailedBlockWithMsg:@"Config Conditions Error" block:failedBlock];
+            return;
+        }
         if (![self configFilterStatus]) {
             [self operationFailedBlockWithMsg:@"Config Filter Status Error" block:failedBlock];
             return;
         }
         if (![self configRelationship:relationship]) {
             [self operationFailedBlockWithMsg:@"Config Relationship Error" block:failedBlock];
-            return;
-        }
-        if (![self configConditions:list]) {
-            [self operationFailedBlockWithMsg:@"Config Conditions Error" block:failedBlock];
             return;
         }
         moko_dispatch_main_safe(^{
@@ -125,7 +125,7 @@
 #pragma mark - interface
 - (BOOL)readFilterStatus {
     __block BOOL success = NO;
-    [MKPBInterface pb_readFilterByUIDStatusWithSucBlock:^(id  _Nonnull returnData) {
+    [MKPBInterface pb_readFilterByOtherStatusWithSucBlock:^(id  _Nonnull returnData) {
         success = YES;
         self.isOn = [returnData[@"result"][@"isOn"] boolValue];
         dispatch_semaphore_signal(self.semaphore);
@@ -138,7 +138,7 @@
 
 - (BOOL)configFilterStatus {
     __block BOOL success = NO;
-    [MKPBInterface pb_configFilterByUIDStatus:self.isOn sucBlock:^{
+    [MKPBInterface pb_configFilterByOtherStatus:self.isOn sucBlock:^{
         success = YES;
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {

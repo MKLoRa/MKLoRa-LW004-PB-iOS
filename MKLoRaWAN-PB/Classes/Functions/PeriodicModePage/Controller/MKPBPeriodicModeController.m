@@ -174,7 +174,7 @@ MKTextFieldCellDelegate>
     cellModel.textPlaceholder = @"1 ~ 14400";
     cellModel.textFieldType = mk_realNumberOnly;
     cellModel.maxLength = 5;
-    cellModel.unit = @"S";
+    cellModel.unit = @"Mins";
     cellModel.textFieldValue = self.dataModel.interval;
     [self.section1List addObject:cellModel];
 }

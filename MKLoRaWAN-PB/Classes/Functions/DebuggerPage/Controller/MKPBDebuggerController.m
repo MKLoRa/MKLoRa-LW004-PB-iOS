@@ -52,6 +52,8 @@ MKPBDebuggerCellDelegate>
 
 @property (nonatomic, strong)NSDateFormatter *formatter;
 
+@property (nonatomic, strong)NSString *logStartTime;
+
 /// 用户是否是点击了返回按钮
 @property (nonatomic, assign)BOOL leftAction;
 
@@ -200,6 +202,7 @@ MKPBDebuggerCellDelegate>
         return;
     }
     //开始监听
+    self.logStartTime = [self.formatter stringFromDate:[NSDate date]];
     self.deleteButton.enabled = NO;
     self.exportButton.enabled = NO;
     self.deleteButton.topIcon.image = LOADICON(@"MKLoRaWAN-PB", @"MKPBDebuggerController", @"pb_delete_disableIcon.png");
@@ -304,12 +307,11 @@ MKPBDebuggerCellDelegate>
         NSString *tempString = [NSString stringWithFormat:@"\n%@",self.contentList[i]];
         text = [text stringByAppendingString:tempString];
     }
-    NSString *date = [self.formatter stringFromDate:[NSDate date]];
     MKPBDebuggerCellModel *cellModel = [[MKPBDebuggerCellModel alloc] init];
     cellModel.index = self.dataList.count;
     cellModel.selected = NO;
     cellModel.logInfo = text;
-    cellModel.timeMsg = date;
+    cellModel.timeMsg = self.logStartTime;
     [self.dataList addObject:cellModel];
     [self saveDataListToLocal];
     [self.contentList removeAllObjects];
