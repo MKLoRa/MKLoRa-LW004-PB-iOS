@@ -148,7 +148,10 @@ static dispatch_once_t onceToken;
     
     if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"AA02"]]) {
         //日志
-        NSString *content = [MKBLEBaseSDKAdopter hexStringFromData:characteristic.value];
+        NSString *content = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
+        if (!MKValidStr(content)) {
+            return;
+        }
         if ([self.logDelegate respondsToSelector:@selector(mk_pb_receiveLog:)]) {
             [self.logDelegate mk_pb_receiveLog:content];
         }
