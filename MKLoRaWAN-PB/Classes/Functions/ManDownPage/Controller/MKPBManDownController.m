@@ -307,7 +307,7 @@ MKTextFieldCellDelegate>
     
     MKTextSwitchCellModel *cellModel2 = [[MKTextSwitchCellModel alloc] init];
     cellModel2.index = 2;
-    cellModel2.msg = @"Notify Event On Man Down Start";
+    cellModel2.msg = @"Notify Event On Man Down End";
     cellModel2.msgFont = MKFont(13.f);
     cellModel2.isOn = self.dataModel.end;
     [self.section4List addObject:cellModel2];

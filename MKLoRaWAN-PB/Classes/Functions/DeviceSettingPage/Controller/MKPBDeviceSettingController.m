@@ -279,7 +279,7 @@ mk_textSwitchCellDelegate>
         MKTextButtonCellModel *cellModel = self.section1List[0];
         cellModel.dataListIndex = prompt;
         self.dataModel.lowPowerPrompt = prompt;
-        cellModel.noteMsg = [NSString stringWithFormat:@"*When the battery is less than or equal to %@, the green LED will flash once every 30 seconds.",self.lowPowerPromptList[prompt]];
+        cellModel.noteMsg = [NSString stringWithFormat:@"*When the battery is less than or equal to %@, the red LED will flash once every 30 seconds.",self.lowPowerPromptList[prompt]];
         [self.tableView mk_reloadSection:1 withRowAnimation:UITableViewRowAnimationNone];
     } failedBlock:^(NSError * _Nonnull error) {
         @strongify(self);
@@ -379,7 +379,7 @@ mk_textSwitchCellDelegate>
     
     MKTextButtonCellModel *cellModel2 = self.section1List[0];
     cellModel2.dataListIndex = self.dataModel.lowPowerPrompt;
-    cellModel2.noteMsg = [NSString stringWithFormat:@"*When the battery is less than or equal to %@, the green LED will flash once every 30 seconds.",self.lowPowerPromptList[self.dataModel.lowPowerPrompt]];
+    cellModel2.noteMsg = [NSString stringWithFormat:@"*When the battery is less than or equal to %@, the red LED will flash once every 30 seconds.",self.lowPowerPromptList[self.dataModel.lowPowerPrompt]];
     
     MKTextSwitchCellModel *cellModel3 = self.section2List[0];
     cellModel3.isOn = self.dataModel.payload;
@@ -420,7 +420,7 @@ mk_textSwitchCellDelegate>
     cellModel1.index = 1;
     cellModel1.msg = @"Low Power Prompt";
     cellModel1.dataList = [NSArray arrayWithArray:self.lowPowerPromptList];
-    cellModel1.noteMsg = @"*When the battery is less than or equal to 10%, the green LED will flash once every 30 seconds.";
+    cellModel1.noteMsg = @"*When the battery is less than or equal to 10%, the red LED will flash once every 30 seconds.";
     [self.section1List addObject:cellModel1];
 }
 

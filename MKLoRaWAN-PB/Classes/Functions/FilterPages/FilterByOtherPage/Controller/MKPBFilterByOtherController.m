@@ -181,7 +181,7 @@ MKTextButtonCellDelegate>
     //更新底部逻辑关系选择
     MKTextButtonCellModel *relationshipModel = self.section2List[0];
     relationshipModel.dataList = [self loadFilterRelationshipList];
-    relationshipModel.dataListIndex = 0;
+    relationshipModel.dataListIndex = cellModelIndex;
     
     [self.tableView reloadData];
     
@@ -195,9 +195,10 @@ MKTextButtonCellDelegate>
     }
     [self.section1List removeLastObject];
     //更新底部逻辑关系选择
+    NSArray *shipList = [self loadFilterRelationshipList];
     MKTextButtonCellModel *relationshipModel = self.section2List[0];
-    relationshipModel.dataList = [self loadFilterRelationshipList];
-    relationshipModel.dataListIndex = 0;
+    relationshipModel.dataList = shipList;
+    relationshipModel.dataListIndex = shipList.count - 1;
     
     [self.tableView reloadData];
 }
