@@ -109,13 +109,13 @@ The `MKPBCentralManager ` contains the method of connecting the device.
 
 Through the manager, you can get the current Bluetooth status of the mobile phone, and the connection status of the device. If you want to monitor the changes of these two states, you can register the following notifications to achieve:
 
-* When the Bluetooth status of the mobile phone changes，<font color=#FF0000 face="黑体">`mk_mp_centralManagerStateChangedNotification`</font> will be posted.You can get status in this way:
+* When the Bluetooth status of the mobile phone changes，<font color=#FF0000 face="黑体">`mk_pb_centralManagerStateChangedNotification`</font> will be posted.You can get status in this way:
 
 ```
 [[MKMPCentralManager shared] centralStatus];
 ```
 
-* When the device connection status changes， <font color=#FF0000 face="黑体"> `mk_mp_peripheralConnectStateChangedNotification` </font> will be posted.You can get the status in this way:
+* When the device connection status changes， <font color=#FF0000 face="黑体"> `mk_pb_peripheralConnectStateChangedNotification` </font> will be posted.You can get the status in this way:
 
 ```
 [MKMPCentralManager shared].connectState;
@@ -123,13 +123,13 @@ Through the manager, you can get the current Bluetooth status of the mobile phon
 
 #### 4.Monitoring device disconnect reason.
 
-Register for <font color=#FF0000 face="黑体"> `mk_mp_deviceDisconnectTypeNotification` </font> notifications to monitor data.
+Register for <font color=#FF0000 face="黑体"> `mk_pb_deviceDisconnectTypeNotification` </font> notifications to monitor data.
 
 
 ```
 [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(disconnectTypeNotification:)
-                                                 name:@"mk_mp_deviceDisconnectTypeNotification"
+                                                 name:@"mk_pb_deviceDisconnectTypeNotification"
                                                object:nil];
 
 ```
