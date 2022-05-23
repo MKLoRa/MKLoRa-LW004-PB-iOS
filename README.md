@@ -112,13 +112,13 @@ Through the manager, you can get the current Bluetooth status of the mobile phon
 * When the Bluetooth status of the mobile phone changes，<font color=#FF0000 face="黑体">`mk_pb_centralManagerStateChangedNotification`</font> will be posted.You can get status in this way:
 
 ```
-[[MKMPCentralManager shared] centralStatus];
+[[MKPBCentralManager shared] centralStatus];
 ```
 
 * When the device connection status changes， <font color=#FF0000 face="黑体"> `mk_pb_peripheralConnectStateChangedNotification` </font> will be posted.You can get the status in this way:
 
 ```
-[MKMPCentralManager shared].connectState;
+[MKPBCentralManager shared].connectState;
 ```
 
 #### 4.Monitoring device disconnect reason.
