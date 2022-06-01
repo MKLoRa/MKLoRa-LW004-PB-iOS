@@ -202,6 +202,22 @@
                  failedBlock:failedBlock];
 }
 
++ (void)pb_readPCBAStatusWithSucBlock:(void (^)(id returnData))sucBlock
+                          failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_pb_taskReadPCBAStatusOperation
+                     cmdFlag:@"1b"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)pb_readSelftestStatusWithSucBlock:(void (^)(id returnData))sucBlock
+                              failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_pb_taskReadSelftestStatusOperation
+                     cmdFlag:@"1c"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
 #pragma mark ****************************************Work Mode************************************************
 
 + (void)pb_readShutDownPayloadStatusWithSucBlock:(void (^)(id returnData))sucBlock

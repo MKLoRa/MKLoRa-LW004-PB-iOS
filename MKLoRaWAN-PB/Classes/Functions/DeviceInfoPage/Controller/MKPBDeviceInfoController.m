@@ -25,6 +25,7 @@
 
 #import "MKPBUpdateController.h"
 #import "MKPBDebuggerController.h"
+#import "MKPBSelftestController.h"
 
 @interface MKPBDeviceInfoController ()<UITableViewDelegate,
 UITableViewDataSource,
@@ -183,6 +184,12 @@ MKPBTextButtonCellDelegate>
     self.isDfuModel = YES;
 }
 
+#pragma mark - event method
+- (void)pushSelftestInterface {
+    MKPBSelftestController *vc = [[MKPBSelftestController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 #pragma mark - interface
 - (void)readDataFromDevice {
     [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
@@ -309,6 +316,11 @@ MKPBTextButtonCellDelegate>
         make.top.mas_equalTo(defaultTopInset);
         make.bottom.mas_equalTo(-VirtualHomeHeight);
     }];
+    
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushSelftestInterface)];
+    gesture.numberOfTapsRequired = 3;
+    [self.view addGestureRecognizer:gesture];
+    
 }
 
 #pragma mark - getter

@@ -22,35 +22,32 @@
         [self operationInsertFailedBlock:failedBlock];
         return ;
     }
-    NSString *databaseName = [NSString stringWithFormat:@"%@.Table",macAddress];
-    FMDatabase* db = [FMDatabase databaseWithPath:kFilePath(databaseName)];
+    FMDatabase* db = [FMDatabase databaseWithPath:kFilePath(@"MKPBLogDB")];
     if (![db open]) {
         [self operationInsertFailedBlock:failedBlock];
         return;
     }
-    NSString *sqlCreateTable = [NSString stringWithFormat:@"create table if not exists MKPBLogDataTable (key text,date text,logDetails text)"];
+    NSString *sqlCreateTable = [NSString stringWithFormat:@"create table if not exists MKPBLogDataTable (macAddress text,date text,logDetails text)"];
     BOOL resCreate = [db executeUpdate:sqlCreateTable];
     if (!resCreate) {
         [db close];
         [self operationInsertFailedBlock:failedBlock];
         return;
     }
-    [[FMDatabaseQueue databaseQueueWithPath:kFilePath(databaseName)] inDatabase:^(FMDatabase *db) {
+    [[FMDatabaseQueue databaseQueueWithPath:kFilePath(@"MKPBLogDB")] inDatabase:^(FMDatabase *db) {
         
         for (NSDictionary *logDic in logList) {
             BOOL exist = NO;
-            FMResultSet * result = [db executeQuery:@"select * from MKPBLogDataTable where key = ?",SafeStr(logDic[@"key"])];
+            FMResultSet * result = [db executeQuery:@"select * from MKPBLogDataTable where macAddress = ? and date = ?",macAddress,SafeStr(logDic[@"date"])];
             while (result.next) {
-                if ([logDic[@"key"] isEqualToString:[result stringForColumn:@"key"]]) {
-                    exist = YES;
-                }
+                exist = YES;
             }
             if (exist) {
                 //存在该设备，更新设备
-                [db executeUpdate:@"UPDATE MKPBLogDataTable SET logDetails = ?, date = ? WHERE key = ?",SafeStr(logDic[@"logDetails"]),SafeStr(logDic[@"date"]),SafeStr(logDic[@"key"])];
+                [db executeUpdate:@"UPDATE MKPBLogDataTable SET logDetails = ? where macAddress = ?",SafeStr(logDic[@"logDetails"]),macAddress];
             }else{
                 //不存在，插入设备
-                [db executeUpdate:@"INSERT INTO MKPBLogDataTable (key,date,logDetails) VALUES (?,?,?)",SafeStr(logDic[@"key"]),SafeStr(logDic[@"date"]),SafeStr(logDic[@"logDetails"])];
+                [db executeUpdate:@"INSERT INTO MKPBLogDataTable (macAddress,date,logDetails) VALUES (?,?,?)",macAddress,SafeStr(logDic[@"date"]),SafeStr(logDic[@"logDetails"])];
             }
         }
         
@@ -66,18 +63,17 @@
 + (void)readLocalLogsWithMacAddress:(NSString *)macAddress
                            sucBlock:(void (^)(NSArray <NSDictionary *>*logList))sucBlock
                         failedBlock:(void (^)(NSError *error))failedBlock {
-    NSString *databaseName = [NSString stringWithFormat:@"%@.Table",macAddress];
-    FMDatabase* db = [FMDatabase databaseWithPath:kFilePath(databaseName)];
+    FMDatabase* db = [FMDatabase databaseWithPath:kFilePath(@"MKPBLogDB")];
     if (![db open]) {
         [self operationGetDataFailedBlock:failedBlock];
         return;
     }
-    [[FMDatabaseQueue databaseQueueWithPath:kFilePath(databaseName)] inDatabase:^(FMDatabase *db) {
+    [[FMDatabaseQueue databaseQueueWithPath:kFilePath(@"MKPBLogDB")] inDatabase:^(FMDatabase *db) {
         NSMutableArray *tempDataList = [NSMutableArray array];
-        FMResultSet * result = [db executeQuery:@"SELECT * FROM MKPBLogDataTable"];
+        FMResultSet * result = [db executeQuery:@"SELECT * FROM MKPBLogDataTable where macAddress = ?",macAddress];
         while ([result next]) {
             NSDictionary *dic = @{
-                @"key":SafeStr([result stringForColumn:@"key"]),
+                @"macAddress":SafeStr([result stringForColumn:@"macAddress"]),
                 @"logDetails":SafeStr([result stringForColumn:@"logDetails"]),
                 @"date":SafeStr([result stringForColumn:@"date"]),
             };
@@ -96,9 +92,8 @@
 + (void)deleteDatasWithMacAddress:(NSString *)macAddress
                          sucBlock:(void (^)(void))sucBlock
                       failedBlock:(void (^)(NSError *error))failedBlock {
-    NSString *databaseName = [NSString stringWithFormat:@"%@.Table",macAddress];
-    [[FMDatabaseQueue databaseQueueWithPath:kFilePath(databaseName)] inDatabase:^(FMDatabase *db) {
-        BOOL result = [db executeUpdate:@"DELETE FROM MKPBLogDataTable"];
+    [[FMDatabaseQueue databaseQueueWithPath:kFilePath(@"MKPBLogDB")] inDatabase:^(FMDatabase *db) {
+        BOOL result = [db executeUpdate:@"DELETE FROM MKPBLogDataTable where macAddress = ?",macAddress];
         if (!result) {
             [self operationDeleteFailedBlock:failedBlock];
             return;

@@ -31,6 +31,8 @@ typedef NS_ENUM(NSInteger, mk_pb_taskOperationID) {
     mk_pb_taskReadThreeAxisMotionDurationOperation,     //读取三轴运动判断时间
     mk_pb_taskReadMotionModeTripEndTimeoutOperation,    //读取运动结束时间
     mk_pb_taskReadMacAddressOperation,              //读取mac地址
+    mk_pb_taskReadPCBAStatusOperation,              //读取产测状态
+    mk_pb_taskReadSelftestStatusOperation,          //读取自检故障原因
     
 #pragma mark - 工作模式
     mk_pb_taskReadShutDownPayloadStatusOperation,       //读取关机信息上报状态

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MKLoRaWAN-PB'
-  s.version          = '0.0.2'
+  s.version          = '1.0.0'
   s.summary          = 'A short description of MKLoRaWAN-PB.'
 
 # This description is used to generate tags and improve search results.
@@ -219,6 +219,7 @@ TODO: Add long description of the pod here.
         
         ssss.dependency 'MKLoRaWAN-PB/Functions/DebuggerPage/Controller'
         ssss.dependency 'MKLoRaWAN-PB/Functions/UpdatePage/Controller'
+        ssss.dependency 'MKLoRaWAN-PB/Functions/SelftestPage/Controller'
       end
     
       sss.subspec 'Model' do |ssss|
@@ -530,7 +531,17 @@ TODO: Add long description of the pod here.
         ssss.source_files = 'MKLoRaWAN-PB/Classes/Functions/ScanPage/Model/**'
       end
     end
+    ss.subspec 'SelftestPage' do |sss|
+      sss.subspec 'Controller' do |ssss|
+        ssss.source_files = 'MKLoRaWAN-PB/Classes/Functions/SelftestPage/Controller/**'
+      
+        ssss.dependency 'MKLoRaWAN-PB/Functions/SelftestPage/Model'
+      end
     
+      sss.subspec 'Model' do |ssss|
+        ssss.source_files = 'MKLoRaWAN-PB/Classes/Functions/SelftestPage/Model/**'
+      end
+    end
     ss.subspec 'SOSSettingsPage' do |sss|
       sss.subspec 'Controller' do |ssss|
         ssss.source_files = 'MKLoRaWAN-PB/Classes/Functions/SOSSettingsPage/Controller/**'
