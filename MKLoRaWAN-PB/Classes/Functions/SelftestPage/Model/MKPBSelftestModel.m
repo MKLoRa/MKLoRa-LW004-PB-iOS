@@ -55,13 +55,41 @@
     __block BOOL success = NO;
     [MKPBInterface pb_readSelftestStatusWithSucBlock:^(id  _Nonnull returnData) {
         success = YES;
-        self.selftestStatus = returnData[@"result"][@"status"];
+        NSString *binary = [self binaryByhex:returnData[@"result"][@"status"]];
+        self.bit0 = [binary substringWithRange:NSMakeRange(7, 1)];
+        self.bit1 = [binary substringWithRange:NSMakeRange(6, 1)];
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);
     }];
     dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
     return success;
+}
+
+#pragma mark - private method
+- (NSString *)binaryByhex:(NSString *)hex {
+    NSDictionary *hexDic = @{
+                             @"0":@"0000",@"1":@"0001",@"2":@"0010",
+                             @"3":@"0011",@"4":@"0100",@"5":@"0101",
+                             @"6":@"0110",@"7":@"0111",@"8":@"1000",
+                             @"9":@"1001",@"A":@"1010",@"a":@"1010",
+                             @"B":@"1011",@"b":@"1011",@"C":@"1100",
+                             @"c":@"1100",@"D":@"1101",@"d":@"1101",
+                             @"E":@"1110",@"e":@"1110",@"F":@"1111",
+                             @"f":@"1111",
+                             };
+    NSString *binaryString = @"";
+    for (int i=0; i<[hex length]; i++) {
+        NSRange rage;
+        rage.length = 1;
+        rage.location = i;
+        NSString *key = [hex substringWithRange:rage];
+        binaryString = [NSString stringWithFormat:@"%@%@",binaryString,
+                        [NSString stringWithFormat:@"%@",[hexDic objectForKey:key]]];
+        
+    }
+    
+    return binaryString;
 }
 
 - (void)operationFailedBlockWithMsg:(NSString *)msg block:(void (^)(NSError *error))block {

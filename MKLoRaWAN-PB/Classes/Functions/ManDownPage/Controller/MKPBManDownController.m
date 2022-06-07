@@ -290,6 +290,7 @@ MKTextFieldCellDelegate>
     MKTextFieldCellModel *cellModel = [[MKTextFieldCellModel alloc] init];
     cellModel.index = 1;
     cellModel.msg = @"Report Interval";
+    cellModel.unit = @"s";
     cellModel.textPlaceholder = @"10~600";
     cellModel.textFieldType = mk_realNumberOnly;
     cellModel.maxLength = 3;

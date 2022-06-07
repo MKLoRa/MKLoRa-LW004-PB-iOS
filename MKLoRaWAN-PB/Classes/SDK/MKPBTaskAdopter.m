@@ -263,9 +263,9 @@ NSString *const mk_pb_contentKey = @"mk_pb_contentKey";
         operationID = mk_pb_taskReadPCBAStatusOperation;
     }else if ([cmd isEqualToString:@"1c"]) {
         //读取自检故障原因
-        NSString *status = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)];
+//        NSString *status = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)];
         resultDic = @{
-            @"status":status,
+            @"status":content,
         };
         operationID = mk_pb_taskReadSelftestStatusOperation;
     }else if ([cmd isEqualToString:@"20"]) {

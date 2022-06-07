@@ -15,9 +15,11 @@
 #import "UIView+MKAdd.h"
 
 #import "MKHudManager.h"
-#import "MKNormalTextCell.h"
 
 #import "MKPBSelftestModel.h"
+
+#import "MKPBSelftestCell.h"
+#import "MKPBPCBAStatusCell.h"
 
 @interface MKPBSelftestController ()<UITableViewDelegate,
 UITableViewDataSource>
@@ -46,6 +48,9 @@ UITableViewDataSource>
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return 60.f;
+    }
     return 44.f;
 }
 
@@ -63,11 +68,11 @@ UITableViewDataSource>
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        MKNormalTextCell *cell = [MKNormalTextCell initCellWithTableView:tableView];
+        MKPBSelftestCell *cell = [MKPBSelftestCell initCellWithTableView:tableView];
         cell.dataModel = self.section0List[indexPath.row];
         return cell;
     }
-    MKNormalTextCell *cell = [MKNormalTextCell initCellWithTableView:tableView];
+    MKPBPCBAStatusCell *cell = [MKPBPCBAStatusCell initCellWithTableView:tableView];
     cell.dataModel = self.section1List[indexPath.row];
     return cell;
 }
@@ -96,16 +101,20 @@ UITableViewDataSource>
 }
 
 - (void)loadSection0Datas {
-    MKNormalTextCellModel *cellModel = [[MKNormalTextCellModel alloc] init];
-    cellModel.leftMsg = @"Selftest Status:";
-    cellModel.rightMsg = self.dataModel.selftestStatus;
+    MKPBSelftestCellModel *cellModel = [[MKPBSelftestCellModel alloc] init];
+    
+    cellModel.value0 = (([self.dataModel.bit0 integerValue] == 0 && [self.dataModel.bit1 integerValue] == 0) ? @"0" : @"");
+    cellModel.value1 = ([self.dataModel.bit0 integerValue] == 1 ? @"1" : @"");
+    cellModel.value2 = ([self.dataModel.bit1 integerValue] == 1 ? @"2" : @"");
+    
     [self.section0List addObject:cellModel];
 }
 
 - (void)loadSection1Datas {
-    MKNormalTextCellModel *cellModel = [[MKNormalTextCellModel alloc] init];
-    cellModel.leftMsg = @"PCBA Status:";
-    cellModel.rightMsg = self.dataModel.pcbaStatus;
+    MKPBPCBAStatusCellModel *cellModel = [[MKPBPCBAStatusCellModel alloc] init];
+    cellModel.value0 = (([self.dataModel.pcbaStatus integerValue] == 0) ? @"0" : @"");
+    cellModel.value1 = (([self.dataModel.pcbaStatus integerValue] == 1) ? @"1" : @"");
+    cellModel.value2 = (([self.dataModel.pcbaStatus integerValue] == 2) ? @"2" : @"");
     [self.section1List addObject:cellModel];
 }
 

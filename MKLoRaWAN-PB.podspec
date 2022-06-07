@@ -536,6 +536,11 @@ TODO: Add long description of the pod here.
         ssss.source_files = 'MKLoRaWAN-PB/Classes/Functions/SelftestPage/Controller/**'
       
         ssss.dependency 'MKLoRaWAN-PB/Functions/SelftestPage/Model'
+        ssss.dependency 'MKLoRaWAN-PB/Functions/SelftestPage/View'
+      end
+      
+      sss.subspec 'View' do |ssss|
+        ssss.source_files = 'MKLoRaWAN-PB/Classes/Functions/SelftestPage/View/**'
       end
     
       sss.subspec 'Model' do |ssss|

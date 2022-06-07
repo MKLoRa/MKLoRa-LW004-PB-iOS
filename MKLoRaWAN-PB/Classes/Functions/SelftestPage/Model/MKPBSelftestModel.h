@@ -12,7 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MKPBSelftestModel : NSObject
 
-@property (nonatomic, copy)NSString *selftestStatus;
+@property (nonatomic, copy)NSString *bit0;
+
+@property (nonatomic, copy)NSString *bit1;
 
 @property (nonatomic, copy)NSString *pcbaStatus;
 
