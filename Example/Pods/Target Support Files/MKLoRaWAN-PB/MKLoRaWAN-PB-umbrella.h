@@ -87,6 +87,8 @@
 #import "MKPBScanPageCell.h"
 #import "MKPBSelftestController.h"
 #import "MKPBSelftestModel.h"
+#import "MKPBPCBAStatusCell.h"
+#import "MKPBSelftestCell.h"
 #import "MKPBTabBarController.h"
 #import "MKPBTimingModeController.h"
 #import "MKPBTimingModeModel.h"

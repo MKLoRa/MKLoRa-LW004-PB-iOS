@@ -417,51 +417,51 @@ PODS:
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKLoRaWAN-PB (0.0.2):
-    - MKLoRaWAN-PB/ConnectModule (= 0.0.2)
-    - MKLoRaWAN-PB/CTMediator (= 0.0.2)
-    - MKLoRaWAN-PB/DatabaseManager (= 0.0.2)
-    - MKLoRaWAN-PB/Expand (= 0.0.2)
-    - MKLoRaWAN-PB/Functions (= 0.0.2)
-    - MKLoRaWAN-PB/SDK (= 0.0.2)
-    - MKLoRaWAN-PB/Target (= 0.0.2)
-  - MKLoRaWAN-PB/ConnectModule (0.0.2):
+  - MKLoRaWAN-PB (1.0.0):
+    - MKLoRaWAN-PB/ConnectModule (= 1.0.0)
+    - MKLoRaWAN-PB/CTMediator (= 1.0.0)
+    - MKLoRaWAN-PB/DatabaseManager (= 1.0.0)
+    - MKLoRaWAN-PB/Expand (= 1.0.0)
+    - MKLoRaWAN-PB/Functions (= 1.0.0)
+    - MKLoRaWAN-PB/SDK (= 1.0.0)
+    - MKLoRaWAN-PB/Target (= 1.0.0)
+  - MKLoRaWAN-PB/ConnectModule (1.0.0):
     - MKBaseModuleLibrary
     - MKLoRaWAN-PB/SDK
-  - MKLoRaWAN-PB/CTMediator (0.0.2):
+  - MKLoRaWAN-PB/CTMediator (1.0.0):
     - CTMediator
     - MKBaseModuleLibrary
-  - MKLoRaWAN-PB/DatabaseManager (0.0.2):
+  - MKLoRaWAN-PB/DatabaseManager (1.0.0):
     - FMDB
     - MKBaseModuleLibrary
-  - MKLoRaWAN-PB/Expand (0.0.2):
+  - MKLoRaWAN-PB/Expand (1.0.0):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKLoRaWAN-PB/Expand/FilterCell (= 0.0.2)
-    - MKLoRaWAN-PB/Expand/TextButtonCell (= 0.0.2)
-  - MKLoRaWAN-PB/Expand/FilterCell (0.0.2):
+    - MKLoRaWAN-PB/Expand/FilterCell (= 1.0.0)
+    - MKLoRaWAN-PB/Expand/TextButtonCell (= 1.0.0)
+  - MKLoRaWAN-PB/Expand/FilterCell (1.0.0):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKLoRaWAN-PB/Expand/FilterCell/FilterBeaconCell (= 0.0.2)
-    - MKLoRaWAN-PB/Expand/FilterCell/FilterByRawDataCell (= 0.0.2)
-    - MKLoRaWAN-PB/Expand/FilterCell/FilterEditSectionHeaderView (= 0.0.2)
-    - MKLoRaWAN-PB/Expand/FilterCell/FilterNormalTextFieldCell (= 0.0.2)
-  - MKLoRaWAN-PB/Expand/FilterCell/FilterBeaconCell (0.0.2):
+    - MKLoRaWAN-PB/Expand/FilterCell/FilterBeaconCell (= 1.0.0)
+    - MKLoRaWAN-PB/Expand/FilterCell/FilterByRawDataCell (= 1.0.0)
+    - MKLoRaWAN-PB/Expand/FilterCell/FilterEditSectionHeaderView (= 1.0.0)
+    - MKLoRaWAN-PB/Expand/FilterCell/FilterNormalTextFieldCell (= 1.0.0)
+  - MKLoRaWAN-PB/Expand/FilterCell/FilterBeaconCell (1.0.0):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKLoRaWAN-PB/Expand/FilterCell/FilterByRawDataCell (0.0.2):
+  - MKLoRaWAN-PB/Expand/FilterCell/FilterByRawDataCell (1.0.0):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKLoRaWAN-PB/Expand/FilterCell/FilterEditSectionHeaderView (0.0.2):
+  - MKLoRaWAN-PB/Expand/FilterCell/FilterEditSectionHeaderView (1.0.0):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKLoRaWAN-PB/Expand/FilterCell/FilterNormalTextFieldCell (0.0.2):
+  - MKLoRaWAN-PB/Expand/FilterCell/FilterNormalTextFieldCell (1.0.0):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKLoRaWAN-PB/Expand/TextButtonCell (0.0.2):
+  - MKLoRaWAN-PB/Expand/TextButtonCell (1.0.0):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKLoRaWAN-PB/Functions (0.0.2):
+  - MKLoRaWAN-PB/Functions (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -469,38 +469,38 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/AboutPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/AlarmFunctionPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/AlertSettingsPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/AuxiliaryPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/AxisSettingsPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/BleFixPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/BleSettingPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/DebuggerPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/DeviceInfoPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/DeviceModePage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/DeviceSettingPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/DownlinkPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/GeneralPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/GpsFixPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/LoRaApplicationPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/LoRaPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/LoRaSettingPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/ManDownPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/MotionModePage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/ONOFFSettingsPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/PeriodicModePage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/PositionPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/ScanPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/SelftestPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/SOSSettingsPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/TabBarPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/TimingModePage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/UpdatePage (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/AboutPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/AlarmFunctionPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/AlertSettingsPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/AuxiliaryPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/AxisSettingsPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/BleFixPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/BleSettingPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/DebuggerPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/DeviceInfoPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/DeviceModePage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/DeviceSettingPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/DownlinkPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/GeneralPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/GpsFixPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/LoRaApplicationPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/LoRaPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/LoRaSettingPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/ManDownPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/MotionModePage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/ONOFFSettingsPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/PeriodicModePage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/PositionPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/ScanPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/SelftestPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/SOSSettingsPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/TabBarPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/TimingModePage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/UpdatePage (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/AboutPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/AboutPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -508,10 +508,10 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/AboutPage/Controller (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/AboutPage/Controller (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/AboutPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/AboutPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -521,7 +521,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/AlarmFunctionPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/AlarmFunctionPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -529,12 +529,12 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/AlarmFunctionPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/AlarmFunctionPage/Model (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/AlarmFunctionPage/View (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/AlarmFunctionPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/AlarmFunctionPage/Model (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/AlarmFunctionPage/View (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/AlarmFunctionPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/AlarmFunctionPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -548,7 +548,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/SOSSettingsPage/Controller
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/AlarmFunctionPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/AlarmFunctionPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -558,7 +558,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/AlarmFunctionPage/View (0.0.2):
+  - MKLoRaWAN-PB/Functions/AlarmFunctionPage/View (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -568,7 +568,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/AlertSettingsPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/AlertSettingsPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -576,11 +576,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/AlertSettingsPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/AlertSettingsPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/AlertSettingsPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/AlertSettingsPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/AlertSettingsPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/AlertSettingsPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -591,7 +591,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/AlertSettingsPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/AlertSettingsPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/AlertSettingsPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -601,7 +601,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/AuxiliaryPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/AuxiliaryPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -609,10 +609,10 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/AuxiliaryPage/Controller (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/AuxiliaryPage/Controller (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/AuxiliaryPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/AuxiliaryPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -625,7 +625,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/ManDownPage/Controller
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/AxisSettingsPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/AxisSettingsPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -633,11 +633,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/AxisSettingsPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/AxisSettingsPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/AxisSettingsPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/AxisSettingsPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/AxisSettingsPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/AxisSettingsPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -648,7 +648,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/AxisSettingsPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/AxisSettingsPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/AxisSettingsPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -658,7 +658,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/BleFixPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/BleFixPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -666,12 +666,12 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/BleFixPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/BleFixPage/Model (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/BleFixPage/View (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/BleFixPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/BleFixPage/Model (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/BleFixPage/View (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/BleFixPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/BleFixPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -684,7 +684,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/FilterPages
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/BleFixPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/BleFixPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -694,7 +694,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/BleFixPage/View (0.0.2):
+  - MKLoRaWAN-PB/Functions/BleFixPage/View (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -704,7 +704,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/BleSettingPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/BleSettingPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -712,12 +712,12 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/BleSettingPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/BleSettingPage/Model (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/BleSettingPage/View (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/BleSettingPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/BleSettingPage/Model (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/BleSettingPage/View (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/BleSettingPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/BleSettingPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -729,7 +729,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/BleSettingPage/View
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/BleSettingPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/BleSettingPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -739,7 +739,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/BleSettingPage/View (0.0.2):
+  - MKLoRaWAN-PB/Functions/BleSettingPage/View (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -749,7 +749,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/DebuggerPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/DebuggerPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -757,11 +757,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/DebuggerPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/DebuggerPage/View (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/DebuggerPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/DebuggerPage/View (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/DebuggerPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/DebuggerPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -772,7 +772,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/DebuggerPage/View
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/DebuggerPage/View (0.0.2):
+  - MKLoRaWAN-PB/Functions/DebuggerPage/View (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -782,7 +782,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/DeviceInfoPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/DeviceInfoPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -790,11 +790,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/DeviceInfoPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/DeviceInfoPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/DeviceInfoPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/DeviceInfoPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/DeviceInfoPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/DeviceInfoPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -808,7 +808,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/UpdatePage/Controller
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/DeviceInfoPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/DeviceInfoPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -818,7 +818,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/DeviceModePage (0.0.2):
+  - MKLoRaWAN-PB/Functions/DeviceModePage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -826,10 +826,10 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/DeviceModePage/Controller (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/DeviceModePage/Controller (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/DeviceModePage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/DeviceModePage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -842,7 +842,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/TimingModePage/Controller
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/DeviceSettingPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/DeviceSettingPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -850,11 +850,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/DeviceSettingPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/DeviceSettingPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/DeviceSettingPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/DeviceSettingPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/DeviceSettingPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/DeviceSettingPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -867,7 +867,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/ONOFFSettingsPage/Controller
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/DeviceSettingPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/DeviceSettingPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -877,7 +877,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/DownlinkPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/DownlinkPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -885,11 +885,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/DownlinkPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/DownlinkPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/DownlinkPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/DownlinkPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/DownlinkPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/DownlinkPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -900,7 +900,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/DownlinkPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/DownlinkPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/DownlinkPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -910,7 +910,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -918,17 +918,17 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByAdvNamePage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByMacPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByOtherPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByRawDataPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByTLMPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByUIDPage (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByURLPage (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByAdvNamePage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByMacPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByOtherPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByRawDataPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByTLMPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByUIDPage (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByURLPage (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByAdvNamePage (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByAdvNamePage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -936,11 +936,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByAdvNamePage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByAdvNamePage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByAdvNamePage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByAdvNamePage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByAdvNamePage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByAdvNamePage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -951,7 +951,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/FilterPages/FilterByAdvNamePage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByAdvNamePage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByAdvNamePage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -961,7 +961,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -969,12 +969,12 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage/Header (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage/Header (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -986,7 +986,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage/Header (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage/Header (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -996,7 +996,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1007,7 +1007,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/FilterPages/FilterByBeaconPage/Header
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByMacPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByMacPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1015,11 +1015,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByMacPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByMacPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByMacPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByMacPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByMacPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByMacPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1030,7 +1030,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/FilterPages/FilterByMacPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByMacPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByMacPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1040,7 +1040,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByOtherPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByOtherPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1048,11 +1048,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByOtherPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByOtherPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByOtherPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByOtherPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByOtherPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByOtherPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1063,7 +1063,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/FilterPages/FilterByOtherPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByOtherPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByOtherPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1073,7 +1073,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByRawDataPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByRawDataPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1081,11 +1081,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByRawDataPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByRawDataPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByRawDataPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByRawDataPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByRawDataPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByRawDataPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1101,7 +1101,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/FilterPages/FilterByURLPage/Controller
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByRawDataPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByRawDataPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1111,7 +1111,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByTLMPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByTLMPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1119,11 +1119,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByTLMPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByTLMPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByTLMPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByTLMPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByTLMPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByTLMPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1134,7 +1134,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/FilterPages/FilterByTLMPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByTLMPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByTLMPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1144,7 +1144,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByUIDPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByUIDPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1152,11 +1152,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByUIDPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByUIDPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByUIDPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByUIDPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByUIDPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByUIDPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1167,7 +1167,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/FilterPages/FilterByUIDPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByUIDPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByUIDPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1177,7 +1177,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByURLPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByURLPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1185,11 +1185,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByURLPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/FilterPages/FilterByURLPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByURLPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/FilterPages/FilterByURLPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByURLPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByURLPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1200,7 +1200,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/FilterPages/FilterByURLPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/FilterPages/FilterByURLPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/FilterPages/FilterByURLPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1210,7 +1210,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/GeneralPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/GeneralPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1218,11 +1218,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/GeneralPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/GeneralPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/GeneralPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/GeneralPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/GeneralPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/GeneralPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1237,7 +1237,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/GeneralPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/GeneralPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/GeneralPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1247,7 +1247,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/GpsFixPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/GpsFixPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1255,11 +1255,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/GpsFixPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/GpsFixPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/GpsFixPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/GpsFixPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/GpsFixPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/GpsFixPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1270,7 +1270,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/GpsFixPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/GpsFixPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/GpsFixPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1280,7 +1280,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/LoRaApplicationPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/LoRaApplicationPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1288,11 +1288,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/LoRaApplicationPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/LoRaApplicationPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/LoRaApplicationPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/LoRaApplicationPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/LoRaApplicationPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/LoRaApplicationPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1303,7 +1303,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/LoRaApplicationPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/LoRaApplicationPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/LoRaApplicationPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1313,7 +1313,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/LoRaPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/LoRaPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1321,11 +1321,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/LoRaPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/LoRaPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/LoRaPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/LoRaPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/LoRaPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/LoRaPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1338,7 +1338,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/LoRaSettingPage/Controller
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/LoRaPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/LoRaPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1348,7 +1348,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/LoRaSettingPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/LoRaSettingPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1356,11 +1356,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/LoRaSettingPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/LoRaSettingPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/LoRaSettingPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/LoRaSettingPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/LoRaSettingPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/LoRaSettingPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1371,7 +1371,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/LoRaSettingPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/LoRaSettingPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/LoRaSettingPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1381,7 +1381,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/ManDownPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/ManDownPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1389,11 +1389,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/ManDownPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/ManDownPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/ManDownPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/ManDownPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/ManDownPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/ManDownPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1404,7 +1404,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/ManDownPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/ManDownPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/ManDownPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1414,7 +1414,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/MotionModePage (0.0.2):
+  - MKLoRaWAN-PB/Functions/MotionModePage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1422,11 +1422,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/MotionModePage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/MotionModePage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/MotionModePage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/MotionModePage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/MotionModePage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/MotionModePage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1437,7 +1437,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/MotionModePage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/MotionModePage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/MotionModePage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1447,7 +1447,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/ONOFFSettingsPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/ONOFFSettingsPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1455,11 +1455,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/ONOFFSettingsPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/ONOFFSettingsPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/ONOFFSettingsPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/ONOFFSettingsPage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/ONOFFSettingsPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/ONOFFSettingsPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1470,7 +1470,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/ONOFFSettingsPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/ONOFFSettingsPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/ONOFFSettingsPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1480,7 +1480,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/PeriodicModePage (0.0.2):
+  - MKLoRaWAN-PB/Functions/PeriodicModePage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1488,11 +1488,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/PeriodicModePage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/PeriodicModePage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/PeriodicModePage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/PeriodicModePage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/PeriodicModePage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/PeriodicModePage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1503,7 +1503,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/PeriodicModePage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/PeriodicModePage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/PeriodicModePage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1513,7 +1513,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/PositionPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/PositionPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1521,10 +1521,10 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/PositionPage/Controller (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/PositionPage/Controller (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/PositionPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/PositionPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1536,7 +1536,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/GpsFixPage/Controller
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/ScanPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/ScanPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1544,12 +1544,12 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/ScanPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/ScanPage/Model (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/ScanPage/View (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/ScanPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/ScanPage/Model (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/ScanPage/View (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/ScanPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/ScanPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1562,7 +1562,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/TabBarPage/Controller
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/ScanPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/ScanPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1572,7 +1572,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/ScanPage/View (0.0.2):
+  - MKLoRaWAN-PB/Functions/ScanPage/View (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1583,7 +1583,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/ScanPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/SelftestPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/SelftestPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1591,11 +1591,12 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/SelftestPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/SelftestPage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/SelftestPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/SelftestPage/Model (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/SelftestPage/View (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/SelftestPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/SelftestPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1604,9 +1605,10 @@ PODS:
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/Functions/SelftestPage/Model
+    - MKLoRaWAN-PB/Functions/SelftestPage/View
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/SelftestPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/SelftestPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1616,7 +1618,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/SOSSettingsPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/SelftestPage/View (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1624,11 +1626,21 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/SOSSettingsPage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/SOSSettingsPage/Model (= 0.0.2)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/SOSSettingsPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/SOSSettingsPage (1.0.0):
+    - HHTransition
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKLoRaWAN-PB/ConnectModule
+    - MKLoRaWAN-PB/CTMediator
+    - MKLoRaWAN-PB/DatabaseManager
+    - MKLoRaWAN-PB/Expand
+    - MKLoRaWAN-PB/Functions/SOSSettingsPage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/SOSSettingsPage/Model (= 1.0.0)
+    - MKLoRaWAN-PB/SDK
+    - MLInputDodger
+  - MKLoRaWAN-PB/Functions/SOSSettingsPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1639,7 +1651,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/SOSSettingsPage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/SOSSettingsPage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/SOSSettingsPage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1649,7 +1661,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/TabBarPage (0.0.2):
+  - MKLoRaWAN-PB/Functions/TabBarPage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1657,10 +1669,10 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/TabBarPage/Controller (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/TabBarPage/Controller (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/TabBarPage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/TabBarPage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1674,7 +1686,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/PositionPage/Controller
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/TimingModePage (0.0.2):
+  - MKLoRaWAN-PB/Functions/TimingModePage (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1682,12 +1694,12 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/TimingModePage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/TimingModePage/Model (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/TimingModePage/View (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/TimingModePage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/TimingModePage/Model (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/TimingModePage/View (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/TimingModePage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/TimingModePage/Controller (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1699,7 +1711,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/TimingModePage/View
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/TimingModePage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/TimingModePage/Model (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1709,7 +1721,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/TimingModePage/View (0.0.2):
+  - MKLoRaWAN-PB/Functions/TimingModePage/View (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1719,7 +1731,7 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/UpdatePage (0.0.2):
+  - MKLoRaWAN-PB/Functions/UpdatePage (1.0.0):
     - HHTransition
     - iOSDFULibrary
     - MKBaseModuleLibrary
@@ -1728,11 +1740,11 @@ PODS:
     - MKLoRaWAN-PB/CTMediator
     - MKLoRaWAN-PB/DatabaseManager
     - MKLoRaWAN-PB/Expand
-    - MKLoRaWAN-PB/Functions/UpdatePage/Controller (= 0.0.2)
-    - MKLoRaWAN-PB/Functions/UpdatePage/Model (= 0.0.2)
+    - MKLoRaWAN-PB/Functions/UpdatePage/Controller (= 1.0.0)
+    - MKLoRaWAN-PB/Functions/UpdatePage/Model (= 1.0.0)
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/UpdatePage/Controller (0.0.2):
+  - MKLoRaWAN-PB/Functions/UpdatePage/Controller (1.0.0):
     - HHTransition
     - iOSDFULibrary
     - MKBaseModuleLibrary
@@ -1744,7 +1756,7 @@ PODS:
     - MKLoRaWAN-PB/Functions/UpdatePage/Model
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/Functions/UpdatePage/Model (0.0.2):
+  - MKLoRaWAN-PB/Functions/UpdatePage/Model (1.0.0):
     - HHTransition
     - iOSDFULibrary
     - MKBaseModuleLibrary
@@ -1755,9 +1767,9 @@ PODS:
     - MKLoRaWAN-PB/Expand
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/SDK (0.0.2):
+  - MKLoRaWAN-PB/SDK (1.0.0):
     - MKBaseBleModule
-  - MKLoRaWAN-PB/Target (0.0.2):
+  - MKLoRaWAN-PB/Target (1.0.0):
     - MKLoRaWAN-PB/Functions
   - MLInputDodger (1.5.2)
   - Toast (4.0.0)
@@ -1801,7 +1813,7 @@ SPEC CHECKSUMS:
   MKBaseBleModule: 6019b69cf3c5a220b1cfe18e71e1e5e63f4757da
   MKBaseModuleLibrary: 859013194f81daa5f8a7a777ce88bf58cd3b5919
   MKCustomUIModule: 91646517fc7a90d94dd5578d119fec38d67d6a90
-  MKLoRaWAN-PB: c26f819b400982bc560c30da5918d769fdecbd81
+  MKLoRaWAN-PB: cf405cdd5284b6eaab7f1cd97f1ff7abbb0fd393
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   WRNavigationBar: 10bfdf96addf14d640d07c2ef08a029c18d8af10

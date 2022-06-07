@@ -1,6 +1,6 @@
 {
   "name": "MKLoRaWAN-PB",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "summary": "A short description of MKLoRaWAN-PB.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/MKLoRa/MKLoRa-LW004-PB-iOS",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/MKLoRa/MKLoRa-LW004-PB-iOS.git",
-    "tag": "0.0.2"
+    "tag": "1.0.0"
   },
   "platforms": {
     "ios": "12.0"
@@ -819,8 +819,15 @@
               "dependencies": {
                 "MKLoRaWAN-PB/Functions/SelftestPage/Model": [
 
+                ],
+                "MKLoRaWAN-PB/Functions/SelftestPage/View": [
+
                 ]
               }
+            },
+            {
+              "name": "View",
+              "source_files": "MKLoRaWAN-PB/Classes/Functions/SelftestPage/View/**"
             },
             {
               "name": "Model",
