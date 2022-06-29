@@ -30,6 +30,9 @@
 /// 05:设备恢复出厂设置
 @property (nonatomic, assign)BOOL disconnectType;
 
+/// 产品要求，进入debugger模式之后，设备断开连接也要停留在当前页面，只有退出debugger模式才进行正常模式通信
+@property (nonatomic, assign)BOOL isDebugger;
+
 @end
 
 @implementation MKPBTabBarController
@@ -72,6 +75,14 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(deviceConnectStateChanged)
                                                  name:mk_pb_peripheralConnectStateChangedNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(deviceEnterDebuggerMode)
+                                                 name:@"mk_pb_startDebuggerMode"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(deviceStopDebuggerMode)
+                                                 name:@"mk_pb_stopDebuggerMode"
                                                object:nil];
 }
 
@@ -138,6 +149,14 @@
     return;
 }
 
+- (void)deviceEnterDebuggerMode {
+    self.isDebugger = YES;
+}
+
+- (void)deviceStopDebuggerMode {
+    self.isDebugger = NO;
+}
+
 #pragma mark - private method
 - (void)showAlertWithMsg:(NSString *)msg title:(NSString *)title{
     MKAlertController *alertController = [MKAlertController alertControllerWithTitle:title
@@ -146,7 +165,9 @@
     @weakify(self);
     UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         @strongify(self);
-        [self gotoScanPage];
+        if (!self.isDebugger) {
+            [self gotoScanPage];
+        }
     }];
     [alertController addAction:moreAction];
     
