@@ -18,6 +18,14 @@
 @implementation MKPBFilterRawAdvDataModel
 
 - (BOOL)validParams {
+    if (!ValidStr(self.dataType)) {
+        //新需求，DataType为空等同于00，
+        self.dataType = @"00";
+    }
+    if ([self.dataType isEqualToString:@"00"]) {
+        self.minIndex = 0;
+        self.maxIndex = 0;
+    }
     if (!ValidStr(self.dataType) || self.dataType.length != 2 || ![MKBLEBaseSDKAdopter checkHexCharacter:self.dataType]) {
         return NO;
     }

@@ -285,6 +285,14 @@ MKTextButtonCellDelegate>
         }
         [list addObject:model];
     }
+    for (NSInteger i = 0; i < self.section1List.count; i ++) {
+        MKPBFilterByRawDataCellModel *cellModel = self.section1List[i];
+        if (!ValidStr(cellModel.dataType) || [cellModel.dataType isEqualToString:@"00"]) {
+            cellModel.maxIndex = @"0";
+            cellModel.minIndex = @"0";
+        }
+    }
+    [self.tableView mk_reloadSection:1 withRowAnimation:UITableViewRowAnimationNone];
     [[MKHudManager share] showHUDWithTitle:@"Config..." inView:self.view isPenetration:NO];
     @weakify(self);
     [self.dataModel configWithRawDataList:list relationship:[self loadCurrentRelationship] sucBlock:^{
@@ -391,7 +399,12 @@ MKTextButtonCellDelegate>
             cellModel.msg = @"Condition C";
         }
         cellModel.dataTypePlaceHolder = @"Data Type";
-        cellModel.dataType = dic[@"type"];
+        if (ValidStr(dic[@"type"]) && [dic[@"type"] isEqualToString:@"00"]) {
+            cellModel.dataType = @"";
+        }else {
+            cellModel.dataType = dic[@"type"];
+        }
+        
         cellModel.minTextFieldPlaceHolder = @"00-29";
         cellModel.minIndex = [NSString stringWithFormat:@"%@",dic[@"start"]];
         cellModel.maxTextFieldPlaceHolder = @"00-29";
