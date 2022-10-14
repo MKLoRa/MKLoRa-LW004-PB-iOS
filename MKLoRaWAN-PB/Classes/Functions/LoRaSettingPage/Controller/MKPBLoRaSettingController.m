@@ -486,6 +486,7 @@ MKLoRaSettingCHCellDelegate>
             cellModel.chLowIndex = cellModel.chLowValueList.count - 1;
             self.dataModel.DRL = self.dataModel.DRH;
         }
+        cellModel.chLowIndex = [self getCurrentDRLIndex];
         
         [self.tableView mk_reloadSection:10 withRowAnimation:UITableViewRowAnimationNone];
         return;
@@ -518,6 +519,7 @@ MKLoRaSettingCHCellDelegate>
             cellModel.chHighIndex = 0;
             self.dataModel.DRH = self.dataModel.DRL;
         }
+        cellModel.chHighIndex = [self getCurrentDRHIndex];
         
         [self.tableView mk_reloadSection:10 withRowAnimation:UITableViewRowAnimationNone];
         return;
