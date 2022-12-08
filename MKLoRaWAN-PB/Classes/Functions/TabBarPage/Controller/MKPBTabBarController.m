@@ -130,6 +130,9 @@
         [self showAlertWithMsg:@"Factory reset successfully!Please reconnect the device." title:@"Factory Reset"];
         return;
     }
+    //异常断开
+    NSString *msg = [NSString stringWithFormat:@"Device disconnected for unknown reason.(%@)",type];
+    [self showAlertWithMsg:msg title:@"Dismiss"];
 }
 
 - (void)centralManagerStateChanged{
