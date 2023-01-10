@@ -1281,7 +1281,7 @@
 		5D1C6EF77820CEF6EEA7333F025E2D6F /* mk_customUI_goNextButton@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_goNextButton@3x.png"; path = "MKCustomUIModule/Assets/mk_customUI_goNextButton@3x.png"; sourceTree = "<group>"; };
 		5D41F1C058466F45A98D2E0AFC5EAEA4 /* NSInvocation+MKAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+MKAdd.h"; path = "MKBaseModuleLibrary/Classes/Category/NSInvocation+MKAdd.h"; sourceTree = "<group>"; };
 		5E0BD5C93B78A9D9CCC5FDE28AC4D899 /* NSObject+MKModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+MKModel.h"; path = "MKBaseModuleLibrary/Classes/Category/NSObject+MKModel.h"; sourceTree = "<group>"; };
-		5E259980E0046D1395EC7061F005F32D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		5E259980E0046D1395EC7061F005F32D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5E2F9365812CE94F0BCD35B92A17D288 /* MKPBFilterByOtherController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKPBFilterByOtherController.m; path = "MKLoRaWAN-PB/Classes/Functions/FilterPages/FilterByOtherPage/Controller/MKPBFilterByOtherController.m"; sourceTree = "<group>"; };
 		5FC9BF02C5F967B543D0710C7DB61EA0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5FE51149AEA17FAC463048BB63E28108 /* MKPBFilterByTLMModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKPBFilterByTLMModel.h; path = "MKLoRaWAN-PB/Classes/Functions/FilterPages/FilterByTLMPage/Model/MKPBFilterByTLMModel.h"; sourceTree = "<group>"; };
@@ -1339,7 +1339,7 @@
 		6E8430DC69B167982E06E99480A68906 /* MKPBLoRaSettingController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKPBLoRaSettingController.m; path = "MKLoRaWAN-PB/Classes/Functions/LoRaSettingPage/Controller/MKPBLoRaSettingController.m"; sourceTree = "<group>"; };
 		6EC3395E2EC37661247AA4FBC6BBA8C3 /* CTMediator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CTMediator.m; path = CTMediator/CTMediator/CTMediator.m; sourceTree = "<group>"; };
 		6F14A19CBA5B95B0E785624401AC5762 /* mk_customUI_listButtonUnselectedIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_listButtonUnselectedIcon@2x.png"; path = "MKCustomUIModule/Assets/mk_customUI_listButtonUnselectedIcon@2x.png"; sourceTree = "<group>"; };
-		6F6EF971E63E1C282A871E6BA4358909 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		6F6EF971E63E1C282A871E6BA4358909 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6F9B6EAEB22776ED280623C58B470579 /* UISegmentedControl+MKAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UISegmentedControl+MKAdd.h"; path = "MKBaseModuleLibrary/Classes/Category/UISegmentedControl+MKAdd.h"; sourceTree = "<group>"; };
 		702D2C7C7E6222E2E040C6EF966D15DB /* MKPBFilterByMacModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKPBFilterByMacModel.h; path = "MKLoRaWAN-PB/Classes/Functions/FilterPages/FilterByMacPage/Model/MKPBFilterByMacModel.h"; sourceTree = "<group>"; };
 		7054B19A491F1F66B88CEBB94262996A /* MKDeviceDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKDeviceDefine.h; path = MKBaseModuleLibrary/Classes/Defines/MKDeviceDefine.h; sourceTree = "<group>"; };
@@ -1471,7 +1471,7 @@
 		9BFD9613462D31FCC9AF0698E2756223 /* WRCustomNavigationBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WRCustomNavigationBar.m; path = Demo/CodeDemo/WRNavigationBar/WRCustomNavigationBar.m; sourceTree = "<group>"; };
 		9CEF786C17C5B733F65FCB7D9A28D55C /* ManifestFirmwareInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ManifestFirmwareInfo.swift; path = iOSDFULibrary/Classes/Utilities/DFUPackage/Manifest/ManifestFirmwareInfo.swift; sourceTree = "<group>"; };
 		9D2353A9D9894862956305625FB7F11C /* HHTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HHTransition.release.xcconfig; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DA136A7AA2809DC8B4E1BFFA9336583 /* WRNavigationBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WRNavigationBar-Info.plist"; sourceTree = "<group>"; };
 		9E3572266EDCD3D9A7968431A097D6A4 /* pb_device_tabBarUnselected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "pb_device_tabBarUnselected@2x.png"; path = "MKLoRaWAN-PB/Assets/pb_device_tabBarUnselected@2x.png"; sourceTree = "<group>"; };
 		9EE679EE227D70C92358B53B81A45A18 /* MJRefreshBackFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackFooter.m; path = MJRefresh/Base/MJRefreshBackFooter.m; sourceTree = "<group>"; };
@@ -1509,7 +1509,7 @@
 		A8238C6B6CA017E6288F19C602C3ECC1 /* MJRefreshAutoGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoGifFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h; sourceTree = "<group>"; };
 		A85FD78C294D52E525A086CDA77D3C98 /* MKWifiAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKWifiAlertView.m; path = MKCustomUIModule/Classes/View/WifiAlertView/MKWifiAlertView.m; sourceTree = "<group>"; };
 		A9026F9A34DDCEB918015E2C65B6048B /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
-		A90314B11FAE02705BD5B43C050CC13A /* MKLoRaWAN-PB.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "MKLoRaWAN-PB.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A90314B11FAE02705BD5B43C050CC13A /* MKLoRaWAN-PB.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "MKLoRaWAN-PB.podspec"; sourceTree = "<group>"; tabWidth = 2; };
 		A90AAF4B13A0057CB16B8472FAF88618 /* MKFilterConditionCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKFilterConditionCell.h; path = MKCustomUIModule/Classes/Cell/LoRaCell/MKFilterConditionCell/MKFilterConditionCell.h; sourceTree = "<group>"; };
 		A927ADC7D2E511241621CC43627F9814 /* FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FMDB-dummy.m"; sourceTree = "<group>"; };
 		A9701F2773908D5549B94F3EE162A811 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
@@ -2666,7 +2666,6 @@
 				CD5FA299A757BB7A650AF9528C5F30E8 /* standard */,
 				CF905839738F7CAA12EB4CB81357CCB6 /* Support Files */,
 			);
-			name = FMDB;
 			path = FMDB;
 			sourceTree = "<group>";
 		};
@@ -2913,7 +2912,6 @@
 				FADB4BEC110952C743D886937877D75F /* Resources */,
 				F471A6E11B69F028B21652B4A1B1ADD4 /* Support Files */,
 			);
-			name = MLInputDodger;
 			path = MLInputDodger;
 			sourceTree = "<group>";
 		};
@@ -2957,7 +2955,6 @@
 				452A4DBB38EDF88F1613A8ED28048479 /* FileManager+ZIP.swift */,
 				2110DDFB5BFF1BA63EC2485BE127048E /* Support Files */,
 			);
-			name = ZIPFoundation;
 			path = ZIPFoundation;
 			sourceTree = "<group>";
 		};
@@ -3187,7 +3184,6 @@
 				0BE9DDA19DD2E18A2831779E588101D6 /* Support Files */,
 				A04AB528400E77A5192F7D7CD8EEA804 /* Tools */,
 			);
-			name = MKBaseModuleLibrary;
 			path = MKBaseModuleLibrary;
 			sourceTree = "<group>";
 		};
@@ -3272,7 +3268,6 @@
 				E5E0F0EEBFB689945622DC6671EABB2A /* ViewController+MASAdditions.m */,
 				7B728A0415BE1F1E988426A2FC40CC76 /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -3367,7 +3362,6 @@
 				6E15BAD28345D8AE991D11EF258559A4 /* UIViewController+HHTransitionProperty.m */,
 				E5A7467769E21DBC230C3DA19BF58149 /* Support Files */,
 			);
-			name = HHTransition;
 			path = HHTransition;
 			sourceTree = "<group>";
 		};
@@ -3409,7 +3403,6 @@
 				FEEAC6D5B1388908AC6C463AB66FCD52 /* UIAdopter */,
 				BB87F10D8EA5AFEA4BC453C8106FA9CF /* View */,
 			);
-			name = MKCustomUIModule;
 			path = MKCustomUIModule;
 			sourceTree = "<group>";
 		};
@@ -3427,7 +3420,6 @@
 				CD631C994EA63C578669036C554589A2 /* MKBLEBaseSDKDefines.h */,
 				F93ABB50D4812C6BFF62662208557239 /* Support Files */,
 			);
-			name = MKBaseBleModule;
 			path = MKBaseBleModule;
 			sourceTree = "<group>";
 		};
@@ -3490,7 +3482,6 @@
 				0A5FBB3D3CB25E1FB4D0257557F51F15 /* UIView+Toast.m */,
 				824A5023FF7812D8226BFD5188AA8228 /* Support Files */,
 			);
-			name = Toast;
 			path = Toast;
 			sourceTree = "<group>";
 		};
@@ -3561,7 +3552,6 @@
 				82131EA10987AB6767D416F3320E7D10 /* ZipArchive.swift */,
 				A5447FA1805DB0817C23889E4E3CD0CA /* Support Files */,
 			);
-			name = iOSDFULibrary;
 			path = iOSDFULibrary;
 			sourceTree = "<group>";
 		};
@@ -3636,7 +3626,6 @@
 				A54CE134076C3122F51EE523E58AED20 /* MBProgressHUD.m */,
 				741AC48CE72C2EEBBFE0F1ECEC568B84 /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -3737,7 +3726,6 @@
 				E4DCAFCD17D3561492D0486159BFA205 /* WRNavigationBar.m */,
 				90B4E5FD32A0F8BED704B0D7C5707757 /* Support Files */,
 			);
-			name = WRNavigationBar;
 			path = WRNavigationBar;
 			sourceTree = "<group>";
 		};
@@ -4033,7 +4021,6 @@
 				2714B46E9A3D36C7E9937DF12FE5981C /* CircleProgressBar.m */,
 				44936E9644C37F08D2CEFDBFDC572730 /* Support Files */,
 			);
-			name = CircleProgressBar;
 			path = CircleProgressBar;
 			sourceTree = "<group>";
 		};
@@ -4371,7 +4358,6 @@
 				6AB2330F3D56FC540FF4DB35E3D33155 /* Resources */,
 				3B4B80FB96229BAEBB28DA4EE4CC2A06 /* Support Files */,
 			);
-			name = MJRefresh;
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
@@ -4547,7 +4533,6 @@
 				EB5A3CBAF2DB9AB357BFCC0F21165209 /* CTMediator+HandyTools.m */,
 				5FCBFBD4D8057DACBE047DA41F5232C1 /* Support Files */,
 			);
-			name = CTMediator;
 			path = CTMediator;
 			sourceTree = "<group>";
 		};
@@ -6818,8 +6803,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -7220,8 +7204,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
