@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		09188C03E3B8F433EC66718A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		1351400384E1AB0C437C4F32 /* Pods_MKLoRaWAN_PB_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MKLoRaWAN_PB_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1CD97DE8DAEEEC2991AEADC0 /* MKLoRaWAN-PB.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "MKLoRaWAN-PB.podspec"; path = "../MKLoRaWAN-PB.podspec"; sourceTree = "<group>"; };
+		1CD97DE8DAEEEC2991AEADC0 /* MKLoRaWAN-PB.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "MKLoRaWAN-PB.podspec"; path = "../MKLoRaWAN-PB.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		28828DD155DD21D952613885 /* Pods-MKLoRaWAN-PB_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKLoRaWAN-PB_Example.release.xcconfig"; path = "Target Support Files/Pods-MKLoRaWAN-PB_Example/Pods-MKLoRaWAN-PB_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* MKLoRaWAN-PB_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MKLoRaWAN-PB_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };

@@ -418,6 +418,7 @@ MKTextButtonCellDelegate>
     cellModel.textPlaceholder = @"10~86400";
     cellModel.textFieldType = mk_realNumberOnly;
     cellModel.maxLength = 5;
+    cellModel.unit = @"s";
     cellModel.textFieldValue = self.dataModel.reportIntervalInTrip;
     [self.section4List addObject:cellModel];
 }
