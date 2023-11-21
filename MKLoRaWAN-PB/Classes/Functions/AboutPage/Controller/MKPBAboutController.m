@@ -142,7 +142,7 @@
         _firmwareLabel.textColor = RGBCOLOR(189, 189, 189);
         _firmwareLabel.textAlignment = NSTextAlignmentCenter;
         _firmwareLabel.font = MKFont(16.f);
-        _firmwareLabel.text = @"FW Version:V3.0";
+        _firmwareLabel.text = @"FW Version:V3.1";
     }
     return _firmwareLabel;
 }
