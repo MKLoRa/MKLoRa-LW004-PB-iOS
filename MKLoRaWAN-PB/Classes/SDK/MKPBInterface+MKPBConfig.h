@@ -470,7 +470,7 @@ NS_ASSUME_NONNULL_BEGIN
                            failedBlock:(void (^)(NSError *error))failedBlock;
 
 /// The number of MACs for Bluetooth positioning.
-/// @param number 1~5
+/// @param number 1~15
 /// @param sucBlock Success callback
 /// @param failedBlock Failure callback
 + (void)pb_configBlePositioningNumberOfMac:(NSInteger)number

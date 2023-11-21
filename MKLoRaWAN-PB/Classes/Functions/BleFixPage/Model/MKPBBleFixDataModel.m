@@ -194,7 +194,7 @@
     if (!ValidStr(self.timeout) || [self.timeout integerValue] < 1 || [self.timeout integerValue] > 10) {
         return NO;
     }
-    if (!ValidStr(self.number) || [self.number integerValue] < 1 || [self.number integerValue] > 5) {
+    if (!ValidStr(self.number) || [self.number integerValue] < 1 || [self.number integerValue] > 15) {
         return NO;
     }
     if (self.rssi < -127 || self.rssi > 0) {
