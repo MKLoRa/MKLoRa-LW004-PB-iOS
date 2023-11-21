@@ -278,7 +278,7 @@ MKPBFilterRelationshipCellDelegate>
     cellModel2.textPlaceholder = @"1~15";
     cellModel2.textFieldType = mk_realNumberOnly;
     cellModel2.textFieldValue = self.dataModel.number;
-    cellModel2.maxLength = 1;
+    cellModel2.maxLength = 2;
     [self.section0List addObject:cellModel2];
 }
 
