@@ -388,6 +388,11 @@ mk_textSwitchCellDelegate>
     cellModel4.dataListIndex = self.dataModel.vibrationIntensity;
     
     [self.tableView reloadData];
+    
+    //让MKPickView消失
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"mk_customUIModule_dismissPickView"
+                                                        object:nil
+                                                      userInfo:nil];
 }
 
 - (void)loadSectionDatas {
