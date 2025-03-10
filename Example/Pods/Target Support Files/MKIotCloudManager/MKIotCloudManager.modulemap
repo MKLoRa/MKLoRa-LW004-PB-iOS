@@ -1,0 +1,6 @@
+framework module MKIotCloudManager {
+  umbrella header "MKIotCloudManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

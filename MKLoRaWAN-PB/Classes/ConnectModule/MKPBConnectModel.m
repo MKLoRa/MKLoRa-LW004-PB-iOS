@@ -23,6 +23,8 @@
 /// 设备连接的时候是否需要密码
 @property (nonatomic, assign)BOOL hasPassword;
 
+@property (nonatomic, copy)NSString *macAddress;
+
 @end
 
 @implementation MKPBConnectModel
@@ -41,6 +43,7 @@
 #pragma mark - public method
 - (void)connectDevice:(CBPeripheral *)peripheral
              password:(NSString *)password
+           macAddress:(NSString *)macAddress
              sucBlock:(void (^)(void))sucBlock
           failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.connectQueue, ^{
@@ -63,6 +66,7 @@
             [self operationFailedMsg:@"Config Date Error" completeBlock:failedBlock];
             return;
         }
+        self.macAddress = macAddress;
         moko_dispatch_main_safe(^{
             if (sucBlock) {
                 sucBlock();

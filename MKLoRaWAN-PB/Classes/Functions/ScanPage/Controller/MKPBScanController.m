@@ -404,7 +404,7 @@ MKPBTabBarControllerDelegate>
         }
     }
     [[MKHudManager share] showHUDWithTitle:@"Connecting..." inView:self.view isPenetration:NO];
-    [[MKPBConnectModel shared] connectDevice:scanDataModel.peripheral password:(scanDataModel.needPassword ? self.passwordField.text : @"") sucBlock:^{
+    [[MKPBConnectModel shared] connectDevice:scanDataModel.peripheral password:(scanDataModel.needPassword ? self.passwordField.text : @"") macAddress:scanDataModel.macAddress sucBlock:^{
         if (scanDataModel.needPassword && ValidStr(self.passwordField.text) && self.passwordField.text.length == 8) {
             [[NSUserDefaults standardUserDefaults] setObject:self.passwordField.text forKey:localPasswordKey];
         }
