@@ -255,20 +255,37 @@
 #pragma mark - public method
 - (void)configAdvanceSettingDefaultParams {
     self.CHL = 0;
-    if (self.currentRegion == 1 || self.currentRegion == 8) {
-        //AU915、US915
-        self.CHL = 8;
-        self.CHH = 15;
-    }else if (self.currentRegion == 2) {
-        //CN470
-        self.CHH = 7;
-    }else if (self.currentRegion == 3 || self.currentRegion == 4 || self.currentRegion == 5 || self.currentRegion == 6 || self.currentRegion == 7) {
-        //CN779、EU433、EU868、KR920、IN865
-        self.CHH = 2;
-    }else if (self.currentRegion == 0 || self.currentRegion == 9) {
-        //RU864、AS923
-        self.CHH = 1;
+    if (self.platform == 0) {
+        //Third Party NS
+        if (self.currentRegion == 1 || self.currentRegion == 8) {
+            //AU915、US915
+            self.CHL = 8;
+            self.CHH = 15;
+        }else if (self.currentRegion == 2) {
+            //CN470
+            self.CHH = 7;
+        }else if (self.currentRegion == 3 || self.currentRegion == 4 || self.currentRegion == 5 || self.currentRegion == 6 || self.currentRegion == 7) {
+            //CN779、EU433、EU868、KR920、IN865
+            self.CHH = 2;
+        }else if (self.currentRegion == 0 || self.currentRegion == 9) {
+            //RU864、AS923
+            self.CHH = 1;
+        }
+    }else {
+        //
+        if (self.region == 2 || self.region == 4) {
+            //MOKO IoT DM
+            //US915 FSB1、AU915 FSB1
+            self.CHL = 0;
+            self.CHH = 7;
+        }else if (self.region == 3 || self.region == 5) {
+            //MOKO IoT DM
+            //US915 FSB2、AU915 FSB2
+            self.CHL = 8;
+            self.CHH = 15;
+        }
     }
+    
     self.dutyIsOn = NO;
     
     self.adrIsOn = YES;

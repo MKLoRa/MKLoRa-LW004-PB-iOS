@@ -523,8 +523,8 @@ MKPBLoRaSettingAccountCellDelegate>
         
         MKTextButtonCellModel *regionModel = self.section2List[0];
         regionModel.dataList = [self.dataModel RegionList];
-        regionModel.dataListIndex = 0;
-        self.dataModel.region = 0;
+        regionModel.dataListIndex = 1;
+        self.dataModel.region = 1;
         
         [self.tableView reloadData];
         return;
