@@ -66,6 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
  6:MK110 Plus 03
  7:MKGW3
  8:MKGW7
+ 9:MKGW4
  */
 @property (nonatomic, assign)NSInteger deviceType;
 

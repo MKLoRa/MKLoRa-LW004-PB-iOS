@@ -178,6 +178,9 @@
     }else if (self.deviceType == 8) {
         //MKGW7
         model = @"85";
+    }else if (self.deviceType == 9) {
+        //MKGW4
+        model = @"200";
     }
     return @{
         @"lastWill":self.lastWillTopic,

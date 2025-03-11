@@ -156,7 +156,7 @@ static CGFloat const alertViewHeight = 150.f;
         _titleLabel.font = MKFont(18.f);
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.numberOfLines = 0;
-        _titleLabel.text = @"Login";
+        _titleLabel.text = @"Account";
     }
     return _titleLabel;
 }
