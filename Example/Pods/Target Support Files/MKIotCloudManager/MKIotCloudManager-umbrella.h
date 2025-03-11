@@ -14,7 +14,7 @@
 #import "MKNetworkDefine.h"
 #import "MKNetworkingStatus.h"
 #import "MKBaseService.h"
-#import "MKNormalService.h"
+#import "MKIoTLoginService.h"
 #import "MKIoTCloudAccountLoginAlertView.h"
 #import "MKIoTCloudExitAccountAlert.h"
 

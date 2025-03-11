@@ -26,12 +26,13 @@
 #import "MKNormalTextCell.h"
 #import "MKTableSectionLineHeader.h"
 
-#import "MKNormalService.h"
 #import "MKIoTCloudExitAccountAlert.h"
 #import "MKIoTCloudAccountLoginAlertView.h"
+#import "MKIoTLoginService.h"
 
 #import "MKPBConnectModel.h"
 #import "MKPBUserLoginManager.h"
+#import "MKPBNetworkService.h"
 
 #import "MKPBLoRaSettingModel.h"
 
@@ -737,7 +738,7 @@ MKPBLoRaSettingAccountCellDelegate>
 #pragma mark - interface
 - (void)login:(BOOL)isHome username:(NSString *)username password:(NSString *)password {
     [[MKHudManager share] showHUDWithTitle:@"Login..." inView:self.view isPenetration:NO];
-    [[MKNormalService share] loginWithUsername:username password:password isHome:isHome sucBlock:^(id returnData) {
+    [[MKIoTLoginService share] loginWithUsername:username password:password isHome:isHome sucBlock:^(id returnData) {
         [[MKHudManager share] hide];
         [[MKPBUserLoginManager shared] syncLoginDataWithHome:isHome username:username password:password];
         [self addDeviceToCloud:SafeStr(returnData[@"data"][@"access_token"])];
@@ -749,14 +750,13 @@ MKPBLoRaSettingAccountCellDelegate>
 
 - (void)addDeviceToCloud:(NSString *)token {
     [[MKHudManager share] showHUDWithTitle:@"Loading..." inView:self.view isPenetration:NO];
-    MKUserCreateLoRaDeviceModel *createModel = [[MKUserCreateLoRaDeviceModel alloc] init];
+    MKPBCreateLoRaDeviceModel *createModel = [[MKPBCreateLoRaDeviceModel alloc] init];
     createModel.macAddress = [MKPBConnectModel shared].macAddress;
     createModel.isHome = [MKPBUserLoginManager shared].isHome;
-    createModel.deviceType = 1;
     createModel.gwId = self.dataModel.gatewayEUI;
     createModel.region = self.dataModel.region;
     createModel.username = [MKPBUserLoginManager shared].username;
-    [[MKNormalService share] addLoRaDeviceToCloud:createModel token:token sucBlock:^(id returnData) {
+    [[MKPBNetworkService share] addLoRaDeviceToCloud:createModel token:token sucBlock:^(id returnData) {
         [[MKHudManager share] hide];
         [self saveDataToDevice];
     } failBlock:^(NSError *error) {

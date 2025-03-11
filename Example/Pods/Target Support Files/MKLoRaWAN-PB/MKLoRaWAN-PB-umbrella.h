@@ -98,6 +98,7 @@
 #import "MKPBTimingModeAddCell.h"
 #import "MKPBUpdateController.h"
 #import "MKPBDFUModule.h"
+#import "MKPBNetworkService.h"
 #import "MKPBUserLoginManager.h"
 #import "CBPeripheral+MKPBAdd.h"
 #import "MKPBCentralManager.h"

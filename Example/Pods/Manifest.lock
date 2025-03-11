@@ -485,30 +485,30 @@ PODS:
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKIotCloudManager (0.0.8):
-    - MKIotCloudManager/SDK (= 0.0.8)
-    - MKIotCloudManager/View (= 0.0.8)
-  - MKIotCloudManager/SDK (0.0.8):
-    - MKIotCloudManager/SDK/Config (= 0.0.8)
-    - MKIotCloudManager/SDK/MKNetwork (= 0.0.8)
-    - MKIotCloudManager/SDK/NetworkService (= 0.0.8)
-  - MKIotCloudManager/SDK/Config (0.0.8)
-  - MKIotCloudManager/SDK/MKNetwork (0.0.8):
+  - MKIotCloudManager (0.0.9):
+    - MKIotCloudManager/SDK (= 0.0.9)
+    - MKIotCloudManager/View (= 0.0.9)
+  - MKIotCloudManager/SDK (0.0.9):
+    - MKIotCloudManager/SDK/Config (= 0.0.9)
+    - MKIotCloudManager/SDK/MKNetwork (= 0.0.9)
+    - MKIotCloudManager/SDK/NetworkService (= 0.0.9)
+  - MKIotCloudManager/SDK/Config (0.0.9)
+  - MKIotCloudManager/SDK/MKNetwork (0.0.9):
     - AFNetworking
     - MKBaseModuleLibrary
     - MKIotCloudManager/SDK/Config
-  - MKIotCloudManager/SDK/NetworkService (0.0.8):
+  - MKIotCloudManager/SDK/NetworkService (0.0.9):
     - AFNetworking
     - MKBaseModuleLibrary
     - MKIotCloudManager/SDK/Config
     - MKIotCloudManager/SDK/MKNetwork
-  - MKIotCloudManager/View (0.0.8):
-    - MKIotCloudManager/View/AccountLoginAlertView (= 0.0.8)
-    - MKIotCloudManager/View/ExitAccountAlertView (= 0.0.8)
-  - MKIotCloudManager/View/AccountLoginAlertView (0.0.8):
+  - MKIotCloudManager/View (0.0.9):
+    - MKIotCloudManager/View/AccountLoginAlertView (= 0.0.9)
+    - MKIotCloudManager/View/ExitAccountAlertView (= 0.0.9)
+  - MKIotCloudManager/View/AccountLoginAlertView (0.0.9):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKIotCloudManager/View/ExitAccountAlertView (0.0.8):
+  - MKIotCloudManager/View/ExitAccountAlertView (0.0.9):
     - MKBaseModuleLibrary
     - MKCustomUIModule
   - MKLoRaWAN-PB (1.0.6):
@@ -2042,7 +2042,7 @@ SPEC CHECKSUMS:
   MKBaseBleModule: 15aa067c4e408a473e025b1a768ebce00a7e5949
   MKBaseModuleLibrary: 2b79bcae588c755588413fbb643b510253271b23
   MKCustomUIModule: bbc862397ad4ffad0a88de756265a29aad5ddaab
-  MKIotCloudManager: 2f9ed9b3c6eff5ee81725dc3b89099deffbd7230
+  MKIotCloudManager: cd5646f03214da9028a63d827083ca92a097cb87
   MKLoRaWAN-PB: 62cec08afa22ab2f7dcb1f457ab2a6e7105cee4c
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
