@@ -123,7 +123,7 @@
     }
     self.macAddress = [self.macAddress lowercaseString];
     
-    if (self.deviceType < 0 || self.deviceType > 8) {
+    if (self.deviceType < 0 || self.deviceType > 9) {
         return @"Device type error";
     }
     
