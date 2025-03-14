@@ -8,8 +8,6 @@
 
 #import "MKPBNetworkService.h"
 
-#import <AFNetworking/AFNetworking.h>
-
 #import "MKMacroDefines.h"
 #import "NSString+MKAdd.h"
 
@@ -117,6 +115,7 @@
         }
         return;
     }
+
     NSDictionary *params = [deviceModel params];
     if (ValidStr(params[@"error"])) {
         NSError *error = [self errorWithErrorInfo:params[@"error"]
@@ -127,21 +126,63 @@
         }
         return;
     }
-    AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
-    sessionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    // 设置请求头
-    [sessionManager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [sessionManager.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
-    
+
+    // 创建 URL
     NSString *urlString = (deviceModel.isHome ? MKRequstUrl(@"stage-api/mqtt/lora/createLoraFromApp") : MKTestRequstUrl(@"prod-api/mqtt/lora/createLoraFromApp"));
+    NSURL *url = [NSURL URLWithString:urlString];
+    if (!url) {
+        NSError *error = [self errorWithErrorInfo:@"Invalid URL"
+                                           domain:@"addDeviceToCloud"
+                                             code:RESULT_API_PARAMS_EMPTY];
+        if (failBlock) {
+            failBlock(error);
+        }
+        return;
+    }
+
+    // 创建 NSURLRequest
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+
+    // 设置请求头
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:token forHTTPHeaderField:@"Authorization"];
+
+    // 设置请求体
+    NSMutableString *bodyString = [NSMutableString string];
+    for (NSString *key in params) {
+        NSString *value = [params[key] description];
+        [bodyString appendFormat:@"%@=%@&", key, [value stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
+    }
+    if (bodyString.length > 0) {
+        [bodyString deleteCharactersInRange:NSMakeRange(bodyString.length - 1, 1)]; // 删除最后一个 "&"
+    }
+    request.HTTPBody = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
+
+    // 创建 NSURLSession
+    NSURLSession *session = [NSURLSession sharedSession];
+
     @weakify(self);
-    self.addLoRaDeviceTask = [sessionManager POST:urlString parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    self.addLoRaDeviceTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         @strongify(self);
+        if (error) {
+            [self handleRequestFailed:error failBlock:failBlock];
+            return;
+        }
+
+        // 解析响应数据
+        NSError *jsonError;
+        id responseObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+        if (jsonError) {
+            [self handleRequestFailed:jsonError failBlock:failBlock];
+            return;
+        }
+
         [self handleRequestSuccess:responseObject sucBlock:sucBlock failBlock:failBlock];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        @strongify(self);
-        [self handleRequestFailed:error failBlock:failBlock];
     }];
+
+    // 启动任务
+    [self.addLoRaDeviceTask resume];
 }
 
 - (void)cancelAddLoRaDevice {

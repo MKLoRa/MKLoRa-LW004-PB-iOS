@@ -8,6 +8,8 @@
 
 #import "MKBaseService.h"
 
+#import "MKMacroDefines.h"
+
 #import "MKNetworkingStatus.h"
 
 @implementation MKBaseService
@@ -32,39 +34,47 @@
     //    NSLog(@"成功：requestInfoModel.requestParam==%@",requestInfoModel.requestParam);
     
     if (!dictionary || [[dictionary allKeys] count]==0) {
-        if (failBlock) {
-            NSError *error = [self errorWithErrorInfo:@"Network error " domain:@"Network error " code:-1];
-            failBlock (error);
-        }
+        moko_dispatch_main_safe(^{
+            if (failBlock) {
+                NSError *error = [self errorWithErrorInfo:@"Network error " domain:@"Network error " code:-1];
+                failBlock (error);
+            }
+        });
         return;
     }
     
     NSString *status = [NSString stringWithFormat:@"%@",[dictionary objectForKey:@"code"]];
     if ([status isEqualToString:@"200"]) {
         if (dictionary) {
-            if (sucBlock){
-                sucBlock (dictionary);
-            }
+            moko_dispatch_main_safe(^{
+                if (sucBlock){
+                    sucBlock (dictionary);
+                }
+            });
         }else{
-            if (failBlock) {
-                NSError *error = [self errorWithErrorInfo:dictionary[@"msg"] domain:@"Data error" code:RESULT_API_DATA_TYPE_ERROR];
-                failBlock (error);
-            }
+            moko_dispatch_main_safe(^{
+                if (failBlock) {
+                    NSError *error = [self errorWithErrorInfo:dictionary[@"msg"] domain:@"Data error" code:RESULT_API_DATA_TYPE_ERROR];
+                    failBlock (error);
+                }
+            });
         }
         return;
     }
     
     //其它异常：
     if (dictionary && ([dictionary objectForKey:@"code"] || [dictionary objectForKey:@"msg"])) {
-        if (failBlock) {
-            NSString *errorMessage = [NSString stringWithFormat:@"%@",[dictionary objectForKey:@"msg"]];
-            if (!errorMessage || errorMessage.length == 0 || [errorMessage isEqualToString:@"(null)"]) {
-                errorMessage = @"Network error ";
+        moko_dispatch_main_safe((^{
+            if (failBlock) {
+                NSString *errorMessage = [NSString stringWithFormat:@"%@",[dictionary objectForKey:@"msg"]];
+                if (!errorMessage || errorMessage.length == 0 || [errorMessage isEqualToString:@"(null)"]) {
+                    errorMessage = @"Network error ";
+                }
+                NSError *error = [self errorWithErrorInfo:errorMessage domain:errorMessage code:RESULT_API_DATA_TYPE_ERROR];
+                failBlock (error);
+                return;
             }
-            NSError *error = [self errorWithErrorInfo:errorMessage domain:errorMessage code:RESULT_API_DATA_TYPE_ERROR];
-            failBlock (error);
-            return;
-        }
+        }));
     }
     return;
 }
@@ -72,26 +82,27 @@
 - (void)handleRequestFailed:(NSError *)error failBlock:(MKNetworkRequestFailureBlock)failBlock{
     
     //    NSLog(@"失败：requestInfoModel.requestParam==%@",requestInfoModel.requestParam);
-    
-    if (failBlock) {
-        // 用户手动中断请求，一般会在离开界面的时候才会终止,故无需抛出错误
-        if (error.code == -999) {
-            return;
+    moko_dispatch_main_safe(^{
+        if (failBlock) {
+            // 用户手动中断请求，一般会在离开界面的时候才会终止,故无需抛出错误
+            if (error.code == -999) {
+                return;
+            }
+            
+            NSError *customError;
+            if (![[self class] isConnectNetwork]) {
+                customError = [self errorWithErrorInfo:@"Network request failed，please check out your network" domain:@"" code:-1];
+            }else if (error.code == 1){
+                customError = [self errorWithErrorInfo:@"Network error " domain:@"" code:-1];
+            }else if (error.code == 2){
+                customError = [self errorWithErrorInfo:@"Network error " domain:@"" code:-1];
+            }else{
+                NSString *errorInfo = [MKBaseService errorWithCode:error.code];
+                customError = [self errorWithErrorInfo:errorInfo domain:error.domain code:error.code];
+            }
+            failBlock (customError);
         }
-        
-        NSError *customError;
-        if (![[self class] isConnectNetwork]) {
-            customError = [self errorWithErrorInfo:@"Network request failed，please check out your network" domain:@"" code:-1];
-        }else if (error.code == 1){
-            customError = [self errorWithErrorInfo:@"Network error " domain:@"" code:-1];
-        }else if (error.code == 2){
-            customError = [self errorWithErrorInfo:@"Network error " domain:@"" code:-1];
-        }else{
-            NSString *errorInfo = [MKBaseService errorWithCode:error.code];
-            customError = [self errorWithErrorInfo:errorInfo domain:error.domain code:error.code];
-        }
-        failBlock (customError);
-    }
+    });
 }
 
 + (NSString *)errorWithCode:(NSInteger)errorCode

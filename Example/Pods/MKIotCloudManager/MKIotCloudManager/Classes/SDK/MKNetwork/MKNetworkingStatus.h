@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-#import <AFNetworking/AFNetworking.h>
+#import "MKNetworkDefine.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,9 +23,9 @@ extern NSString *const MKNetworkingStatusChangedNotification;
 + (MKNetworkingStatus *)sharedNetworkingStatus;
 
 /**
- AFNetworkReachabilityStatus
+ MKNetworkReachabilityStatus
  */
-@property(nonatomic, assign)AFNetworkReachabilityStatus currentNetStatus;
+@property(nonatomic, assign)MKNetworkReachabilityStatus currentNetStatus;
 
 /**
  *  启动网络状态监测的接口函数

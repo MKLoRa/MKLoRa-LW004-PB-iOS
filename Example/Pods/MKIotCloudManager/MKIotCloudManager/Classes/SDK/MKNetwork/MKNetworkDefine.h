@@ -9,6 +9,13 @@
 #ifndef MKNetworkDefine_h
 #define MKNetworkDefine_h
 
+typedef NS_ENUM(NSInteger, MKNetworkReachabilityStatus) {
+    MKNetworkReachabilityStatusUnknown          = -1,
+    MKNetworkReachabilityStatusNotReachable     = 0,
+    MKNetworkReachabilityStatusReachableViaWWAN = 1,
+    MKNetworkReachabilityStatusReachableViaWiFi = 2,
+};
+
 /**
  *  请求类型
  */
