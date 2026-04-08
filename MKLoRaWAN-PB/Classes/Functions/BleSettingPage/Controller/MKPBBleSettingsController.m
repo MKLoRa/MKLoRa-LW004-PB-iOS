@@ -23,7 +23,7 @@
 #import "MKNormalTextCell.h"
 #import "MKTextFieldCell.h"
 #import "MKTextSwitchCell.h"
-#import "MKAlertController.h"
+#import "MKAlertView.h"
 
 #import "MKPBConnectModel.h"
 
@@ -54,10 +54,6 @@ MKPBBleTxPowerCellDelegate>
 @property (nonatomic, strong)NSMutableArray *headerList;
 
 @property (nonatomic, strong)MKPBBleSettingsDataModel *dataModel;
-
-@property (nonatomic, strong)UITextField *passwordTextField;
-
-@property (nonatomic, strong)UITextField *confirmTextField;
 
 @property (nonatomic, copy)NSString *passwordAsciiStr;
 
@@ -259,86 +255,43 @@ MKPBBleTxPowerCellDelegate>
 #pragma mark - 设置密码
 - (void)configPassword{
     @weakify(self);
-    NSString *msg = @"Note:The password should be 8 characters.";
-    MKAlertController *alertView = [MKAlertController alertControllerWithTitle:@"Change Password"
-                                                                       message:msg
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-    alertView.notificationName = @"mk_pb_needDismissAlert";
-    [alertView addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        @strongify(self);
-        self.passwordTextField = nil;
-        self.passwordTextField = textField;
-        self.passwordAsciiStr = @"";
-        [self.passwordTextField setPlaceholder:@"Enter new password"];
-        [self.passwordTextField addTarget:self
-                                   action:@selector(passwordTextFieldValueChanged:)
-                         forControlEvents:UIControlEventEditingChanged];
+    MKAlertViewAction *cancelAction = [[MKAlertViewAction alloc] initWithTitle:@"Cancel" handler:^{
     }];
-    [alertView addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        @strongify(self);
-        self.confirmTextField = nil;
-        self.confirmTextField = textField;
-        self.confirmAsciiStr = @"";
-        [self.confirmTextField setPlaceholder:@"Enter new password again"];
-        [self.confirmTextField addTarget:self
-                                  action:@selector(passwordTextFieldValueChanged:)
-                        forControlEvents:UIControlEventEditingChanged];
-    }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
-    [alertView addAction:cancelAction];
-    UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    
+    MKAlertViewAction *confirmAction = [[MKAlertViewAction alloc] initWithTitle:@"OK" handler:^{
         @strongify(self);
         [self setPasswordToDevice];
     }];
-    [alertView addAction:moreAction];
+    MKAlertViewTextField *passwordField = [[MKAlertViewTextField alloc] initWithTextValue:@""
+                                                                              placeholder:@"Enter new password"
+                                                                            textFieldType:mk_normal
+                                                                                maxLength:8
+                                                                                  handler:^(NSString * _Nonnull text) {
+        @strongify(self);
+        self.passwordAsciiStr = text;
+    }];
     
-    [self presentViewController:alertView animated:YES completion:nil];
-}
-
-- (void)passwordTextFieldValueChanged:(UITextField *)textField{
-    NSString *inputValue = textField.text;
-    if (!ValidStr(inputValue)) {
-        textField.text = @"";
-        if (textField == self.passwordTextField) {
-            self.passwordAsciiStr = @"";
-        }else if (textField == self.confirmTextField) {
-            self.confirmAsciiStr = @"";
-        }
-        return;
-    }
-    NSInteger strLen = inputValue.length;
-    NSInteger dataLen = [inputValue dataUsingEncoding:NSUTF8StringEncoding].length;
+    MKAlertViewTextField *confirmField = [[MKAlertViewTextField alloc] initWithTextValue:@""
+                                                                             placeholder:@"Enter new password again"
+                                                                           textFieldType:mk_normal
+                                                                               maxLength:8
+                                                                                 handler:^(NSString * _Nonnull text) {
+        @strongify(self);
+        self.confirmAsciiStr = text;
+    }];
     
-    NSString *currentStr = @"";
-    if (textField == self.passwordTextField) {
-        currentStr = self.passwordAsciiStr;
-    }else {
-        currentStr = self.confirmAsciiStr;
-    }
-    if (dataLen == strLen) {
-        //当前输入是ascii字符
-        currentStr = inputValue;
-    }
-    if (currentStr.length > 8) {
-        textField.text = [currentStr substringToIndex:8];
-        if (textField == self.passwordTextField) {
-            self.passwordAsciiStr = [currentStr substringToIndex:8];
-        }else {
-            self.confirmAsciiStr = [currentStr substringToIndex:8];
-        }
-    }else {
-        textField.text = currentStr;
-        if (textField == self.passwordTextField) {
-            self.passwordAsciiStr = currentStr;
-        }else {
-            self.confirmAsciiStr = currentStr;
-        }
-    }
+    NSString *msg = @"Note:The password should be 8 characters.";
+    MKAlertView *alertView = [[MKAlertView alloc] init];
+    [alertView addAction:cancelAction];
+    [alertView addAction:confirmAction];
+    [alertView addTextField:passwordField];
+    [alertView addTextField:confirmField];
+    [alertView showAlertWithTitle:@"Change Password" message:msg notificationName:@"mk_pb_needDismissAlert"];
 }
 
 - (void)setPasswordToDevice{
-    NSString *password = self.passwordTextField.text;
-    NSString *confirmpassword = self.confirmTextField.text;
+    NSString *password = self.passwordAsciiStr;
+    NSString *confirmpassword = self.confirmAsciiStr;
     if (!ValidStr(password) || !ValidStr(confirmpassword) || password.length != 8 || confirmpassword.length != 8) {
         [self.view showCentralToast:@"The password should be 8 characters.Please try again."];
         return;

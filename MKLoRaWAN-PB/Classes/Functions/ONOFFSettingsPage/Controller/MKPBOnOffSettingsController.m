@@ -17,7 +17,7 @@
 
 #import "MKHudManager.h"
 #import "MKTextSwitchCell.h"
-#import "MKAlertController.h"
+#import "MKAlertView.h"
 
 #import "MKPBInterface+MKPBConfig.h"
 
@@ -107,27 +107,23 @@ mk_textSwitchCellDelegate>
 
 #pragma mark - 关机
 - (void)powerOff {
-    NSString *msg = @"Are you sure to turn off the device? Please make sure the device has a button to turn on!";
-    MKAlertController *alertView = [MKAlertController alertControllerWithTitle:@"Warning!"
-                                                                       message:msg
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-    alertView.notificationName = @"mk_pb_needDismissAlert";
     @weakify(self);
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    MKAlertViewAction *cancelAction = [[MKAlertViewAction alloc] initWithTitle:@"Cancel" handler:^{
         @strongify(self);
         MKTextSwitchCellModel *cellModel = self.dataList[2];
         cellModel.isOn = NO;
         [self.tableView mk_reloadRow:2 inSection:0 withRowAnimation:UITableViewRowAnimationNone];
     }];
-    [alertView addAction:cancelAction];
     
-    UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    MKAlertViewAction *confirmAction = [[MKAlertViewAction alloc] initWithTitle:@"OK" handler:^{
         @strongify(self);
         [self sendPowerOffCommandToDevice];
     }];
-    [alertView addAction:moreAction];
-    
-    [self presentViewController:alertView animated:YES completion:nil];
+    NSString *msg = @"Are you sure to turn off the device? Please make sure the device has a button to turn on!";
+    MKAlertView *alertView = [[MKAlertView alloc] init];
+    [alertView addAction:cancelAction];
+    [alertView addAction:confirmAction];
+    [alertView showAlertWithTitle:@"Warning!" message:msg notificationName:@"mk_pb_needDismissAlert"];
 }
 
 - (void)sendPowerOffCommandToDevice {

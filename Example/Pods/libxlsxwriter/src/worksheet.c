@@ -4,7 +4,7 @@
  * Used in conjunction with the libxlsxwriter library.
  *
  * SPDX-License-Identifier: BSD-2-Clause
- * Copyright 2014-2025, John McNamara, jmcnamara@cpan.org.
+ * Copyright 2014-2024, John McNamara, jmcnamara@cpan.org.
  *
  */
 
@@ -1717,11 +1717,9 @@ _expand_table_formula(const char *formula)
 
     ptr = formula;
 
-    while (*ptr) {
+    while (*ptr++) {
         if (*ptr == '@')
             ref_count++;
-
-        ptr++;
     }
 
     if (ref_count == 0) {
@@ -9628,16 +9626,12 @@ worksheet_set_selection(lxw_worksheet *self,
 
     /* Check that row and col are valid without storing. */
     err = _check_dimensions(self, first_row, first_col, LXW_TRUE, LXW_TRUE);
-    if (err) {
-        free(selection);
+    if (err)
         return err;
-    }
 
     err = _check_dimensions(self, last_row, last_col, LXW_TRUE, LXW_TRUE);
-    if (err) {
-        free(selection);
+    if (err)
         return err;
-    }
 
     /* Set the cell range selection. Do this before swapping max/min to  */
     /* allow the selection direction to be reversed. */
@@ -10683,10 +10677,8 @@ worksheet_embed_image_opt(lxw_worksheet *self,
 
     /* Check and store the cell dimensions. */
     err = _check_dimensions(self, row_num, col_num, LXW_FALSE, LXW_FALSE);
-    if (err) {
-        fclose(image_stream);
+    if (err)
         return err;
-    }
 
     /* Create a new object to hold the image properties. */
     object_props = calloc(1, sizeof(lxw_object_properties));

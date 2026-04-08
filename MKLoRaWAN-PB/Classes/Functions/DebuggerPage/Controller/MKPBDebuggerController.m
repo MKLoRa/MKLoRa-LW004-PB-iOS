@@ -18,7 +18,7 @@
 #import "UITableView+MKAdd.h"
 
 #import "MKCustomUIAdopter.h"
-#import "MKAlertController.h"
+#import "MKAlertView.h"
 #import "MKHudManager.h"
 
 #import "MKPBDatabaseManager.h"
@@ -369,16 +369,12 @@ MKPBDebuggerCellDelegate>
 }
 
 - (void)showTipsAlert:(NSString *)msg {
-    MKAlertController *alertView = [MKAlertController alertControllerWithTitle:@"Tips!"
-                                                                       message:msg
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-    alertView.notificationName = @"mk_pb_needDismissAlert";
-    
-    UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    MKAlertViewAction *cancelAction = [[MKAlertViewAction alloc] initWithTitle:@"OK" handler:^{
+        
     }];
-    [alertView addAction:moreAction];
-    
-    [self presentViewController:alertView animated:YES completion:nil];
+    MKAlertView *alertView = [[MKAlertView alloc] init];
+    [alertView addAction:cancelAction];
+    [alertView showAlertWithTitle:@"Tips!" message:msg notificationName:@"mk_pb_needDismissAlert"];
 }
 
 #pragma mark - UI

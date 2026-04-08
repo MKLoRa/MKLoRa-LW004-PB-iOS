@@ -21,7 +21,7 @@
 #import "MKNormalTextCell.h"
 #import "MKTextButtonCell.h"
 #import "MKTextSwitchCell.h"
-#import "MKAlertController.h"
+#import "MKAlertView.h"
 
 #import "MKPBInterface+MKPBConfig.h"
 
@@ -343,21 +343,19 @@ mk_textSwitchCellDelegate>
 #pragma mark - 恢复出厂设置
 
 - (void)factoryReset {
-    NSString *msg = @"After factory reset,all the data will be reseted to the factory values.";
-    MKAlertController *alertView = [MKAlertController alertControllerWithTitle:@"Factory Reset"
-                                                                       message:msg
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-    alertView.notificationName = @"mk_pb_needDismissAlert";
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
-    [alertView addAction:cancelAction];
     @weakify(self);
-    UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    MKAlertViewAction *cancelAction = [[MKAlertViewAction alloc] initWithTitle:@"Cancel" handler:^{
+    }];
+    
+    MKAlertViewAction *confirmAction = [[MKAlertViewAction alloc] initWithTitle:@"OK" handler:^{
         @strongify(self);
         [self sendResetCommandToDevice];
     }];
-    [alertView addAction:moreAction];
-    
-    [self presentViewController:alertView animated:YES completion:nil];
+    NSString *msg = @"After factory reset,all the data will be reseted to the factory values.";
+    MKAlertView *alertView = [[MKAlertView alloc] init];
+    [alertView addAction:cancelAction];
+    [alertView addAction:confirmAction];
+    [alertView showAlertWithTitle:@"Factory Reset" message:msg notificationName:@"mk_pb_needDismissAlert"];
 }
 
 - (void)sendResetCommandToDevice{
