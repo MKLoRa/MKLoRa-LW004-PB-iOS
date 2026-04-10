@@ -63,7 +63,7 @@
     [self.aboutIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view.mas_centerX);
         make.width.mas_equalTo(110.f);
-        make.top.mas_equalTo(self.view.mas_safeAreaLayoutGuideTop).mas_offset(40.f);
+        make.top.equalTo(self.view).offset(kTopBarHeight + 40.f);
         make.height.mas_equalTo(110.f);
     }];
     [self.appNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -99,7 +99,7 @@
     [self.bottomIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+        make.bottom.equalTo(self.view).offset(-kSafeAreaHeight);
         make.height.mas_equalTo(213.f);
     }];
 }
