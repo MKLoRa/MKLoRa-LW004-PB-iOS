@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MKLoRaWAN-PB'
-  s.version          = '1.0.6'
+  s.version          = '1.0.7'
   s.summary          = 'A short description of MKLoRaWAN-PB.'
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
