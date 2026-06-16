@@ -13,80 +13,80 @@ PODS:
   - Masonry (1.1.0)
   - MJRefresh (3.7.9)
   - MKBaseBleModule (1.1.4)
-  - MKBaseModuleLibrary (2.2.7):
+  - MKBaseModuleLibrary (2.2.8):
     - Masonry (~> 1.1)
-    - MKBaseModuleLibrary/Base (= 2.2.7)
-    - MKBaseModuleLibrary/Category (= 2.2.7)
-    - MKBaseModuleLibrary/Defines (= 2.2.7)
-    - MKBaseModuleLibrary/Tools (= 2.2.7)
+    - MKBaseModuleLibrary/Base (= 2.2.8)
+    - MKBaseModuleLibrary/Category (= 2.2.8)
+    - MKBaseModuleLibrary/Defines (= 2.2.8)
+    - MKBaseModuleLibrary/Tools (= 2.2.8)
     - Toast (~> 4.1)
-  - MKBaseModuleLibrary/Base (2.2.7):
+  - MKBaseModuleLibrary/Base (2.2.8):
     - Masonry (~> 1.1)
-    - MKBaseModuleLibrary/Base/Controller (= 2.2.7)
-    - MKBaseModuleLibrary/Base/MKBaseCell (= 2.2.7)
-    - MKBaseModuleLibrary/Base/NavigationController (= 2.2.7)
-    - MKBaseModuleLibrary/Base/View (= 2.2.7)
+    - MKBaseModuleLibrary/Base/Controller (= 2.2.8)
+    - MKBaseModuleLibrary/Base/MKBaseCell (= 2.2.8)
+    - MKBaseModuleLibrary/Base/NavigationController (= 2.2.8)
+    - MKBaseModuleLibrary/Base/View (= 2.2.8)
     - MKBaseModuleLibrary/Category
     - MKBaseModuleLibrary/Defines
     - Toast (~> 4.1)
-  - MKBaseModuleLibrary/Base/Controller (2.2.7):
+  - MKBaseModuleLibrary/Base/Controller (2.2.8):
     - Masonry (~> 1.1)
     - MKBaseModuleLibrary/Base/View/NavigationBar
     - MKBaseModuleLibrary/Category
     - MKBaseModuleLibrary/Defines
     - Toast (~> 4.1)
-  - MKBaseModuleLibrary/Base/MKBaseCell (2.2.7):
+  - MKBaseModuleLibrary/Base/MKBaseCell (2.2.8):
     - Masonry (~> 1.1)
     - MKBaseModuleLibrary/Category
     - MKBaseModuleLibrary/Defines
     - Toast (~> 4.1)
-  - MKBaseModuleLibrary/Base/NavigationController (2.2.7):
+  - MKBaseModuleLibrary/Base/NavigationController (2.2.8):
     - Masonry (~> 1.1)
     - MKBaseModuleLibrary/Category
     - MKBaseModuleLibrary/Defines
     - Toast (~> 4.1)
-  - MKBaseModuleLibrary/Base/View (2.2.7):
+  - MKBaseModuleLibrary/Base/View (2.2.8):
     - Masonry (~> 1.1)
-    - MKBaseModuleLibrary/Base/View/CollectionView (= 2.2.7)
-    - MKBaseModuleLibrary/Base/View/NavigationBar (= 2.2.7)
-    - MKBaseModuleLibrary/Base/View/TableView (= 2.2.7)
+    - MKBaseModuleLibrary/Base/View/CollectionView (= 2.2.8)
+    - MKBaseModuleLibrary/Base/View/NavigationBar (= 2.2.8)
+    - MKBaseModuleLibrary/Base/View/TableView (= 2.2.8)
     - MKBaseModuleLibrary/Category
     - MKBaseModuleLibrary/Defines
     - Toast (~> 4.1)
-  - MKBaseModuleLibrary/Base/View/CollectionView (2.2.7):
-    - Masonry (~> 1.1)
-    - MKBaseModuleLibrary/Category
-    - MKBaseModuleLibrary/Defines
-    - Toast (~> 4.1)
-  - MKBaseModuleLibrary/Base/View/NavigationBar (2.2.7):
+  - MKBaseModuleLibrary/Base/View/CollectionView (2.2.8):
     - Masonry (~> 1.1)
     - MKBaseModuleLibrary/Category
     - MKBaseModuleLibrary/Defines
     - Toast (~> 4.1)
-  - MKBaseModuleLibrary/Base/View/TableView (2.2.7):
+  - MKBaseModuleLibrary/Base/View/NavigationBar (2.2.8):
     - Masonry (~> 1.1)
     - MKBaseModuleLibrary/Category
     - MKBaseModuleLibrary/Defines
     - Toast (~> 4.1)
-  - MKBaseModuleLibrary/Category (2.2.7):
+  - MKBaseModuleLibrary/Base/View/TableView (2.2.8):
+    - Masonry (~> 1.1)
+    - MKBaseModuleLibrary/Category
+    - MKBaseModuleLibrary/Defines
+    - Toast (~> 4.1)
+  - MKBaseModuleLibrary/Category (2.2.8):
     - Masonry (~> 1.1)
     - MKBaseModuleLibrary/Defines
     - MKBaseModuleLibrary/Tools/MKClassInfo
     - Toast (~> 4.1)
-  - MKBaseModuleLibrary/Defines (2.2.7):
+  - MKBaseModuleLibrary/Defines (2.2.8):
     - Masonry (~> 1.1)
     - Toast (~> 4.1)
-  - MKBaseModuleLibrary/Tools (2.2.7):
-    - Masonry (~> 1.1)
-    - MKBaseModuleLibrary/Defines
-    - MKBaseModuleLibrary/Tools/MKClassInfo (= 2.2.7)
-    - MKBaseModuleLibrary/Tools/MKExcelManager (= 2.2.7)
-    - Toast (~> 4.1)
-  - MKBaseModuleLibrary/Tools/MKClassInfo (2.2.7):
+  - MKBaseModuleLibrary/Tools (2.2.8):
     - Masonry (~> 1.1)
     - MKBaseModuleLibrary/Defines
+    - MKBaseModuleLibrary/Tools/MKClassInfo (= 2.2.8)
+    - MKBaseModuleLibrary/Tools/MKExcelManager (= 2.2.8)
     - Toast (~> 4.1)
-  - MKBaseModuleLibrary/Tools/MKExcelManager (2.2.7):
+  - MKBaseModuleLibrary/Tools/MKClassInfo (2.2.8):
+    - Masonry (~> 1.1)
+    - MKBaseModuleLibrary/Defines
+    - Toast (~> 4.1)
+  - MKBaseModuleLibrary/Tools/MKExcelManager (2.2.8):
     - libxlsxwriter (~> 1.1.7)
     - Masonry (~> 1.1)
     - MKBaseModuleLibrary/Defines
@@ -472,28 +472,28 @@ PODS:
   - MKIotCloudManager/View/ExitAccountAlertView (0.0.12):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKLoRaWAN-PB (1.0.6):
-    - MKLoRaWAN-PB/ConnectModule (= 1.0.6)
-    - MKLoRaWAN-PB/CTMediator (= 1.0.6)
-    - MKLoRaWAN-PB/DatabaseManager (= 1.0.6)
-    - MKLoRaWAN-PB/Expand (= 1.0.6)
-    - MKLoRaWAN-PB/Functions (= 1.0.6)
-    - MKLoRaWAN-PB/LoginManager (= 1.0.6)
-    - MKLoRaWAN-PB/SDK (= 1.0.6)
-    - MKLoRaWAN-PB/Target (= 1.0.6)
-  - MKLoRaWAN-PB/ConnectModule (1.0.6):
+  - MKLoRaWAN-PB (1.0.7):
+    - MKLoRaWAN-PB/ConnectModule (= 1.0.7)
+    - MKLoRaWAN-PB/CTMediator (= 1.0.7)
+    - MKLoRaWAN-PB/DatabaseManager (= 1.0.7)
+    - MKLoRaWAN-PB/Expand (= 1.0.7)
+    - MKLoRaWAN-PB/Functions (= 1.0.7)
+    - MKLoRaWAN-PB/LoginManager (= 1.0.7)
+    - MKLoRaWAN-PB/SDK (= 1.0.7)
+    - MKLoRaWAN-PB/Target (= 1.0.7)
+  - MKLoRaWAN-PB/ConnectModule (1.0.7):
     - MKBaseModuleLibrary
     - MKLoRaWAN-PB/SDK
-  - MKLoRaWAN-PB/CTMediator (1.0.6):
+  - MKLoRaWAN-PB/CTMediator (1.0.7):
     - CTMediator
     - MKBaseModuleLibrary
-  - MKLoRaWAN-PB/DatabaseManager (1.0.6):
+  - MKLoRaWAN-PB/DatabaseManager (1.0.7):
     - FMDB
     - MKBaseModuleLibrary
-  - MKLoRaWAN-PB/Expand (1.0.6):
+  - MKLoRaWAN-PB/Expand (1.0.7):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKLoRaWAN-PB/Functions (1.0.6):
+  - MKLoRaWAN-PB/Functions (1.0.7):
     - HHTransition
     - iOSDFULibrary (= 4.13.0)
     - MKBaseModuleLibrary
@@ -505,11 +505,11 @@ PODS:
     - MKLoRaWAN-PB/LoginManager
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
-  - MKLoRaWAN-PB/LoginManager (1.0.6):
+  - MKLoRaWAN-PB/LoginManager (1.0.7):
     - MKIotCloudManager
-  - MKLoRaWAN-PB/SDK (1.0.6):
+  - MKLoRaWAN-PB/SDK (1.0.7):
     - MKBaseBleModule
-  - MKLoRaWAN-PB/Target (1.0.6):
+  - MKLoRaWAN-PB/Target (1.0.7):
     - MKLoRaWAN-PB/Functions
   - MLInputDodger (1.5.2)
   - SSZipArchive (2.4.3)
@@ -552,10 +552,10 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   MKBaseBleModule: 15aa067c4e408a473e025b1a768ebce00a7e5949
-  MKBaseModuleLibrary: b5196f9bf0ddfe4beee6395183c3f616cd996ffd
+  MKBaseModuleLibrary: b57331db53cebd9c822ce5881ee84429088dc995
   MKCustomUIModule: 6304b13cf253c678c46bb6e1ec3bd2c3bb0f0a37
   MKIotCloudManager: 241bd4bb7fae48e6b031c69a40c26637aabe67be
-  MKLoRaWAN-PB: 3e9b5b0f1d3acc72a99d5a2f33ad24a692be63f5
+  MKLoRaWAN-PB: 3d999ffa0d744daddd5fa4bc3ef33587ddcf9077
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   Toast: 1f5ea13423a1e6674c4abdac5be53587ae481c4e
