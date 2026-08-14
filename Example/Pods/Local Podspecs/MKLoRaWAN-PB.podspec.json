@@ -16,7 +16,7 @@
     "tag": "1.0.7"
   },
   "platforms": {
-    "ios": "14.0"
+    "ios": "18.0"
   },
   "resource_bundles": {
     "MKLoRaWAN-PB": [
