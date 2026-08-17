@@ -133,8 +133,8 @@
         "MLInputDodger": [
 
         ],
-        "iOSDFULibrary": [
-          "4.13.0"
+        "NordicDFU": [
+
         ]
       }
     }

@@ -79,7 +79,7 @@ TODO: Add long description of the pod here.
     ss.dependency 'MKCustomUIModule'
     ss.dependency 'HHTransition'
     ss.dependency 'MLInputDodger'
-    ss.dependency 'iOSDFULibrary', '4.13.0'
+    ss.dependency 'NordicDFU'
   end
   
 end

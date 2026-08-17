@@ -7,8 +7,6 @@ PODS:
   - FMDB/standard (2.7.12):
     - FMDB/Core
   - HHTransition (3.1.2)
-  - iOSDFULibrary (4.13.0):
-    - ZIPFoundation (= 0.9.11)
   - libxlsxwriter (1.1.9)
   - Masonry (1.1.0)
   - MJRefresh (3.7.9)
@@ -448,28 +446,28 @@ PODS:
     - MJRefresh (~> 3.7.5)
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKIotCloudManager (0.0.12):
-    - MKIotCloudManager/SDK (= 0.0.12)
-    - MKIotCloudManager/View (= 0.0.12)
-  - MKIotCloudManager/SDK (0.0.12):
-    - MKIotCloudManager/SDK/Config (= 0.0.12)
-    - MKIotCloudManager/SDK/MKNetwork (= 0.0.12)
-    - MKIotCloudManager/SDK/NetworkService (= 0.0.12)
-  - MKIotCloudManager/SDK/Config (0.0.12)
-  - MKIotCloudManager/SDK/MKNetwork (0.0.12):
+  - MKIotCloudManager (0.0.13):
+    - MKIotCloudManager/SDK (= 0.0.13)
+    - MKIotCloudManager/View (= 0.0.13)
+  - MKIotCloudManager/SDK (0.0.13):
+    - MKIotCloudManager/SDK/Config (= 0.0.13)
+    - MKIotCloudManager/SDK/MKNetwork (= 0.0.13)
+    - MKIotCloudManager/SDK/NetworkService (= 0.0.13)
+  - MKIotCloudManager/SDK/Config (0.0.13)
+  - MKIotCloudManager/SDK/MKNetwork (0.0.13):
     - MKBaseModuleLibrary
     - MKIotCloudManager/SDK/Config
-  - MKIotCloudManager/SDK/NetworkService (0.0.12):
+  - MKIotCloudManager/SDK/NetworkService (0.0.13):
     - MKBaseModuleLibrary
     - MKIotCloudManager/SDK/Config
     - MKIotCloudManager/SDK/MKNetwork
-  - MKIotCloudManager/View (0.0.12):
-    - MKIotCloudManager/View/AccountLoginAlertView (= 0.0.12)
-    - MKIotCloudManager/View/ExitAccountAlertView (= 0.0.12)
-  - MKIotCloudManager/View/AccountLoginAlertView (0.0.12):
+  - MKIotCloudManager/View (0.0.13):
+    - MKIotCloudManager/View/AccountLoginAlertView (= 0.0.13)
+    - MKIotCloudManager/View/ExitAccountAlertView (= 0.0.13)
+  - MKIotCloudManager/View/AccountLoginAlertView (0.0.13):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKIotCloudManager/View/ExitAccountAlertView (0.0.12):
+  - MKIotCloudManager/View/ExitAccountAlertView (0.0.13):
     - MKBaseModuleLibrary
     - MKCustomUIModule
   - MKLoRaWAN-PB (1.0.7):
@@ -495,7 +493,6 @@ PODS:
     - MKCustomUIModule
   - MKLoRaWAN-PB/Functions (1.0.7):
     - HHTransition
-    - iOSDFULibrary (= 4.13.0)
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PB/ConnectModule
@@ -505,6 +502,7 @@ PODS:
     - MKLoRaWAN-PB/LoginManager
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
+    - NordicDFU
   - MKLoRaWAN-PB/LoginManager (1.0.7):
     - MKIotCloudManager
   - MKLoRaWAN-PB/SDK (1.0.7):
@@ -512,9 +510,11 @@ PODS:
   - MKLoRaWAN-PB/Target (1.0.7):
     - MKLoRaWAN-PB/Functions
   - MLInputDodger (1.5.2)
+  - NordicDFU (4.17.0):
+    - ZIPFoundation (= 0.9.20)
   - SSZipArchive (2.4.3)
   - Toast (4.1.1)
-  - ZIPFoundation (0.9.11)
+  - ZIPFoundation (0.9.20)
 
 DEPENDENCIES:
   - MKLoRaWAN-PB (from `../`)
@@ -525,7 +525,6 @@ SPEC REPOS:
     - CTMediator
     - FMDB
     - HHTransition
-    - iOSDFULibrary
     - libxlsxwriter
     - Masonry
     - MJRefresh
@@ -534,6 +533,7 @@ SPEC REPOS:
     - MKCustomUIModule
     - MKIotCloudManager
     - MLInputDodger
+    - NordicDFU
     - SSZipArchive
     - Toast
     - ZIPFoundation
@@ -547,19 +547,19 @@ SPEC CHECKSUMS:
   CTMediator: 3f3578b525b3a46a7a2f92a99922ec40363f4269
   FMDB: 728731dd336af3936ce00f91d9d8495f5718a0e6
   HHTransition: 67c1bc632c4838e4eb28f07b9be1b927362ae07d
-  iOSDFULibrary: ae1bcb1cb921e6e3ff551755f6fdff1b77e07e15
   libxlsxwriter: b013eaa467bbf24336b71b6cac15a6fbaf4e613b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   MKBaseBleModule: 15aa067c4e408a473e025b1a768ebce00a7e5949
   MKBaseModuleLibrary: b57331db53cebd9c822ce5881ee84429088dc995
   MKCustomUIModule: 6304b13cf253c678c46bb6e1ec3bd2c3bb0f0a37
-  MKIotCloudManager: 241bd4bb7fae48e6b031c69a40c26637aabe67be
-  MKLoRaWAN-PB: f445d27137220849a501c2d2c7baa217fd0f8199
+  MKIotCloudManager: 42c48390291e8293df22a8b16f6781fb634ac2ac
+  MKLoRaWAN-PB: 2d277dfb977a5e7dfc829884bb04a79dfd968f33
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
+  NordicDFU: a9b14cc3f36c85f9056182d9e8f5ec2ada0d2156
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   Toast: 1f5ea13423a1e6674c4abdac5be53587ae481c4e
-  ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
+  ZIPFoundation: dfd3d681c4053ff7e2f7350bc4e53b5dba3f5351
 
 PODFILE CHECKSUM: fda102106395562008857954f30a051b07f28b7b
 
