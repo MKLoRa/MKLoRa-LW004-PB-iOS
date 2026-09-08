@@ -26,13 +26,12 @@
 #import "MKNormalTextCell.h"
 #import "MKTableSectionLineHeader.h"
 
-#import "MKIoTCloudExitAccountAlert.h"
-#import "MKIoTCloudAccountLoginAlertView.h"
-#import "MKIoTLoginService.h"
+#import <MKIotDMApp/MKIDMLoginManager.h>
+#import <MKIotDMApp/MKIDMNetWorkRequest.h>
+#import <MKIotDMApp/MKIDMUrlDefinition.h>
 
 #import "MKPBConnectModel.h"
-#import "MKPBUserLoginManager.h"
-#import "MKPBNetworkService.h"
+#import "MKPBCreateLoRaDeviceModel.h"
 
 #import "MKPBLoRaSettingModel.h"
 
@@ -140,22 +139,19 @@ MKPBLoRaSettingAccountCellDelegate>
         [self saveDataToDevice];
         return;
     }
-    if (!ValidStr([MKPBUserLoginManager shared].password)) {
-        //当前未登录
+    if (![MKIDMLoginManager sharedManager].isLoggedIn) {
+        //当前未登录，弹登录弹窗（带环境切换）
         @weakify(self);
-        MKIoTCloudAccountLoginAlertViewModel *viewModel = [[MKIoTCloudAccountLoginAlertViewModel alloc] init];
-        viewModel.account = [MKPBUserLoginManager shared].username;
-        viewModel.isHome = [MKPBUserLoginManager shared].isHome;
-        viewModel.password = [MKPBUserLoginManager shared].password;
-        MKIoTCloudAccountLoginAlertView *alertView = [[MKIoTCloudAccountLoginAlertView alloc] init];
-        [alertView showViewWithModel:viewModel completeBlock:^(NSString * _Nonnull account, NSString * _Nonnull password, BOOL isHome) {
+        [[MKIDMLoginManager sharedManager] showLoginWithEnvFromViewController:self
+                                                                  completion:^{
             @strongify(self);
-            [self login:isHome username:account password:password];
+            // 登录成功，直接添加设备
+            [self addDeviceToCloud];
         }];
         return;
     }
-    //登录过
-    [self login:[MKPBUserLoginManager shared].isHome username:[MKPBUserLoginManager shared].username password:[MKPBUserLoginManager shared].password];
+    //已登录，直接添加设备
+    [self addDeviceToCloud];
 }
 
 #pragma mark - UITableViewDelegate
@@ -278,7 +274,7 @@ MKPBLoRaSettingAccountCellDelegate>
     }
     if (section == 7) {
         //Account
-        return ((self.dataModel.configModel.supportServerPlatform && self.dataModel.platform == 1 && ValidStr([MKPBUserLoginManager shared].password)) ? self.section6List.count : 0);
+        return ((self.dataModel.configModel.supportServerPlatform && self.dataModel.platform == 1 && [MKIDMLoginManager sharedManager].isLoggedIn) ? self.section6List.count : 0);
     }
     if (section == 8) {
         //Gateway EUI(Gateway ID)
@@ -516,7 +512,10 @@ MKPBLoRaSettingAccountCellDelegate>
         self.dataModel.messageType = dataListIndex;
         MKTextButtonCellModel *regionModel = self.section4List[0];
         regionModel.dataListIndex = dataListIndex;
-        [self.tableView mk_reloadSection:17 withRowAnimation:UITableViewRowAnimationNone];
+        // 只有高级设置开启时才刷新 section 17
+        if (self.dataModel.advancedStatus) {
+            [self.tableView mk_reloadSection:17 withRowAnimation:UITableViewRowAnimationNone];
+        }
         return;
     }
     if (index == 4) {
@@ -726,40 +725,41 @@ MKPBLoRaSettingAccountCellDelegate>
 
 #pragma mark - MKPBLoRaSettingAccountCellDelegate
 - (void)pb_loRaSettingAccountCell_logoutBtnPressed {
-    MKIoTCloudExitAccountAlert *alert = [[MKIoTCloudExitAccountAlert alloc] init];
-    BOOL isHome = [MKPBUserLoginManager shared].isHome;
-    NSString *username = [MKPBUserLoginManager shared].username;
-    [alert showWithAccount:username completeBlock:^{
-        [[MKPBUserLoginManager shared] syncLoginDataWithHome:isHome username:username password:@""];
+    @weakify(self);
+    [[MKIDMLoginManager sharedManager] showExitAlertFromViewController:self
+                                                          completion:^{
+        @strongify(self);
+        // 退出完成，刷新 Account section
         [self.tableView mk_reloadSection:7 withRowAnimation:UITableViewRowAnimationNone];
     }];
 }
 
 #pragma mark - interface
-- (void)login:(BOOL)isHome username:(NSString *)username password:(NSString *)password {
-    [[MKHudManager share] showHUDWithTitle:@"Login..." inView:self.view isPenetration:NO];
-    [[MKIoTLoginService share] loginWithUsername:username password:password isHome:isHome sucBlock:^(id returnData) {
-        [[MKHudManager share] hide];
-        [[MKPBUserLoginManager shared] syncLoginDataWithHome:isHome username:username password:password];
-        [self addDeviceToCloud:SafeStr(returnData[@"data"][@"access_token"])];
-    } failBlock:^(NSError *error) {
-        [[MKHudManager share] hide];
-        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
-    }];
-}
-
-- (void)addDeviceToCloud:(NSString *)token {
+- (void)addDeviceToCloud {
     [[MKHudManager share] showHUDWithTitle:@"Loading..." inView:self.view isPenetration:NO];
+    
     MKPBCreateLoRaDeviceModel *createModel = [[MKPBCreateLoRaDeviceModel alloc] init];
     createModel.macAddress = [MKPBConnectModel shared].macAddress;
-    createModel.isHome = [MKPBUserLoginManager shared].isHome;
     createModel.gwId = self.dataModel.gatewayEUI;
     createModel.region = self.dataModel.region;
-    createModel.username = [MKPBUserLoginManager shared].username;
-    [[MKPBNetworkService share] addLoRaDeviceToCloud:createModel token:token sucBlock:^(id returnData) {
+    createModel.username = [MKIDMLoginManager sharedManager].userInfo[@"username"];
+    
+    NSDictionary *params = [createModel params];
+    if (ValidStr(params[@"error"])) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:params[@"error"]];
+        return;
+    }
+    
+    NSString *urlString = MKIDMRequstUrl(@"/mqtt/lora/createLoraFromApp");
+    
+    [[MKIDMNetWorkRequest shared] POST:urlString
+                            parameters:params
+                          successBlock:^(id returnData) {
         [[MKHudManager share] hide];
         [self saveDataToDevice];
-    } failBlock:^(NSError *error) {
+    }
+                          failureBlock:^(NSError *error) {
         [[MKHudManager share] hide];
         [self.view showCentralToast:error.userInfo[@"errorInfo"]];
     }];
@@ -998,7 +998,7 @@ MKPBLoRaSettingAccountCellDelegate>
 
 - (void)loadSection6Datas {
     MKPBLoRaSettingAccountCellModel *cellModel = [[MKPBLoRaSettingAccountCellModel alloc] init];
-    cellModel.account = [MKPBUserLoginManager shared].username;
+    cellModel.account = [MKIDMLoginManager sharedManager].userInfo[@"username"];
     [self.section6List addObject:cellModel];
 }
 

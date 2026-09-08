@@ -1,0 +1,6 @@
+framework module MKIotDMApp {
+  umbrella header "MKIotDMApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

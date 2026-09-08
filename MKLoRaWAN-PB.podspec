@@ -56,12 +56,6 @@ TODO: Add long description of the pod here.
     ss.dependency 'MKCustomUIModule'
   end
   
-  # ========== 登录管理 ==========
-  s.subspec 'LoginManager' do |ss|
-    ss.source_files = 'MKLoRaWAN-PB/Classes/LoginManager/**/*.{h,m}'
-    ss.dependency 'MKIotCloudManager'
-  end
-  
   # ========== 完整功能层（包含所有页面）==========
   s.subspec 'Functions' do |ss|
     ss.source_files = 'MKLoRaWAN-PB/Classes/Functions/**/*.{h,m}'
@@ -72,7 +66,6 @@ TODO: Add long description of the pod here.
     ss.dependency 'MKLoRaWAN-PB/ConnectModule'
     ss.dependency 'MKLoRaWAN-PB/Expand'
     ss.dependency 'MKLoRaWAN-PB/DatabaseManager'
-    ss.dependency 'MKLoRaWAN-PB/LoginManager'
     
     # 公共依赖
     ss.dependency 'MKBaseModuleLibrary'
@@ -80,6 +73,7 @@ TODO: Add long description of the pod here.
     ss.dependency 'HHTransition'
     ss.dependency 'MLInputDodger'
     ss.dependency 'NordicDFU', '4.16.0'
+    ss.dependency 'MKIotDMApp/LoginManager'
   end
   
 end
