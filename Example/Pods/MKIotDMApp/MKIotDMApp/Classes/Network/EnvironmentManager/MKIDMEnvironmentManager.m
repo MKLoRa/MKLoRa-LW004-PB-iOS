@@ -46,30 +46,26 @@ static dispatch_once_t onceToken;
 - (BOOL)isReleaseEnvironment {
 #if DEBUG
     return NO;
+#elif POD_CONFIGURATION_RELEASE
+    return YES;
 #else
-    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
-    NSString *appEnvironment = infoDict[@"Environment"];
-    // Release 或 0 才是正式环境
-    return [appEnvironment isEqualToString:@"0"];
+    return NO;
 #endif
 }
 
 - (void)resetToDefaultEnvironment {
-    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
-    NSString *appEnvironment = infoDict[@"Environment"];
-    
-    // Release 或 0 → 正式环境
-    if ([appEnvironment isEqualToString:@"0"]) {
+    if ([self isReleaseEnvironment]) {
         self.currentEnvironment = MKIDMEnvironmentTypeProduction;
     } else {
-        // Debug/Adhoc 默认使用测试环境
         self.currentEnvironment = MKIDMEnvironmentTypeDevelopment;
     }
-    
     self.baseURL = [self urlForEnvironment:self.currentEnvironment];
 }
 
 - (NSString *)urlForEnvironment:(MKIDMEnvironmentType)environment {
+    if ([self isReleaseEnvironment]) {
+        return @"https://iotdm.mokocloud.com/stage-api";
+    }
     switch (environment) {
         case MKIDMEnvironmentTypeDevelopment:
             return @"https://testiotdm.mokocloud.com/prod-api";

@@ -94,27 +94,32 @@ static dispatch_once_t onceToken;
         }
         return;
     }
-    
+
     self.presentingVC = presentingVC;
     self.completion = completion;
     self.navigateToTabBar = navigateToTabBar;
-    
-    // 动态创建 MKIDMLoginAlertView（壳工程才有，子组件用带环境切换的版本）
-    Class alertClass = NSClassFromString(@"MKIDMLoginAlertView");
-    if (!alertClass) {
-        // 子组件场景下类不存在，降级为带环境切换的弹窗
-        [self showLoginWithEnvFromViewController:presentingVC
-                                navigateToTabBar:navigateToTabBar
-                                      completion:completion];
-        return;
+
+    if ([[MKIDMEnvironmentManager sharedManager] isReleaseEnvironment]) {
+        // Release: 无环境切换
+        // 壳工程: 使用 MKIDMLoginAlertView
+        // 子组件: MKIDMLoginAlertView 不存在，降级为 MKIDMLoginAlertWithEnvView（自动隐藏环境切换按钮）
+        Class alertClass = NSClassFromString(@"MKIDMLoginAlertView");
+        if (alertClass) {
+            id alertView = [[alertClass alloc] init];
+            SEL showSelector = @selector(showFromViewController:completion:);
+            if ([alertView respondsToSelector:showSelector]) {
+                ((void (*)(id, SEL, UIViewController *, void (^)(void)))
+                 objc_msgSend)(alertView, showSelector, presentingVC, completion);
+                return;
+            }
+        }
     }
-    id alertView = [[alertClass alloc] init];
-    SEL showSelector = @selector(showFromViewController:completion:);
-    if ([alertView respondsToSelector:showSelector]) {
-        // 用 objc_msgSend 调用避免编译警告（因为 id 类型编译器不知道方法签名）
-        ((void (*)(id, SEL, UIViewController *, void (^)(void)))
-         objc_msgSend)(alertView, showSelector, presentingVC, completion);
-    }
+
+    // Adhoc/Debug: 带环境切换
+    // Release(子组件): MKIDMLoginAlertWithEnvView 自动隐藏环境切换按钮
+    [self showLoginWithEnvFromViewController:presentingVC
+                            navigateToTabBar:navigateToTabBar
+                                  completion:completion];
 }
 
 - (void)showLoginWithEnvFromViewController:(UIViewController *)presentingVC

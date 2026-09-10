@@ -142,7 +142,7 @@ MKPBLoRaSettingAccountCellDelegate>
     if (![MKIDMLoginManager sharedManager].isLoggedIn) {
         //当前未登录，弹登录弹窗（带环境切换）
         @weakify(self);
-        [[MKIDMLoginManager sharedManager] showLoginWithEnvFromViewController:self
+        [[MKIDMLoginManager sharedManager] showLoginFromViewController:self navigateToTabBar:NO
                                                                   completion:^{
             @strongify(self);
             // 登录成功，直接添加设备

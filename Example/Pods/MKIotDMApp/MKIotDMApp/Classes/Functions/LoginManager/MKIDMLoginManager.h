@@ -21,29 +21,33 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 登录相关
 
-/// 显示登录弹窗（无环境切换，壳工程使用）
+/// 自动根据编译环境选择登录方式（壳工程和子组件通用）
+/// Release: 无环境切换
+/// Adhoc/Debug: 带环境切换
 /// 默认不跳转TabBar，如需跳转请使用带 navigateToTabBar 参数的方法
 /// @param presentingVC 当前ViewController
 /// @param completion 登录完成回调
 - (void)showLoginFromViewController:(UIViewController *)presentingVC
                          completion:(nullable void(^)(void))completion;
 
-/// 显示登录弹窗（无环境切换，壳工程使用）
+/// 自动根据编译环境选择登录方式（壳工程和子组件通用）
+/// Release: 无环境切换
+/// Adhoc/Debug: 带环境切换
 /// @param presentingVC 当前ViewController
-/// @param navigateToTabBar 登录成功后是否自动跳转到TabBar
+/// @param navigateToTabBar 登录成功后是否自动跳转到TabBar（壳工程YES，子组件NO）
 /// @param completion 登录完成回调
 - (void)showLoginFromViewController:(UIViewController *)presentingVC
                    navigateToTabBar:(BOOL)navigateToTabBar
                          completion:(nullable void(^)(void))completion;
 
-/// 显示登录弹窗（带环境切换，子组件使用）
+/// 显示带环境切换的登录弹窗（仅 Adhoc/Debug 有效，Release 会被忽略）
 /// 默认不跳转TabBar，如需跳转请使用带 navigateToTabBar 参数的方法
 /// @param presentingVC 当前ViewController
 /// @param completion 登录完成回调
 - (void)showLoginWithEnvFromViewController:(UIViewController *)presentingVC
                                 completion:(nullable void(^)(void))completion;
 
-/// 显示登录弹窗（带环境切换，子组件使用）
+/// 显示带环境切换的登录弹窗（仅 Adhoc/Debug 有效，Release 会被忽略）
 /// @param presentingVC 当前ViewController
 /// @param navigateToTabBar 登录成功后是否自动跳转到TabBar
 /// @param completion 登录完成回调

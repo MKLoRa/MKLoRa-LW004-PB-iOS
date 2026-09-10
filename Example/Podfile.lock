@@ -446,34 +446,34 @@ PODS:
     - MJRefresh (~> 3.7.5)
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKIotDMApp/LoginManager (0.1.0):
+  - MKIotDMApp/LoginManager (0.1.2):
     - HHTransition
     - MKIotDMApp/Network
     - MLInputDodger
-  - MKIotDMApp/Network (0.1.0):
+  - MKIotDMApp/Network (0.1.2):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKLoRaWAN-PB (1.0.7):
-    - MKLoRaWAN-PB/ConnectModule (= 1.0.7)
-    - MKLoRaWAN-PB/CTMediator (= 1.0.7)
-    - MKLoRaWAN-PB/DatabaseManager (= 1.0.7)
-    - MKLoRaWAN-PB/Expand (= 1.0.7)
-    - MKLoRaWAN-PB/Functions (= 1.0.7)
-    - MKLoRaWAN-PB/SDK (= 1.0.7)
-    - MKLoRaWAN-PB/Target (= 1.0.7)
-  - MKLoRaWAN-PB/ConnectModule (1.0.7):
+  - MKLoRaWAN-PB (1.0.8):
+    - MKLoRaWAN-PB/ConnectModule (= 1.0.8)
+    - MKLoRaWAN-PB/CTMediator (= 1.0.8)
+    - MKLoRaWAN-PB/DatabaseManager (= 1.0.8)
+    - MKLoRaWAN-PB/Expand (= 1.0.8)
+    - MKLoRaWAN-PB/Functions (= 1.0.8)
+    - MKLoRaWAN-PB/SDK (= 1.0.8)
+    - MKLoRaWAN-PB/Target (= 1.0.8)
+  - MKLoRaWAN-PB/ConnectModule (1.0.8):
     - MKBaseModuleLibrary
     - MKLoRaWAN-PB/SDK
-  - MKLoRaWAN-PB/CTMediator (1.0.7):
+  - MKLoRaWAN-PB/CTMediator (1.0.8):
     - CTMediator
     - MKBaseModuleLibrary
-  - MKLoRaWAN-PB/DatabaseManager (1.0.7):
+  - MKLoRaWAN-PB/DatabaseManager (1.0.8):
     - FMDB
     - MKBaseModuleLibrary
-  - MKLoRaWAN-PB/Expand (1.0.7):
+  - MKLoRaWAN-PB/Expand (1.0.8):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKLoRaWAN-PB/Functions (1.0.7):
+  - MKLoRaWAN-PB/Functions (1.0.8):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -485,9 +485,9 @@ PODS:
     - MKLoRaWAN-PB/SDK
     - MLInputDodger
     - NordicDFU (= 4.16.0)
-  - MKLoRaWAN-PB/SDK (1.0.7):
+  - MKLoRaWAN-PB/SDK (1.0.8):
     - MKBaseBleModule
-  - MKLoRaWAN-PB/Target (1.0.7):
+  - MKLoRaWAN-PB/Target (1.0.8):
     - MKLoRaWAN-PB/Functions
   - MLInputDodger (1.5.2)
   - NordicDFU (4.16.0):
@@ -534,8 +534,8 @@ SPEC CHECKSUMS:
   MKBaseBleModule: 15aa067c4e408a473e025b1a768ebce00a7e5949
   MKBaseModuleLibrary: b57331db53cebd9c822ce5881ee84429088dc995
   MKCustomUIModule: 6304b13cf253c678c46bb6e1ec3bd2c3bb0f0a37
-  MKIotDMApp: 9b9e0ec6f10ce220384a82b0eaf1607be488c209
-  MKLoRaWAN-PB: c62684847cc7521ee2228e2b8df6c8ad39c4ef8c
+  MKIotDMApp: 2b53434ec0dc58d264a1fa5b3ba2ab6fa0c68688
+  MKLoRaWAN-PB: e888a6a264f88af8d4e10472f269bcba88a129d1
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   NordicDFU: 116a4ec458945889f8e0e71759e03b23c39c3482
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
