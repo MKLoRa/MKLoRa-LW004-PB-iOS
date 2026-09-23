@@ -7,10 +7,13 @@
 //
 
 #import "MKIDMLoginManager.h"
+
 #import <objc/message.h>
+
+#import "UIViewController+HHTransition.h"
+
 #import "MKIDMUserManager.h"
 #import "MKIDMAccountService.h"
-#import "UIViewController+HHTransition.h"
 #import "MKIDMEnvironmentManager.h"
 #import "MKIDMNetWorkRequest.h"
 
@@ -44,6 +47,10 @@ static dispatch_once_t onceToken;
 }
 
 + (void)singleDealloc {
+    [MKIDMUserManager singleDealloc];
+    [MKIDMNetWorkRequest singleDealloc];
+    [MKIDMEnvironmentManager singleDealloc];
+    
     onceToken = 0;
     instance = nil;
 }
@@ -188,6 +195,52 @@ static dispatch_once_t onceToken;
     }];
 }
 
+#pragma mark - Public Methods - TabBar 跳转
+
+- (void)navigateToMainTabBarFromViewController:(UIViewController *)presentingVC {
+    [self navigateToMainTabBarFromViewController:presentingVC completion:nil];
+}
+
+- (void)navigateToMainTabBarFromViewController:(UIViewController *)presentingVC
+                                    completion:(nullable void(^)(void))completion {
+    if (!presentingVC) {
+        NSLog(@"[MKIDMLoginManager] presentingVC 为空，无法跳转 MainTabBar");
+        if (completion) {
+            completion();
+        }
+        return;
+    }
+    
+    // 动态创建 MainTabBarController，避免编译期依赖
+    Class tabBarClass = NSClassFromString(@"MKIDMMainTabBarController");
+    if (!tabBarClass) {
+        NSLog(@"[MKIDMLoginManager] MKIDMMainTabBarController 不存在，无法跳转");
+        if (completion) {
+            completion();
+        }
+        return;
+    }
+    
+    id rawVC = [[tabBarClass alloc] init];
+    if (![rawVC isKindOfClass:[UIViewController class]]) {
+        if (completion) {
+            completion();
+        }
+        return;
+    }
+    
+    UIViewController *mainVC = (UIViewController *)rawVC;
+    mainVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    
+    [presentingVC hh_presentViewController:mainVC
+                              presentStyle:HHPresentStyleErected
+                                completion:^{
+        if (completion) {
+            completion();
+        }
+    }];
+}
+
 #pragma mark - Public Methods - Network Request
 
 - (void)postWithPath:(NSString *)path
@@ -315,44 +368,29 @@ static dispatch_once_t onceToken;
     }];
 }
 
-#pragma mark - TabBar Navigation（运行时动态创建，无需 import MainTabBar 头文件）
+#pragma mark - Private Methods - TabBar Navigation
 
+/// 登录流程内部使用的 TabBar 跳转（依赖 self.presentingVC / self.completion）
 - (void)navigateToMainTabBarWithCompletion:(void(^)(void))completion {
-    Class tabBarClass = NSClassFromString(@"MKIDMMainTabBarController");
-    if (!tabBarClass) {
+    // 合并回调：先执行外部传入的，再执行登录保存的
+    void (^finalCompletion)(void) = ^{
         if (completion) {
             completion();
+        }
+        if (self.completion) {
+            self.completion();
+        }
+    };
+    
+    // 没有 presentingVC 则直接回调
+    if (!self.presentingVC) {
+        if (finalCompletion) {
+            finalCompletion();
         }
         return;
     }
     
-    id rawVC = [[tabBarClass alloc] init];
-    if (![rawVC isKindOfClass:[UIViewController class]]) {
-        if (completion) {
-            completion();
-        }
-        return;
-    }
-    
-    UIViewController *mainVC = rawVC;
-    mainVC.modalPresentationStyle = UIModalPresentationFullScreen;
-    
-    if (self.presentingVC) {
-        [self.presentingVC hh_presentViewController:mainVC
-                                        presentStyle:HHPresentStyleErected
-                                          completion:^{
-            if (completion) {
-                completion();
-            }
-            if (self.completion) {
-                self.completion();
-            }
-        }];
-    } else {
-        if (completion) {
-            completion();
-        }
-    }
+    [self navigateToMainTabBarFromViewController:self.presentingVC completion:finalCompletion];
 }
 
 @end

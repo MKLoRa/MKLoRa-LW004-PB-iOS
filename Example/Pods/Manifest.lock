@@ -10,7 +10,7 @@ PODS:
   - libxlsxwriter (1.1.9)
   - Masonry (1.1.0)
   - MJRefresh (3.7.9)
-  - MKBaseBleModule (1.1.4)
+  - MKBaseBleModule (1.1.5)
   - MKBaseModuleLibrary (2.2.8):
     - Masonry (~> 1.1)
     - MKBaseModuleLibrary/Base (= 2.2.8)
@@ -446,11 +446,11 @@ PODS:
     - MJRefresh (~> 3.7.5)
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKIotDMApp/LoginManager (0.1.2):
+  - MKIotDMApp/LoginManager (0.1.4):
     - HHTransition
     - MKIotDMApp/Network
     - MLInputDodger
-  - MKIotDMApp/Network (0.1.2):
+  - MKIotDMApp/Network (0.1.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
   - MKLoRaWAN-PB (1.0.8):
@@ -531,10 +531,10 @@ SPEC CHECKSUMS:
   libxlsxwriter: b013eaa467bbf24336b71b6cac15a6fbaf4e613b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
-  MKBaseBleModule: 15aa067c4e408a473e025b1a768ebce00a7e5949
+  MKBaseBleModule: 68d556f6256df48d3764bc67f8c68193d9f88cca
   MKBaseModuleLibrary: b57331db53cebd9c822ce5881ee84429088dc995
   MKCustomUIModule: 6304b13cf253c678c46bb6e1ec3bd2c3bb0f0a37
-  MKIotDMApp: 2b53434ec0dc58d264a1fa5b3ba2ab6fa0c68688
+  MKIotDMApp: d7783c81b7c3ebdeb8fef3db2ec9d9f1631cf029
   MKLoRaWAN-PB: e888a6a264f88af8d4e10472f269bcba88a129d1
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   NordicDFU: 116a4ec458945889f8e0e71759e03b23c39c3482

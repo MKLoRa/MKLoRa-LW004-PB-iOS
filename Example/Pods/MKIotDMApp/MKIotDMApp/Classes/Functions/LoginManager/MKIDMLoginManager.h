@@ -73,6 +73,18 @@ NS_ASSUME_NONNULL_BEGIN
 /// 退出登录（直接退出，不弹窗）
 - (void)logout;
 
+#pragma mark - TabBar 跳转
+
+/// 跳转到主界面（MainTabBar）
+/// @param presentingVC 当前用于 present 的 ViewController
+- (void)navigateToMainTabBarFromViewController:(UIViewController *)presentingVC;
+
+/// 跳转到主界面（MainTabBar）
+/// @param presentingVC 当前用于 present 的 ViewController
+/// @param completion 跳转完成回调
+- (void)navigateToMainTabBarFromViewController:(UIViewController *)presentingVC
+                                    completion:(nullable void(^)(void))completion;
+
 #pragma mark - 通用网络请求（自动拼接baseURL，自动携带Token）
 
 /// POST请求
