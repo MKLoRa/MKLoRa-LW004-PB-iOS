@@ -8,7 +8,7 @@
 
 #import "MKPBDatabaseManager.h"
 
-#import <FMDB/FMDB.h>
+#import "FMDB.h"
 
 #import "MKMacroDefines.h"
 

@@ -10,7 +10,7 @@
 
 #import "Masonry.h"
 
-#import "UIViewController+HHTransition.h"
+#import "HHTransition.h"
 
 #import "MKMacroDefines.h"
 #import "MKBaseTableView.h"

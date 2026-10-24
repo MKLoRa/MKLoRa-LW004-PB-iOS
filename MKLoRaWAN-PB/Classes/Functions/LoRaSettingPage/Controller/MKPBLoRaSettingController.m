@@ -26,9 +26,9 @@
 #import "MKNormalTextCell.h"
 #import "MKTableSectionLineHeader.h"
 
-#import <MKIotDMApp/MKIDMLoginManager.h>
-#import <MKIotDMApp/MKIDMNetWorkRequest.h>
-#import <MKIotDMApp/MKIDMUrlDefinition.h>
+#import "MKIDMLoginManager.h"
+#import "MKIDMNetWorkRequest.h"
+#import "MKIDMUrlDefinition.h"
 
 #import "MKPBConnectModel.h"
 #import "MKPBCreateLoRaDeviceModel.h"
