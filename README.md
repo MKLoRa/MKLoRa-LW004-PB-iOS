@@ -37,17 +37,21 @@ The device broadcast information includes whether a password is required when co
 
 ### Import to Project
 
-CocoaPods
+Swift Package Manager
 
-SDK-PIR is available through CocoaPods.To install it, simply add the following line to your Podfile, and then import <MKLoRaWAN-PB/MKPBSDK.h>:
+MKLoRaWAN-PB is available through Swift Package Manager. To install it, simply add the following line to your Package.swift dependencies:
 
-**pod 'MKLoRaWAN-PB/SDK'**
+```swift
+.package(url: "https://github.com/lovexiaoxia/MKLoRaWAN-PB.git", from: "0.1.0")
+```
 
+Or add it via Xcode: File → Add Packages... and enter the repository URL.
 
-* <font color=#FF0000 face="黑体">!!!on iOS 10 and above, Apple add authority control of bluetooth, you need add the string to “info.plist” file of your project: Privacy - Bluetooth Peripheral Usage Description - “your description”. as the screenshot below.</font>
+Then import the SDK header:
 
-*  <font color=#FF0000 face="黑体">!!! In iOS13 and above, Apple added permission restrictions on Bluetooth APi. You need to add a string to the project’s info.plist file: Privacy-Bluetooth Always Usage Description-“Your usage description”.</font>
-
+```objc
+#import <MKLoRaWAN-PB/MKPBSDK.h>
+```
 
 ## Start Developing
 

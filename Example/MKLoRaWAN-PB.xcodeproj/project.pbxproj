@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		009B23293063CDE9007A3DFE /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 009B23283063CDE9007A3DFE /* SceneDelegate.m */; };
-		2CEC5B1C08D92175BF7237D5 /* Pods_MKLoRaWAN_PB_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1351400384E1AB0C437C4F32 /* Pods_MKLoRaWAN_PB_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -37,9 +36,7 @@
 		009B23273063CDE9007A3DFE /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		009B23283063CDE9007A3DFE /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		09188C03E3B8F433EC66718A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		1351400384E1AB0C437C4F32 /* Pods_MKLoRaWAN_PB_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MKLoRaWAN_PB_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD97DE8DAEEEC2991AEADC0 /* MKLoRaWAN-PB.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "MKLoRaWAN-PB.podspec"; path = "../MKLoRaWAN-PB.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		28828DD155DD21D952613885 /* Pods-MKLoRaWAN-PB_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKLoRaWAN-PB_Example.release.xcconfig"; path = "Target Support Files/Pods-MKLoRaWAN-PB_Example/Pods-MKLoRaWAN-PB_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* MKLoRaWAN-PB_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MKLoRaWAN-PB_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,10 +52,8 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		633E3463C72F71F6AB927972 /* Pods-MKLoRaWAN-PB_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKLoRaWAN-PB_Example.debug.xcconfig"; path = "Target Support Files/Pods-MKLoRaWAN-PB_Example/Pods-MKLoRaWAN-PB_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC73758F143EC7BBF6A21844 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		F5FF67BDE3A12C4C4B36A49F /* Pods-MKLoRaWAN-PB_Example.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKLoRaWAN-PB_Example.adhoc.xcconfig"; path = "Target Support Files/Pods-MKLoRaWAN-PB_Example/Pods-MKLoRaWAN-PB_Example.adhoc.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +64,6 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				2CEC5B1C08D92175BF7237D5 /* Pods_MKLoRaWAN_PB_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +115,6 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				1351400384E1AB0C437C4F32 /* Pods_MKLoRaWAN_PB_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,9 +176,6 @@
 		69B87F6CED81F633D8314B59 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				633E3463C72F71F6AB927972 /* Pods-MKLoRaWAN-PB_Example.debug.xcconfig */,
-				28828DD155DD21D952613885 /* Pods-MKLoRaWAN-PB_Example.release.xcconfig */,
-				F5FF67BDE3A12C4C4B36A49F /* Pods-MKLoRaWAN-PB_Example.adhoc.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -197,15 +187,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "MKLoRaWAN-PB_Example" */;
 			buildPhases = (
-				63787A30668B621D22D3512F /* [CP] Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				A834CCA1D9963D37F0002C6C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			packageProductDependencies = (
+				AA0000000000000000000002 /* MKLoRaWAN-PB */,
 			);
 			name = "MKLoRaWAN-PB_Example";
 			productName = "MKLoRaWAN-PB";
@@ -264,6 +255,9 @@
 				6003F589195388D20070C39A /* MKLoRaWAN-PB_Example */,
 				6003F5AD195388D20070C39A /* MKLoRaWAN-PB_Tests */,
 			);
+			packageReferences = (
+				AA0000000000000000000001 /* XCLocalSwiftPackageReference ".." */,
+			);
 		};
 /* End PBXProject section */
 
@@ -289,66 +283,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		63787A30668B621D22D3512F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MKLoRaWAN-PB_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A834CCA1D9963D37F0002C6C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MKLoRaWAN-PB_Example/Pods-MKLoRaWAN-PB_Example-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB_Privacy.bundle",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.Privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/MKBaseModuleLibrary/MKBaseModuleLibrary.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/MKCustomUIModule/MKCustomUIModule.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/MKIotDMApp/MKIotDMApp.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/MKLoRaWAN-PB/MKLoRaWAN-PB.bundle",
-				"${PODS_ROOT}/MLInputDodger/Classes/MLInputDodger.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/NordicDFU/NordicDFUPrivacyInfo.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/Toast/Toast.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/ZIPFoundation/ZIPFoundation_Privacy.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FMDB_Privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.Privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MKBaseModuleLibrary.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MKCustomUIModule.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MKIotDMApp.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MKLoRaWAN-PB.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLInputDodger.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NordicDFUPrivacyInfo.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Toast.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZIPFoundation_Privacy.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MKLoRaWAN-PB_Example/Pods-MKLoRaWAN-PB_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -464,7 +398,6 @@
 		};
 		0051CB8227EC21EB000CDD15 /* adhoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5FF67BDE3A12C4C4B36A49F /* Pods-MKLoRaWAN-PB_Example.adhoc.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 2022120901;
@@ -612,7 +545,6 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 633E3463C72F71F6AB927972 /* Pods-MKLoRaWAN-PB_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 2022120901;
@@ -633,7 +565,6 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28828DD155DD21D952613885 /* Pods-MKLoRaWAN-PB_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 2022120901;
@@ -729,6 +660,21 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+
+/* Begin XCLocalSwiftPackageReference section */
+		AA0000000000000000000001 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA0000000000000000000002 /* MKLoRaWAN-PB */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "MKLoRaWAN-PB";
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* End XCConfigurationList section */
 	};
 	rootObject = 6003F582195388D10070C39A /* Project object */;
