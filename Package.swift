@@ -41,7 +41,6 @@ let package = Package(
             exclude: ["Classes/SDK"],
             sources: ["Classes"],
             resources: [.process("Assets")],
-            publicHeadersPath: "Classes/PublicHeaders",
             cSettings: [
                 .headerSearchPath("Classes/CTMediator"),
                 .headerSearchPath("Classes/ConnectModule"),
