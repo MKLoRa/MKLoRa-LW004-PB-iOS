@@ -8,10 +8,19 @@
 
 #import "MKPBBleFixDataModel.h"
 
+#import <UIKit/UIKit.h>
+
 #import "MKMacroDefines.h"
 
 #import "MKPBInterface.h"
 #import "MKPBInterface+MKPBConfig.h"
+
+#import "MKFilterByMacController.h"
+#import "MKFilterByAdvNameController.h"
+
+#import "MKPBFilterByMacModel.h"
+#import "MKPBFilterByAdvNameModel.h"
+#import "MKPBFilterByRawDataController.h"
 
 @interface MKPBBleFixDataModel ()
 
@@ -19,9 +28,121 @@
 
 @property (nonatomic, strong)dispatch_semaphore_t semaphore;
 
+#pragma mark - Protocol required stored properties
+
+@property (nonatomic, copy, readwrite) NSString *pageTitle;
+@property (nonatomic, copy, readwrite) NSString *saveIconName;
+
+@property (nonatomic, copy, readwrite) NSString *timeout;
+@property (nonatomic, copy, readwrite) NSString *number;
+
+@property (nonatomic, assign, readwrite) NSInteger priority;
+@property (nonatomic, assign, readwrite) NSInteger phy;
+
+@property (nonatomic, assign, readwrite) NSInteger rssi;
+@property (nonatomic, assign, readwrite) NSInteger relationship;
+
 @end
 
 @implementation MKPBBleFixDataModel
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _pageTitle = @"Bluetooth Fix";
+        _saveIconName = @"pb_slotSaveIcon";
+        // PB 硬件不支持 priority / phy，固定默认值
+        _priority = 0;
+        _phy = 0;
+    }
+    return self;
+}
+
+#pragma mark - MKFilterBleFixProtocol: section0 TextField 回调
+
+- (void)timeoutTextFieldValueChanged:(NSString *)value {
+    self.timeout = value;
+}
+
+- (void)numberOfMACTextFieldValueChanged:(NSString *)value {
+    self.number = value;
+}
+
+#pragma mark - MKFilterBleFixProtocol: section1 FilterRelationship（priority / phy）
+
+- (NSArray<NSString *> *)priorityDataList {
+    // PB 硬件不支持，返回单选项
+    return @[@"Time Priority"];
+}
+
+- (NSArray<NSString *> *)phyDataList {
+    // PB 硬件不支持，返回单选项
+    return @[@"1M PHY(BLE 4.x)"];
+}
+
+- (void)priorityChanged:(NSInteger)dataListIndex {
+    self.priority = dataListIndex;
+}
+
+- (void)phyChanged:(NSInteger)dataListIndex {
+    self.phy = dataListIndex;
+}
+
+#pragma mark - MKFilterBleFixProtocol: section2 Slider 回调
+
+- (void)rssiSliderValueChanged:(NSInteger)value {
+    self.rssi = value;
+}
+
+#pragma mark - MKFilterBleFixProtocol: section3 FilterRelationship
+
+- (NSArray<NSString *> *)relationshipDataList {
+    return @[@"Null", @"Only MAC", @"Only ADV Name", @"Only Raw Data",
+             @"ADV Name & Raw Data", @"MAC & ADV Name & Raw Data", @"ADV Name | Raw Data"];
+}
+
+- (void)relationshipChanged:(NSInteger)dataListIndex {
+    self.relationship = dataListIndex;
+}
+
+#pragma mark - MKFilterBleFixProtocol: section4 push 子 Controller
+
+- (void)pushFilterByMACControllerWithNav:(UINavigationController *)nav {
+    MKFilterByMacController *vc = [[MKFilterByMacController alloc] init];
+    MKPBFilterByMacModel *model = [[MKPBFilterByMacModel alloc] init];
+    model.pageTitle = @"Filter by MAC";
+    vc.protocol = model;
+    [nav pushViewController:vc animated:YES];
+}
+
+- (void)pushFilterByAdvNameControllerWithNav:(UINavigationController *)nav {
+    MKFilterByAdvNameController *vc = [[MKFilterByAdvNameController alloc] init];
+    MKPBFilterByAdvNameModel *model = [[MKPBFilterByAdvNameModel alloc] init];
+    model.pageTitle = @"Filter by ADV Name";
+    vc.protocol = model;
+    [nav pushViewController:vc animated:YES];
+}
+
+- (void)pushFilterByRawDataControllerWithNav:(UINavigationController *)nav {
+    MKPBFilterByRawDataController *vc = [[MKPBFilterByRawDataController alloc] init];
+    [nav pushViewController:vc animated:YES];
+}
+
+#pragma mark - MKFilterBleFixProtocol: section5 payload（PB 不支持）
+
+- (BOOL)hasPayloadContentsSection {
+    return NO;
+}
+
+- (NSString *)payloadContentsTitle {
+    return @"";
+}
+
+- (void)pushPayloadContentsControllerWithNav:(UINavigationController *)nav {
+    // PB 不支持，不做任何操作
+}
+
+#pragma mark - MKFilterBleFixProtocol: 核心 read / config
 
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.readQueue, ^{
@@ -80,6 +201,7 @@
 }
 
 #pragma mark - interface
+
 - (BOOL)readBlePositioningTimeout {
     __block BOOL success = NO;
     [MKPBInterface pb_readBlePositioningTimeoutWithSucBlock:^(id  _Nonnull returnData) {
@@ -181,6 +303,7 @@
 }
 
 #pragma mark - private method
+
 - (void)operationFailedBlockWithMsg:(NSString *)msg block:(void (^)(NSError *error))block {
     moko_dispatch_main_safe(^{
         NSError *error = [[NSError alloc] initWithDomain:@"BleFixParams"
@@ -204,6 +327,7 @@
 }
 
 #pragma mark - getter
+
 - (dispatch_semaphore_t)semaphore {
     if (!_semaphore) {
         _semaphore = dispatch_semaphore_create(0);
