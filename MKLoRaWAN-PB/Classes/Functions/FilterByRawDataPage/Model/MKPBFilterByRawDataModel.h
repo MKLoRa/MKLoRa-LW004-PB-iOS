@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MKFilterByRawDataProtocol.h"
+#import "MKPBFilterByRawDataProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBFilterByRawDataModel : NSObject <MKFilterByRawDataProtocol>
+@interface MKPBFilterByRawDataModel : NSObject <MKPBFilterByRawDataProtocol>
 
 @end
 
