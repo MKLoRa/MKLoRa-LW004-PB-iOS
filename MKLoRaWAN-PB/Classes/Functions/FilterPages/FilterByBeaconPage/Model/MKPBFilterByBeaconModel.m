@@ -24,15 +24,15 @@
 @implementation MKPBFilterByBeaconModel
 
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
-    if (self.pageType == mk_pb_filterByBeaconPageType_beacon) {
+    if (self.pageType == mk_filterByBeaconPageType_beacon) {
         [self readBeaconDataWithSucBlock:sucBlock failedBlock:failedBlock];
         return;
     }
-    if (self.pageType == mk_pb_filterByBeaconPageType_MKBeacon) {
+    if (self.pageType == mk_filterByBeaconPageType_bxpBeacon) {
         [self readMKBeaconDataWithSucBlock:sucBlock failedBlock:failedBlock];
         return;
     }
-    if (self.pageType == mk_pb_filterByBeaconPageType_MKBeaconAcc) {
+    if (self.pageType == mk_filterByBeaconPageType_bxpBeaconAcc) {
         [self readMKBeaconAccDataWithSucBlock:sucBlock failedBlock:failedBlock];
         return;
     }
@@ -44,15 +44,15 @@
 }
 
 - (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
-    if (self.pageType == mk_pb_filterByBeaconPageType_beacon) {
+    if (self.pageType == mk_filterByBeaconPageType_beacon) {
         [self configBeaconDataWithSucBlock:sucBlock failedBlock:failedBlock];
         return;
     }
-    if (self.pageType == mk_pb_filterByBeaconPageType_MKBeacon) {
+    if (self.pageType == mk_filterByBeaconPageType_bxpBeacon) {
         [self configMKBeaconDataWithSucBlock:sucBlock failedBlock:failedBlock];
         return;
     }
-    if (self.pageType == mk_pb_filterByBeaconPageType_MKBeaconAcc) {
+    if (self.pageType == mk_filterByBeaconPageType_bxpBeaconAcc) {
         [self configMKBeaconAccDataWithSucBlock:sucBlock failedBlock:failedBlock];
         return;
     }

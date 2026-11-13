@@ -23,11 +23,17 @@
 
 #import "MKPBFilterByRawDataModel.h"
 
-#import "MKPBFilterByBeaconController.h"
-#import "MKPBFilterByUIDController.h"
-#import "MKPBFilterByURLController.h"
-#import "MKPBFilterByTLMController.h"
-#import "MKPBFilterByOtherController.h"
+#import "MKFilterByBeaconController.h"
+#import "MKFilterByUIDController.h"
+#import "MKFilterByURLController.h"
+#import "MKFilterByTLMController.h"
+#import "MKFilterByOtherController.h"
+
+#import "MKPBFilterByBeaconModel.h"
+#import "MKPBFilterByUIDModel.h"
+#import "MKPBFilterByURLModel.h"
+#import "MKPBFilterByTLMModel.h"
+#import "MKPBFilterByOtherModel.h"
 
 @interface MKPBFilterByRawDataController ()<UITableViewDelegate,
 UITableViewDataSource,
@@ -70,46 +76,67 @@ mk_textSwitchCellDelegate>
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0 && indexPath.row == 0) {
         //iBeacon
-        MKPBFilterByBeaconController *vc = [[MKPBFilterByBeaconController alloc] init];
-        vc.pageType = mk_pb_filterByBeaconPageType_beacon;
+        MKFilterByBeaconController *vc = [[MKFilterByBeaconController alloc] init];
+        MKPBFilterByBeaconModel *model = [[MKPBFilterByBeaconModel alloc] init];
+        model.pageType = mk_filterByBeaconPageType_beacon;
+        model.pageTitle = @"iBeacon Filter";
+        vc.protocol = model;
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
     if (indexPath.section == 0 && indexPath.row == 1) {
         //Eddystone-UID
-        MKPBFilterByUIDController *vc = [[MKPBFilterByUIDController alloc] init];
+        MKFilterByUIDController *vc = [[MKFilterByUIDController alloc] init];
+        MKPBFilterByUIDModel *model = [[MKPBFilterByUIDModel alloc] init];
+        model.pageTitle = @"Eddystone-UID Filter";
+        vc.protocol = model;
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
     if (indexPath.section == 0 && indexPath.row == 2) {
         //Eddystone-URL
-        MKPBFilterByURLController *vc = [[MKPBFilterByURLController alloc] init];
+        MKFilterByURLController *vc = [[MKFilterByURLController alloc] init];
+        MKPBFilterByURLModel *model = [[MKPBFilterByURLModel alloc] init];
+        model.pageTitle = @"Eddystone-URL Filter";
+        vc.protocol = model;
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
     if (indexPath.section == 0 && indexPath.row == 3) {
         //Eddystone-TLM
-        MKPBFilterByTLMController *vc = [[MKPBFilterByTLMController alloc] init];
+        MKFilterByTLMController *vc = [[MKFilterByTLMController alloc] init];
+        MKPBFilterByTLMModel *model = [[MKPBFilterByTLMModel alloc] init];
+        model.pageTitle = @"Eddystone-TLM Filter";
+        vc.protocol = model;
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
     if (indexPath.section == 0 && indexPath.row == 4) {
         //MKiBeacon
-        MKPBFilterByBeaconController *vc = [[MKPBFilterByBeaconController alloc] init];
-        vc.pageType = mk_pb_filterByBeaconPageType_MKBeacon;
+        MKFilterByBeaconController *vc = [[MKFilterByBeaconController alloc] init];
+        MKPBFilterByBeaconModel *model = [[MKPBFilterByBeaconModel alloc] init];
+        model.pageType = mk_filterByBeaconPageType_bxpBeacon;
+        model.pageTitle = @"MKiBeacon Filter";
+        vc.protocol = model;
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
     if (indexPath.section == 0 && indexPath.row == 5) {
         //MKiBeacon&ACC
-        MKPBFilterByBeaconController *vc = [[MKPBFilterByBeaconController alloc] init];
-        vc.pageType = mk_pb_filterByBeaconPageType_MKBeaconAcc;
+        MKFilterByBeaconController *vc = [[MKFilterByBeaconController alloc] init];
+        MKPBFilterByBeaconModel *model = [[MKPBFilterByBeaconModel alloc] init];
+        model.pageType = mk_filterByBeaconPageType_bxpBeaconAcc;
+        model.pageTitle = @"MKiBeacon&ACC Filter";
+        vc.protocol = model;
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
     if (indexPath.section == 2 && indexPath.row == 0) {
         //Other
-        MKPBFilterByOtherController *vc = [[MKPBFilterByOtherController alloc] init];
+        MKFilterByOtherController *vc = [[MKFilterByOtherController alloc] init];
+        MKPBFilterByOtherModel *model = [[MKPBFilterByOtherModel alloc] init];
+        model.pageTitle = @"Other Type Filter";
+        vc.protocol = model;
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }

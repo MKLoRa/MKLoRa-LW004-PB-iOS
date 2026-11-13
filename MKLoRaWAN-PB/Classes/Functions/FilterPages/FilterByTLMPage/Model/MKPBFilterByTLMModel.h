@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MKPBFilterByTLMModel : NSObject
 
+@property (nonatomic, copy) NSString *pageTitle;
+
 @property (nonatomic, assign)BOOL isOn;
 
 /// 0:过滤所有TLM  1:过滤非加密类型TLM 2:过滤加密类型TLM

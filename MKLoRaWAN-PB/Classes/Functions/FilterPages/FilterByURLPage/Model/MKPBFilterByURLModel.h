@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MKPBFilterByURLModel : NSObject
 
+@property (nonatomic, copy) NSString *pageTitle;
+
 @property (nonatomic, assign)BOOL isOn;
 
 @property (nonatomic, copy)NSString *url;

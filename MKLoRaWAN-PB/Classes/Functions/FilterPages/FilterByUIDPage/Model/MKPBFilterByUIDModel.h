@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MKPBFilterByUIDModel : NSObject
 
+@property (nonatomic, copy) NSString *pageTitle;
+
 @property (nonatomic, assign)BOOL isOn;
 
 @property (nonatomic, copy)NSString *namespaceID;

@@ -8,13 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MKPBFilterByBeaconDefines.h"
+#import "MKFilterByBeaconProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBFilterByBeaconModel : NSObject
+@interface MKPBFilterByBeaconModel : NSObject<MKFilterByBeaconProtocol>
 
-@property (nonatomic, assign)mk_pb_filterByBeaconPageType pageType;
+@property (nonatomic, copy) NSString *pageTitle;
+
+@property (nonatomic, assign) mk_filterByBeaconPageType pageType;
 
 @property (nonatomic, assign)BOOL isOn;
 

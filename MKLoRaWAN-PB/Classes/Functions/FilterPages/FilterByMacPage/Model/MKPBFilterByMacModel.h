@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MKPBFilterByMacModel : NSObject
 
+@property (nonatomic, copy) NSString *pageTitle;
+
 @property (nonatomic, assign)BOOL match;
 
 @property (nonatomic, assign)BOOL filter;
