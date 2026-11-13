@@ -17,7 +17,7 @@ let package = Package(
         .package(url: "https://github.com/MOKO-iOS-Base-Library/MKCustomUIModule.git", from: "2.1.17"),
         .package(url: "https://github.com/nordicsemi/IOS-DFU-Library.git", from: "4.17.0"),
         .package(url: "git@120.27.8.241:MokoTest/MKIoTDM_iOS.git", from: "0.1.9"),
-        .package(url: "https://github.com/MOKO-iOS-Base-Library/MKFilterPagesModule.git", from: "0.0.12"),
+        .package(url: "https://github.com/MOKO-iOS-Base-Library/MKFilterPagesModule.git", from: "0.0.17"),
     ],
     targets: [
         .target(
