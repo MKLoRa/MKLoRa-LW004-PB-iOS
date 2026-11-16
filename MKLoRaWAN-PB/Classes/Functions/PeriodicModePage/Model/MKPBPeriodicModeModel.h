@@ -8,22 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MKPeriodicModePageProtocol.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBPeriodicModeModel : NSObject
-
-/*
- 0:BLE
- 1:GPS
- 2:GPS+BLE
- */
-@property (nonatomic, assign)NSInteger strategy;
-
-@property (nonatomic, copy)NSString *interval;
-
-- (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
-
-- (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
+@interface MKPBPeriodicModeModel : NSObject<MKPeriodicModePageProtocol>
 
 @end
 
