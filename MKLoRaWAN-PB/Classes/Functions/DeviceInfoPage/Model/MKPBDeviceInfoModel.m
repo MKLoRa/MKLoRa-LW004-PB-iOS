@@ -76,7 +76,7 @@
     [MKPBInterface pb_readBatteryVoltageWithSucBlock:^(id  _Nonnull returnData) {
         success = YES;
         NSInteger battery = [returnData[@"result"][@"voltage"] integerValue];
-        self.voltage = [NSString stringWithFormat:@"%.3f",(battery * 0.001)];
+        self.voltage = [NSString stringWithFormat:@"%ld",(long)battery];
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);

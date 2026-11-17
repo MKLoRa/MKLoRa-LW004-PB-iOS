@@ -6,11 +6,11 @@
 //  Copyright © 2021 aadyx2007@163.com. All rights reserved.
 //
 
-#import "MKBaseViewController.h"
+#import "MKLoRaDeviceInfoController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBDeviceInfoController : MKBaseViewController
+@interface MKPBDeviceInfoController : MKLoRaDeviceInfoController
 
 @end
 
