@@ -2,16 +2,17 @@
 //  MKPBDebuggerController.h
 //  MKLoRaWAN-PB_Example
 //
-//  Created by aa on 2021/12/29.
-//  Copyright © 2021 aadyx2007@163.com. All rights reserved.
+//  Created by aa on 2023/7/5.
+//  Copyright © 2023 aadyx2007@163.com. All rights reserved.
 //
 
-#import "MKBaseViewController.h"
+#import "MKLoRaDebuggerController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBDebuggerController : MKBaseViewController
+@interface MKPBDebuggerController : MKLoRaDebuggerController
 
+/// 兼容原有调用方式：设备信息页 push 前赋值，实际数据由 Model 提供给基础库
 @property (nonatomic, copy)NSString *macAddress;
 
 @end

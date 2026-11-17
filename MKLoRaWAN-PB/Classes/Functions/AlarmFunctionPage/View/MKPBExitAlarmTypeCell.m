@@ -78,7 +78,7 @@
         make.left.mas_equalTo(15.f);
         make.right.mas_equalTo(self.pressLabel.mas_left).mas_offset(-10.f);
         make.centerY.mas_equalTo(self.contentView.mas_centerY);
-        make.height.mas_equalTo(MKFont(15.f).lineHeight);
+        make.height.mas_equalTo(MKFont(14.f).lineHeight);
     }];
 }
 
@@ -103,7 +103,7 @@
         _msgLabel = [[UILabel alloc] init];
         _msgLabel.textColor = DEFAULT_TEXT_COLOR;
         _msgLabel.textAlignment = NSTextAlignmentLeft;
-        _msgLabel.font = MKFont(15.f);
+        _msgLabel.font = MKFont(14.f);
         _msgLabel.text = @"Exit Alarm Type";
     }
     return _msgLabel;

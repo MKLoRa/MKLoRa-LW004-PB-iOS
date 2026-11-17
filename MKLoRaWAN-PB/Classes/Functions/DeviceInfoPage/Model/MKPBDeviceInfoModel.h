@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MKLoRaDeviceInfoPageProtocol.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBDeviceInfoModel : NSObject
+@interface MKPBDeviceInfoModel : NSObject<MKLoRaDeviceInfoPageProtocol>
 
 /**
  软件版本
@@ -27,7 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy)NSString *hardware;
 
-/// 电压
+/**
+ 电池电压，单位mV
+ */
 @property (nonatomic, copy)NSString *voltage;
 
 /**
@@ -45,10 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy)NSString *manu;
 
-/// 开始读取设备信息
-/// @param sucBlock 成功回调
-/// @param failedBlock 失败回调
-- (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;;
+- (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
 @end
 
