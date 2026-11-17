@@ -149,4 +149,13 @@
     return _readQueue;
 }
 
+
+- (NSInteger)maxPointList {
+    return 10;
+}
+
+- (NSArray<NSString *> *)strategyDataList {
+    return @[@"BLE",@"GPS",@"BLE&GPS"];
+}
+
 @end

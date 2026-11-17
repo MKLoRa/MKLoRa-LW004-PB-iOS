@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MKPBPeriodicModeModel : NSObject<MKLoRaPeriodicModePageProtocol>
 
+@property (nonatomic, copy)NSArray<NSString *> *strategyDataList;
+@property (nonatomic, copy)NSString *intervalPlaceholder;
+@property (nonatomic, copy)NSString *intervalUnit;
+
 @end
 
 NS_ASSUME_NONNULL_END

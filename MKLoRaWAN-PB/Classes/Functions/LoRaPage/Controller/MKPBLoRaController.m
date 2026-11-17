@@ -9,7 +9,9 @@
 #import "MKPBLoRaController.h"
 
 #import "MKPBLoRaPageModel.h"
-#import "MKPBLoRaAppSettingController.h"
+#import "MKLoRaApplicationController.h"
+
+#import "MKPBLoRaAppSettingModel.h"
 #import "MKPBLoRaSettingController.h"
 
 @implementation MKPBLoRaController
@@ -35,7 +37,8 @@
 }
 
 - (void)pushToLoRaApplicationPage {
-    MKPBLoRaAppSettingController *vc = [[MKPBLoRaAppSettingController alloc] init];
+    MKLoRaApplicationController *vc = [[MKLoRaApplicationController alloc] init];
+    vc.protocol = [[MKPBLoRaAppSettingModel alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
