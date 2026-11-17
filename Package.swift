@@ -56,7 +56,6 @@ let package = Package(
                 .headerSearchPath("Classes/Expand/FilterCell/FilterByRawDataCell"),
                 .headerSearchPath("Classes/Expand/FilterCell/FilterEditSectionHeaderView"),
                 .headerSearchPath("Classes/Expand/FilterCell/FilterNormalTextFieldCell"),
-                .headerSearchPath("Classes/Functions/AboutPage/Controller"),
                 .headerSearchPath("Classes/Functions/AlarmFunctionPage/Controller"),
                 .headerSearchPath("Classes/Functions/AlarmFunctionPage/Model"),
                 .headerSearchPath("Classes/Functions/AlarmFunctionPage/View"),
