@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MKPeriodicModePageProtocol.h"
+#import "MKLoRaPeriodicModePageProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBPeriodicModeModel : NSObject<MKPeriodicModePageProtocol>
+@interface MKPBPeriodicModeModel : NSObject<MKLoRaPeriodicModePageProtocol>
 
 @end
 

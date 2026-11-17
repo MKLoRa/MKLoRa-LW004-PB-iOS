@@ -35,30 +35,6 @@
 
 @property (nonatomic, strong)dispatch_semaphore_t semaphore;
 
-#pragma mark - Protocol required stored properties
-
-@property (nonatomic, copy, readwrite) NSString *pageTitle;
-
-// section0
-@property (nonatomic, assign, readwrite) BOOL iBeacon;
-@property (nonatomic, assign, readwrite) BOOL uid;
-@property (nonatomic, assign, readwrite) BOOL url;
-@property (nonatomic, assign, readwrite) BOOL tlm;
-@property (nonatomic, assign, readwrite) BOOL bxpBeacon;
-
-// section1
-@property (nonatomic, assign, readwrite) BOOL bxpDeviceInfo;  // PB 硬件不支持，固定 NO
-@property (nonatomic, assign, readwrite) BOOL bxpAcc;
-@property (nonatomic, assign, readwrite) BOOL bxpTH;
-
-// section2
-@property (nonatomic, assign, readwrite) BOOL bxpButton;  // PB 硬件不支持，固定 NO
-@property (nonatomic, assign, readwrite) BOOL bxpTag;     // PB 硬件不支持，固定 NO
-@property (nonatomic, assign, readwrite) BOOL pir;        // PB 硬件不支持，固定 NO
-@property (nonatomic, assign, readwrite) BOOL tof;        // PB 硬件不支持，固定 NO
-@property (nonatomic, assign, readwrite) BOOL nanoBeacon; // PB 硬件不支持，固定 NO
-@property (nonatomic, assign, readwrite) BOOL other;
-
 @end
 
 @implementation MKPBFilterByRawDataModel
@@ -169,7 +145,7 @@
 - (void)configBXPAccStatus:(BOOL)isOn
                   sucBlock:(void (^)(void))sucBlock
                failedBlock:(void (^)(NSError *error))failedBlock {
-    [[MKHudManager share] showHUDWithTitle:@"Config..." isPenetration:NO];
+    [[MKHudManager share] showHUDWithTitle:@"Config..." inView:[UIApplication sharedApplication].keyWindow isPenetration:NO];
     [MKPBInterface pb_configBXPAccFilterStatus:isOn sucBlock:^{
         [[MKHudManager share] hide];
         self.bxpAcc = isOn;
@@ -187,7 +163,7 @@
 - (void)configBXPTHStatus:(BOOL)isOn
                  sucBlock:(void (^)(void))sucBlock
               failedBlock:(void (^)(NSError *error))failedBlock {
-    [[MKHudManager share] showHUDWithTitle:@"Config..." isPenetration:NO];
+    [[MKHudManager share] showHUDWithTitle:@"Config..." inView:[UIApplication sharedApplication].keyWindow isPenetration:NO];
     [MKPBInterface pb_configBXPTHFilterStatus:isOn sucBlock:^{
         [[MKHudManager share] hide];
         self.bxpTH = isOn;

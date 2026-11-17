@@ -14,6 +14,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MKPBBleFixDataModel : NSObject <MKPBFilterBleFixProtocol>
 
+@property (nonatomic, copy) NSString *pageTitle;
+@property (nonatomic, copy) NSString *saveIconName;
+
+@property (nonatomic, copy) NSString *timeout;
+@property (nonatomic, copy) NSString *number;
+
+@property (nonatomic, assign) NSInteger priority;
+@property (nonatomic, assign) NSInteger phy;
+
+@property (nonatomic, assign) NSInteger rssi;
+@property (nonatomic, assign) NSInteger relationship;
+
 @end
 
 NS_ASSUME_NONNULL_END
