@@ -6,11 +6,11 @@
 //  Copyright © 2022 aadyx2007@163.com. All rights reserved.
 //
 
-#import "MKBaseViewController.h"
+#import "MKLoRaController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBLoRaController : MKBaseViewController
+@interface MKPBLoRaController : MKLoRaController
 
 @end
 
