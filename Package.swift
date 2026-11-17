@@ -39,7 +39,7 @@ let package = Package(
                 .product(name: "NordicDFU", package: "ios-dfu-library"),
                 .product(name: "MKIotDMApp", package: "mkiotdm_ios"),
                 "MKFilterPagesModule",
-                "MKLoRaCommonModule",
+                .product(name: "MKLoRaCommonModule", package: "LoRaCommonModule"),
             ],
             path: "MKLoRaWAN-PB",
             exclude: ["Classes/SDK"],
