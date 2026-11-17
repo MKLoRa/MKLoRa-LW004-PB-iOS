@@ -28,20 +28,6 @@
 
 @property (nonatomic, strong)dispatch_semaphore_t semaphore;
 
-#pragma mark - Protocol required stored properties
-
-@property (nonatomic, copy, readwrite) NSString *pageTitle;
-@property (nonatomic, copy, readwrite) NSString *saveIconName;
-
-@property (nonatomic, copy, readwrite) NSString *timeout;
-@property (nonatomic, copy, readwrite) NSString *number;
-
-@property (nonatomic, assign, readwrite) NSInteger priority;
-@property (nonatomic, assign, readwrite) NSInteger phy;
-
-@property (nonatomic, assign, readwrite) NSInteger rssi;
-@property (nonatomic, assign, readwrite) NSInteger relationship;
-
 @end
 
 @implementation MKPBBleFixDataModel
