@@ -10,7 +10,9 @@
 
 #import "MKPBScanController.h"
 
-#import "MKPBAboutController.h"
+#import "MKLoRaAboutController.h"
+
+#import "MKPBAboutModel.h"
 
 @implementation Target_LoRaWANPB_Module
 
@@ -21,7 +23,9 @@
 
 /// 关于页面
 - (UIViewController *)Action_LoRaWANPB_Module_AboutController:(NSDictionary *)params {
-    return [[MKPBAboutController alloc] init];
+    MKLoRaAboutController *vc = [[MKLoRaAboutController alloc] init];
+    vc.protocol = [[MKPBAboutModel alloc] init];
+    return vc;
 }
 
 @end

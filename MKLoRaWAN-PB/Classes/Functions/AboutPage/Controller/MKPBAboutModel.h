@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 #import "MKLoRaAboutPageProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -16,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *appName;
 
 @property (nonatomic, copy) NSString *firmwareLabel;
+
+@property (nonatomic, strong, nullable) UIImage *aboutIcon;
+
+@property (nonatomic, strong, nullable) UIImage *bottomIcon;
 
 @end
 

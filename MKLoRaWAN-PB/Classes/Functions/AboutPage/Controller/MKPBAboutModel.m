@@ -8,6 +8,8 @@
 
 #import "MKPBAboutModel.h"
 
+#import "MKMacroDefines.h"
+
 @implementation MKPBAboutModel
 
 - (instancetype)init {
@@ -16,6 +18,14 @@
         self.firmwareLabel = @"FW Version:V3.1";
     }
     return self;
+}
+
+- (UIImage *)aboutIcon {
+    return LOADICON(@"MKLoRaWAN-PB", @"MKPBAboutModel", @"pb_aboutIcon.png");
+}
+
+- (UIImage *)bottomIcon {
+    return LOADICON(@"MKLoRaWAN-PB", @"MKPBAboutModel", @"pb_aboutBottomIcon.png");
 }
 
 @end
