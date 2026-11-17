@@ -1,19 +1,19 @@
 //
-//  MKPBLoRaAppSettingModel.m
+//  MKPBPeriodicModeModel.m
 //  MKLoRaWAN-PB_Example
 //
-//  Created by aa on 2022/3/16.
-//  Copyright © 2022 aadyx2007@163.com. All rights reserved.
+//  Created by aa on 2021/5/24.
+//  Copyright © 2021 aadyx2007@163.com. All rights reserved.
 //
 
-#import "MKPBLoRaAppSettingModel.h"
+#import "MKPBPeriodicModeModel.h"
 
 #import "MKMacroDefines.h"
 
 #import "MKPBInterface.h"
 #import "MKPBInterface+MKPBConfig.h"
 
-@interface MKPBLoRaAppSettingModel ()
+@interface MKPBPeriodicModeModel ()
 
 @property (nonatomic, strong)dispatch_queue_t readQueue;
 
@@ -21,16 +21,16 @@
 
 @end
 
-@implementation MKPBLoRaAppSettingModel
+@implementation MKPBPeriodicModeModel
 
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.readQueue, ^{
-        if (![self readTimeSyncInterval]) {
-            [self operationFailedBlockWithMsg:@"Read Time Sync Interval Error" block:failedBlock];
+        if (![self readStrategy]) {
+            [self operationFailedBlockWithMsg:@"Read Positioning Strategy Error" block:failedBlock];
             return;
         }
-        if (![self readNetworkCheckInterval]) {
-            [self operationFailedBlockWithMsg:@"Read Network Check Interval Error" block:failedBlock];
+        if (![self readReportInterval]) {
+            [self operationFailedBlockWithMsg:@"Read Report Interval Error" block:failedBlock];
             return;
         }
         moko_dispatch_main_safe(^{
@@ -47,12 +47,12 @@
             [self operationFailedBlockWithMsg:@"Opps！Save failed. Please check the input characters and try again." block:failedBlock];
             return;
         }
-        if (![self configTimeSyncInterval]) {
-            [self operationFailedBlockWithMsg:@"Config Time Sync Interval Error" block:failedBlock];
+        if (![self configStrategy]) {
+            [self operationFailedBlockWithMsg:@"Config Positioning Strategy Error" block:failedBlock];
             return;
         }
-        if (![self configNetworkCheckInterval]) {
-            [self operationFailedBlockWithMsg:@"Config Network Check Interval Error" block:failedBlock];
+        if (![self configReportInterval]) {
+            [self operationFailedBlockWithMsg:@"Config Report Interval Error" block:failedBlock];
             return;
         }
         moko_dispatch_main_safe(^{
@@ -64,12 +64,11 @@
 }
 
 #pragma mark - interface
-
-- (BOOL)readTimeSyncInterval {
+- (BOOL)readStrategy {
     __block BOOL success = NO;
-    [MKPBInterface pb_readLorawanTimeSyncIntervalWithSucBlock:^(id  _Nonnull returnData) {
+    [MKPBInterface pb_readPeriodicModePositioningStrategyWithSucBlock:^(id  _Nonnull returnData) {
         success = YES;
-        self.timeSyncInterval = returnData[@"result"][@"interval"];
+        self.strategy = [returnData[@"result"][@"strategy"] integerValue];
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);
@@ -78,9 +77,9 @@
     return success;
 }
 
-- (BOOL)configTimeSyncInterval {
+- (BOOL)configStrategy {
     __block BOOL success = NO;
-    [MKPBInterface pb_configTimeSyncInterval:[self.timeSyncInterval integerValue] sucBlock:^{
+    [MKPBInterface pb_configPeriodicModePositioningStrategy:self.strategy sucBlock:^{
         success = YES;
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
@@ -90,11 +89,11 @@
     return success;
 }
 
-- (BOOL)readNetworkCheckInterval {
+- (BOOL)readReportInterval {
     __block BOOL success = NO;
-    [MKPBInterface pb_readLorawanNetworkCheckIntervalWithSucBlock:^(id  _Nonnull returnData) {
+    [MKPBInterface pb_readPeriodicModeReportIntervalWithSucBlock:^(id  _Nonnull returnData) {
         success = YES;
-        self.checkInterval = returnData[@"result"][@"interval"];
+        self.interval = returnData[@"result"][@"interval"];
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);
@@ -103,9 +102,9 @@
     return success;
 }
 
-- (BOOL)configNetworkCheckInterval {
+- (BOOL)configReportInterval {
     __block BOOL success = NO;
-    [MKPBInterface pb_configLorawanNetworkCheckInterval:[self.checkInterval integerValue] sucBlock:^{
+    [MKPBInterface pb_configPeriodicModeReportInterval:[self.interval longLongValue] sucBlock:^{
         success = YES;
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
@@ -118,7 +117,7 @@
 #pragma mark - private method
 - (void)operationFailedBlockWithMsg:(NSString *)msg block:(void (^)(NSError *error))block {
     moko_dispatch_main_safe(^{
-        NSError *error = [[NSError alloc] initWithDomain:@"LoRaAppSettingParams"
+        NSError *error = [[NSError alloc] initWithDomain:@"periodicModeParams"
                                                     code:-999
                                                 userInfo:@{@"errorInfo":msg}];
         block(error);
@@ -126,10 +125,7 @@
 }
 
 - (BOOL)validParams {
-    if (!ValidStr(self.timeSyncInterval) || [self.timeSyncInterval integerValue] < 0 || [self.timeSyncInterval integerValue] > 255) {
-        return NO;
-    }
-    if (!ValidStr(self.checkInterval) || [self.checkInterval integerValue] < 0 || [self.checkInterval integerValue] > 255) {
+    if (!ValidStr(self.interval) || [self.interval integerValue] < 1 || [self.interval integerValue] > 14400) {
         return NO;
     }
     return YES;
@@ -145,9 +141,21 @@
 
 - (dispatch_queue_t)readQueue {
     if (!_readQueue) {
-        _readQueue = dispatch_queue_create("LoRaAppSettingQueue", DISPATCH_QUEUE_SERIAL);
+        _readQueue = dispatch_queue_create("periodicModeQueue", DISPATCH_QUEUE_SERIAL);
     }
     return _readQueue;
+}
+
+- (NSArray<NSString *> *)strategyDataList {
+    return @[@"BLE",@"GPS",@"BLE+GPS"];
+}
+
+- (NSString *)intervalPlaceholder {
+    return @"1 ~ 14400";
+}
+
+- (NSString *)intervalUnit {
+    return @"Mins";
 }
 
 @end

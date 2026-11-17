@@ -77,6 +77,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
+@property (nonatomic, copy)NSArray<NSString *> *posStrategyDataList;
+@property (nonatomic, copy)NSArray<NSString *> *posStrategyInTripDataList;
+@property (nonatomic, assign)BOOL hideStationary;
+@property (nonatomic, copy)NSString *fixCountOnStartPlaceholder;
+@property (nonatomic, copy)NSString *tripEndTimeoutPlaceholder;
+@property (nonatomic, copy)NSString *numberOfFixOnEndPlaceholder;
+
 @end
 
 NS_ASSUME_NONNULL_END

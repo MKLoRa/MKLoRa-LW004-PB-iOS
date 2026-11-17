@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MKLoRaApplicationPageProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBLoRaAppSettingModel : NSObject
+@interface MKPBLoRaAppSettingModel : NSObject<MKLoRaApplicationPageProtocol>
 
 @property (nonatomic, copy)NSString *timeSyncInterval;
 
@@ -19,6 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
 - (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
+
+
+@property (nonatomic, assign)BOOL hideMessageType;
+@property (nonatomic, copy)NSString *checkIntervalTitle;
 
 @end
 

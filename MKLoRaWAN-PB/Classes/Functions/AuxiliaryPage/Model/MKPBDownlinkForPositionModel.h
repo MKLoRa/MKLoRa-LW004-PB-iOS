@@ -7,21 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MKLoRaDownlinkPageProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBDownlinkForPositionModel : NSObject
+@interface MKPBDownlinkForPositionModel : NSObject<MKLoRaDownlinkPageProtocol>
 
 /*
  0:BLE
  1:GPS
  2:GPS+BLE
  */
-@property (nonatomic, assign)NSInteger strategy;
+@property (nonatomic, assign)NSInteger positioningStrategy;
 
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
 - (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
+
+
+
+@property (nonatomic, copy)NSArray<NSString *> *strategyDataList;
 
 @end
 

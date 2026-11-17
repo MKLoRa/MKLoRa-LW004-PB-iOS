@@ -15,7 +15,9 @@
 
 #import "MKNormalTextCell.h"
 
-#import "MKPBDownlinkForPositionController.h"
+#import "MKLoRaDownlinkController.h"
+
+#import "MKPBDownlinkForPositionModel.h"
 #import "MKPBManDownController.h"
 #import "MKPBAlarmFunctionController.h"
 
@@ -48,7 +50,8 @@ UITableViewDataSource>
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0 && indexPath.row == 0) {
         //Downlink  For Position
-        MKPBDownlinkForPositionController *vc = [[MKPBDownlinkForPositionController alloc] init];
+        MKLoRaDownlinkController *vc = [[MKLoRaDownlinkController alloc] init];
+        vc.protocol = [[MKPBDownlinkForPositionModel alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "MKPBSDKNormalDefines.h"
+#import "MKLoRaTimingModePageProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface MKPBTimingModeModel : NSObject
+@interface MKPBTimingModeModel : NSObject<MKLoRaTimingModePageProtocol>
 
 /*
  0:BLE
@@ -38,6 +39,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)configData:(NSArray <MKPBTimingModeTimePointModel *>*)pointList
           sucBlock:(void (^)(void))sucBlock
        failedBlock:(void (^)(NSError *error))failedBlock;
+
+
+
+@property (nonatomic, assign)NSInteger maxPointList;
+
+@property (nonatomic, copy)NSArray<NSString *> *strategyDataList;
 
 @end
 

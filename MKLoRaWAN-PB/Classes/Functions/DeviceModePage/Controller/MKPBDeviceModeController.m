@@ -22,9 +22,15 @@
 #import "MKPBInterface.h"
 #import "MKPBInterface+MKPBConfig.h"
 
-#import "MKPBTimingModeController.h"
-#import "MKPBPeriodicModeController.h"
-#import "MKPBMotionModeController.h"
+#import "MKLoRaTimingModeController.h"
+
+#import "MKPBTimingModeModel.h"
+#import "MKLoRaPeriodicModeController.h"
+
+#import "MKPBPeriodicModeModel.h"
+#import "MKLoRaMotionModeController.h"
+
+#import "MKPBMotionModeModel.h"
 
 @interface MKPBDeviceModeController ()<UITableViewDelegate,
 UITableViewDataSource,
@@ -59,19 +65,22 @@ MKTextButtonCellDelegate>
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1 && indexPath.row == 0) {
         //MKPBTimingModeController
-        MKPBTimingModeController *vc = [[MKPBTimingModeController alloc] init];
+        MKLoRaTimingModeController *vc = [[MKLoRaTimingModeController alloc] init];
+        vc.protocol = [[MKPBTimingModeModel alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
     if (indexPath.section == 1 && indexPath.row == 1) {
         //Periodic Mode
-        MKPBPeriodicModeController *vc = [[MKPBPeriodicModeController alloc] init];
+        MKLoRaPeriodicModeController *vc = [[MKLoRaPeriodicModeController alloc] init];
+        vc.protocol = [[MKPBPeriodicModeModel alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
     if (indexPath.section == 1 && indexPath.row == 2) {
         //Motion Mode
-        MKPBMotionModeController *vc = [[MKPBMotionModeController alloc] init];
+        MKLoRaMotionModeController *vc = [[MKLoRaMotionModeController alloc] init];
+        vc.protocol = [[MKPBMotionModeModel alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }

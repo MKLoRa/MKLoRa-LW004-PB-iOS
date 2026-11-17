@@ -404,4 +404,28 @@
     return _readQueue;
 }
 
+- (NSArray<NSString *> *)posStrategyDataList {
+    return @[@"BLE",@"GPS",@"BLE+GPS"];
+}
+
+- (NSArray<NSString *> *)posStrategyInTripDataList {
+    return @[@"BLE",@"GPS",@"BLE+GPS"];
+}
+
+- (BOOL)hideStationary {
+    return YES;
+}
+
+- (NSString *)fixCountOnStartPlaceholder {
+    return @"1~255";
+}
+
+- (NSString *)tripEndTimeoutPlaceholder {
+    return @"3~180";
+}
+
+- (NSString *)numberOfFixOnEndPlaceholder {
+    return @"1~255";
+}
+
 @end
