@@ -9,7 +9,7 @@
 #import "MKPBDebuggerModel.h"
 
 #import "MKPBCentralManager.h"
-#import "MKPBDatabaseManager.h"
+#import "MKLoRaLogDatabaseManager.h"
 
 @interface MKPBDebuggerModel ()<mk_pb_centralManagerLogDelegate>
 
@@ -22,14 +22,18 @@
 #pragma mark - MKLoRaDebuggerPageProtocol
 - (void)fetchLogDataWithSucBlock:(void (^)(NSArray<NSDictionary *> * _Nonnull))sucBlock
                      failedBlock:(void (^)(NSError * _Nonnull))failedBlock {
-    [MKPBDatabaseManager readLocalLogsWithMacAddress:self.macAddress
+    [MKLoRaLogDatabaseManager readLocalLogsWithMacAddress:self.macAddress
+                                            databaseName:@"MKPBLogDB"
+                                            tableName:@"MKPBLogDataTable"
                                             sucBlock:sucBlock
                                          failedBlock:failedBlock];
 }
 
 - (void)deleteAllLogsWithSucBlock:(void (^)(void))sucBlock
                       failedBlock:(void (^)(NSError * _Nonnull))failedBlock {
-    [MKPBDatabaseManager deleteDatasWithMacAddress:self.macAddress
+    [MKLoRaLogDatabaseManager deleteDatasWithMacAddress:self.macAddress
+                                          databaseName:@"MKPBLogDB"
+                                          tableName:@"MKPBLogDataTable"
                                           sucBlock:sucBlock
                                        failedBlock:failedBlock];
 }
@@ -38,8 +42,10 @@
             macAddress:(NSString *)macAddress
              sucBlock:(void (^)(void))sucBlock
           failedBlock:(void (^)(NSError * _Nonnull))failedBlock {
-    [MKPBDatabaseManager insertLogDatas:logList
+    [MKLoRaLogDatabaseManager insertLogDatas:logList
                              macAddress:macAddress
+                               databaseName:@"MKPBLogDB"
+                               tableName:@"MKPBLogDataTable"
                                sucBlock:sucBlock
                             failedBlock:failedBlock];
 }
