@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MKPBFilterBleFixProtocol.h"
+#import "MKFilterBleFixProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBBleFixDataModel : NSObject <MKPBFilterBleFixProtocol>
+@interface MKPBBleFixDataModel : NSObject <MKFilterBleFixProtocol>
 
 @property (nonatomic, copy) NSString *pageTitle;
 @property (nonatomic, copy) NSString *saveIconName;

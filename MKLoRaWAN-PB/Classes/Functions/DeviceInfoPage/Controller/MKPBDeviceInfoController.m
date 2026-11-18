@@ -10,7 +10,8 @@
 
 #import "MKPBDeviceInfoModel.h"
 
-#import "MKPBUpdateController.h"
+#import "MKLoRaUpdateController.h"
+#import "MKPBUpdateModel.h"
 #import "MKPBSelftestController.h"
 #import "MKLoRaDebuggerController.h"
 #import "MKPBDebuggerModel.h"
@@ -36,7 +37,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1 && indexPath.row == 0) {
         //DFU
-        MKPBUpdateController *vc = [[MKPBUpdateController alloc] init];
+        MKLoRaUpdateController *vc = [[MKLoRaUpdateController alloc] init];
+        MKPBUpdateModel *updateModel = [[MKPBUpdateModel alloc] init];
+        vc.protocol = updateModel;
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }

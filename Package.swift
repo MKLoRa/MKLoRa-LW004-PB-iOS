@@ -15,7 +15,6 @@ let package = Package(
         .package(url: "https://github.com/MOKO-iOS-Base-Library/MKBaseBleModule.git", from: "1.1.6"),
         .package(url: "https://github.com/ccgus/fmdb.git", from: "2.7.0"),
         .package(url: "https://github.com/MOKO-iOS-Base-Library/MKCustomUIModule.git", from: "2.1.17"),
-        .package(url: "https://github.com/nordicsemi/IOS-DFU-Library.git", from: "4.17.0"),
         .package(url: "git@120.27.8.241:MokoTest/MKIoTDM_iOS.git", from: "0.1.9"),
         .package(url: "https://github.com/MOKO-iOS-Base-Library/MKFilterPagesModule.git", from: "0.0.19"),
         .package(url: "https://github.com/MOKO-iOS-Base-Library/LoRaCommonModule.git", from: "0.1.0"),
@@ -36,7 +35,6 @@ let package = Package(
                 "MKBaseModuleLibrary",
                 "MKCustomUIModule",
                 .product(name: "FMDB", package: "fmdb"),
-                .product(name: "NordicDFU", package: "ios-dfu-library"),
                 .product(name: "MKIotDMApp", package: "mkiotdm_ios"),
                 "MKFilterPagesModule",
                 .product(name: "MKLoRaCommonModule", package: "LoRaCommonModule"),
@@ -61,7 +59,6 @@ let package = Package(
                 .headerSearchPath("Classes/Functions/AxisSettingsPage/Controller"),
                 .headerSearchPath("Classes/Functions/AxisSettingsPage/Model"),
                 .headerSearchPath("Classes/Functions/BleFixPage/Model"),
-                .headerSearchPath("Classes/Functions/BleFixPage/Protocol"),
                 .headerSearchPath("Classes/Functions/FilterByRawDataPage/Controller"),
                 .headerSearchPath("Classes/Functions/FilterByRawDataPage/Model"),
                 .headerSearchPath("Classes/Functions/FilterByRawDataPage/Protocol"),
@@ -97,8 +94,6 @@ let package = Package(
                 .headerSearchPath("Classes/Functions/SelftestPage/Model"),
                 .headerSearchPath("Classes/Functions/SelftestPage/View"),
                 .headerSearchPath("Classes/Functions/TabBarPage/Controller"),
-                .headerSearchPath("Classes/Functions/UpdatePage/Controller"),
-                .headerSearchPath("Classes/Functions/UpdatePage/Model"),
 
             ],
             linkerSettings: [
