@@ -68,4 +68,22 @@
     return ([MKPBCentralManager shared].connectStatus == mk_pb_centralConnectStatusConnected);
 }
 
+
+#pragma mark - MKLoRaDebuggerPageProtocol optional
+- (NSString *)debuggerModeStartNotificationName {
+    return @"mk_pb_startDebuggerMode";
+}
+
+- (NSString *)debuggerModeStopNotificationName {
+    return @"mk_pb_stopDebuggerMode";
+}
+
+- (NSString *)popToRootViewControllerNotificationName {
+    return @"mk_pb_popToRootViewControllerNotification";
+}
+
+- (NSString *)peripheralConnectStateChangedNotificationName {
+    return mk_pb_peripheralConnectStateChangedNotification;
+}
+
 @end

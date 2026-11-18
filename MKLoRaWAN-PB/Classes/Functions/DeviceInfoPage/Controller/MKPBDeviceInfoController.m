@@ -12,7 +12,8 @@
 
 #import "MKPBUpdateController.h"
 #import "MKPBSelftestController.h"
-#import "MKPBDebuggerController.h"
+#import "MKLoRaDebuggerController.h"
+#import "MKPBDebuggerModel.h"
 
 @interface MKPBDeviceInfoController ()<UITableViewDelegate>
 
@@ -41,8 +42,10 @@
     }
     if (indexPath.section == 6 && indexPath.row == 0) {
         //Debugger Mode
-        MKPBDebuggerController *vc = [[MKPBDebuggerController alloc] init];
-        vc.macAddress = self.protocol.macAddress;
+        MKLoRaDebuggerController *vc = [[MKLoRaDebuggerController alloc] init];
+        MKPBDebuggerModel *debuggerModel = [[MKPBDebuggerModel alloc] init];
+        debuggerModel.macAddress = self.protocol.macAddress;
+        vc.protocol = debuggerModel;
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
