@@ -69,8 +69,6 @@ let package = Package(
                 .headerSearchPath("Classes/Functions/BleSettingPage/Controller"),
                 .headerSearchPath("Classes/Functions/BleSettingPage/Model"),
                 .headerSearchPath("Classes/Functions/BleSettingPage/View"),
-                .headerSearchPath("Classes/Functions/DebuggerPage/Controller"),
-                .headerSearchPath("Classes/Functions/DebuggerPage/View"),
                 .headerSearchPath("Classes/Functions/DeviceInfoPage/Controller"),
                 .headerSearchPath("Classes/Functions/DeviceInfoPage/Model"),
                 .headerSearchPath("Classes/Functions/DeviceModePage/Controller"),
