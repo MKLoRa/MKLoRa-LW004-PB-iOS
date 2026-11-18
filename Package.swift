@@ -58,7 +58,7 @@ let package = Package(
                 .headerSearchPath("Classes/Functions/AuxiliaryPage/Model"),
                 .headerSearchPath("Classes/Functions/AxisSettingsPage/Controller"),
                 .headerSearchPath("Classes/Functions/AxisSettingsPage/Model"),
-                .headerSearchPath("Classes/Functions/BleFixPage/Model"),
+                .headerSearchPath("Classes/Functions/BleFixPageModel"),
                 .headerSearchPath("Classes/Functions/FilterByRawDataPage/Controller"),
                 .headerSearchPath("Classes/Functions/FilterByRawDataPage/Model"),
                 .headerSearchPath("Classes/Functions/FilterByRawDataPage/Protocol"),
