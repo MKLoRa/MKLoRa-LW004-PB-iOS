@@ -15,7 +15,8 @@
 
 #import "MKNormalTextCell.h"
 
-#import "MKPBBleFixController.h"
+#import "MKFilterBleFixController.h"
+#import "MKPBBleFixDataModel.h"
 #import "MKPBGpsFixController.h"
 
 @interface MKPBPositionController ()<UITableViewDelegate, UITableViewDataSource>
@@ -51,7 +52,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         //Bluetooth Fix
-        MKPBBleFixController *vc = [[MKPBBleFixController alloc] init];
+        MKPBBleFixDataModel *model = [[MKPBBleFixDataModel alloc] init];
+        MKFilterBleFixController *vc = [[MKFilterBleFixController alloc] initWithProtocol:model];
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
