@@ -13,6 +13,13 @@
 #import "MKPBInterface.h"
 #import "MKPBInterface+MKPBConfig.h"
 
+#import "MKIDMLoginManager.h"
+#import "MKIDMNetWorkRequest.h"
+#import "MKIDMUrlDefinition.h"
+
+#import "MKPBConnectModel.h"
+#import "MKPBCreateLoRaDeviceModel.h"
+
 @implementation MKPBLoRaSettingConfigModel
 
 - (instancetype)init {
@@ -20,7 +27,8 @@
         _supportClassType = NO;
         _supportMessageType = YES;
         _supportServerPlatform = YES;
-        _supportMaxRetransmissionTimes = NO;
+        _supportMaxRetransmissionTimes = YES;
+        _supportADRACK = YES;
     }
     return self;
 }
@@ -925,6 +933,80 @@
         _configModel = [[MKPBLoRaSettingConfigModel alloc] init];
     }
     return _configModel;
+}
+
+#pragma mark - MKLoRaFullSettingPageProtocol
+- (BOOL)supportClassType {
+    return self.configModel.supportClassType;
+}
+
+- (BOOL)supportMessageType {
+    return self.configModel.supportMessageType;
+}
+
+- (BOOL)supportServerPlatform {
+    return self.configModel.supportServerPlatform;
+}
+
+- (BOOL)supportMaxRetransmissionTimes {
+    return self.configModel.supportMaxRetransmissionTimes;
+}
+
+- (BOOL)supportADRACK {
+    return self.configModel.supportADRACK;
+}
+
+- (NSArray <NSString *>*)retransmissionValueList {
+    return @[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7"];
+}
+
+- (NSString *)mokoDevEUI {
+    NSString *macAddress = [[MKPBConnectModel shared].macAddress stringByReplacingOccurrencesOfString:@":" withString:@""];
+    NSString *eui = [NSString stringWithFormat:@"%@%@%@",[macAddress substringToIndex:6],@"FFFF",[macAddress substringFromIndex:6]];
+    return [eui uppercaseString];
+}
+
+- (NSString *)account {
+    return [MKIDMLoginManager sharedManager].userInfo[@"username"] ?: @"";
+}
+
+- (BOOL)isLoggedIn {
+    return [MKIDMLoginManager sharedManager].isLoggedIn;
+}
+
+- (void)showLoginFromViewController:(UIViewController *)viewController completion:(void (^)(void))completion {
+    [[MKIDMLoginManager sharedManager] showLoginFromViewController:viewController navigateToTabBar:NO completion:completion];
+}
+
+- (void)showLogoutFromViewController:(UIViewController *)viewController completion:(void (^)(void))completion {
+    [[MKIDMLoginManager sharedManager] showExitAlertFromViewController:viewController completion:completion];
+}
+
+- (void)addDeviceToCloudWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *))failedBlock {
+    MKPBCreateLoRaDeviceModel *createModel = [[MKPBCreateLoRaDeviceModel alloc] init];
+    createModel.macAddress = [MKPBConnectModel shared].macAddress;
+    createModel.gwId = self.gatewayEUI;
+    createModel.region = self.region;
+    createModel.username = self.account;
+
+    NSDictionary *params = [createModel params];
+    if (ValidStr(params[@"error"])) {
+        [self operationFailedBlockWithMsg:params[@"error"] block:failedBlock];
+        return;
+    }
+
+    NSString *urlString = MKIDMRequstUrl(@"/mqtt/lora/createLoraFromApp");
+    [[MKIDMNetWorkRequest shared] POST:urlString
+                            parameters:params
+                          successBlock:^(id returnData) {
+        if (sucBlock) {
+            sucBlock();
+        }
+    } failureBlock:^(NSError *error) {
+        if (failedBlock) {
+            failedBlock(error);
+        }
+    }];
 }
 
 @end

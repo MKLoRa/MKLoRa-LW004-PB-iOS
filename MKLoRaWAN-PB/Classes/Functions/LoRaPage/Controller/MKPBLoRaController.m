@@ -12,7 +12,8 @@
 #import "MKLoRaApplicationController.h"
 
 #import "MKPBLoRaAppSettingModel.h"
-#import "MKPBLoRaSettingController.h"
+#import "MKLoRaFullSettingController.h"
+#import "MKPBLoRaSettingModel.h"
 
 @implementation MKPBLoRaController
 
@@ -32,7 +33,7 @@
 #pragma mark - Subclass Override
 
 - (void)pushToLoRaSettingPage {
-    MKPBLoRaSettingController *vc = [[MKPBLoRaSettingController alloc] init];
+    MKLoRaFullSettingController *vc = [[MKLoRaFullSettingController alloc] initWithProtocol:[[MKPBLoRaSettingModel alloc] init]];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

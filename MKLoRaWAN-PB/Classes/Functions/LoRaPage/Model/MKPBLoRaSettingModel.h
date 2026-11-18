@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MKLoRaFullSettingPageProtocol.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MKPBLoRaSettingConfigModel : NSObject
@@ -20,9 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign)BOOL supportMaxRetransmissionTimes;
 
+@property (nonatomic, assign)BOOL supportADRACK;
+
 @end
 
-@interface MKPBLoRaSettingModel : NSObject
+@interface MKPBLoRaSettingModel : NSObject <MKLoRaFullSettingPageProtocol>
 
 @property (nonatomic, strong, readonly)MKPBLoRaSettingConfigModel *configModel;
 

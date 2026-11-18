@@ -17,7 +17,7 @@ let package = Package(
         .package(url: "https://github.com/MOKO-iOS-Base-Library/MKCustomUIModule.git", from: "2.1.17"),
         .package(url: "git@120.27.8.241:MokoTest/MKIoTDM_iOS.git", from: "0.1.9"),
         .package(url: "https://github.com/MOKO-iOS-Base-Library/MKFilterPagesModule.git", from: "0.0.19"),
-        .package(url: "https://github.com/MOKO-iOS-Base-Library/LoRaCommonModule.git", from: "0.1.0"),
+        .package(url: "https://github.com/MOKO-iOS-Base-Library/LoRaCommonModule.git", from: "0.1.14"),
     ],
     targets: [
         .target(
@@ -77,9 +77,6 @@ let package = Package(
                 .headerSearchPath("Classes/Functions/GpsFixPage/Model"),
                 .headerSearchPath("Classes/Functions/LoRaPage/Controller"),
                 .headerSearchPath("Classes/Functions/LoRaPage/Model"),
-                .headerSearchPath("Classes/Functions/LoRaSettingPage/Controller"),
-                .headerSearchPath("Classes/Functions/LoRaSettingPage/Model"),
-                .headerSearchPath("Classes/Functions/LoRaSettingPage/View"),
                 .headerSearchPath("Classes/Functions/ManDownPage/Controller"),
                 .headerSearchPath("Classes/Functions/ManDownPage/Model"),
                 .headerSearchPath("Classes/Functions/ONOFFSettingsPage/Controller"),
