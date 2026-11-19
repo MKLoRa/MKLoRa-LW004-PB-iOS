@@ -256,6 +256,10 @@ MKPBTabBarControllerDelegate>
             }
             timeInterval = currentInterval;
             if (self.isNeedRefresh) {
+                [self.dataList sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"rssi" ascending:NO]]];
+                [self.dataList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    [obj setIndex:idx];
+                }];
                 [self.tableView reloadData];
                 self.defaultTitle = [NSString stringWithFormat:@"DEVICE(%@)",[NSString stringWithFormat:@"%ld",(long)self.dataList.count]];
                 self.isNeedRefresh = NO;
