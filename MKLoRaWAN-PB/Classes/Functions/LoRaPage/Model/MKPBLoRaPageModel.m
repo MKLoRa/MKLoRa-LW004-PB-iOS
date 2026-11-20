@@ -12,6 +12,11 @@
 
 #import "MKPBInterface.h"
 
+#import "MKLoRaApplicationController.h"
+#import "MKLoRaFullSettingController.h"
+#import "MKPBLoRaAppSettingModel.h"
+#import "MKPBLoRaSettingModel.h"
+
 @interface MKPBLoRaPageModel ()
 
 @property (nonatomic, strong)dispatch_queue_t readQueue;
@@ -97,6 +102,24 @@
     }];
     dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
     return success;
+}
+
+#pragma mark - MKLoRaPageProtocol
+
+- (void)pushToLoRaSettingPageFromController:(UIViewController *)controller {
+    MKLoRaFullSettingController *vc = [[MKLoRaFullSettingController alloc] initWithProtocol:[[MKPBLoRaSettingModel alloc] init]];
+    [controller.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)pushToLoRaApplicationPageFromController:(UIViewController *)controller {
+    MKLoRaApplicationController *vc = [[MKLoRaApplicationController alloc] init];
+    vc.protocol = [[MKPBLoRaAppSettingModel alloc] init];
+    [controller.navigationController pushViewController:vc animated:YES];
+}
+
+- (BOOL)loraPageHandleLeftButtonTapFromController:(UIViewController *)controller {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"mk_pb_popToRootViewControllerNotification" object:nil];
+    return YES;
 }
 
 #pragma mark - private method
