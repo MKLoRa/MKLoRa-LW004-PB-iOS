@@ -279,7 +279,7 @@ UITableViewDataSource>
 #pragma mark - UI
 - (void)loadSubViews {
     self.defaultTitle = @"General Settings";
-    [self.rightButton setImage:LOADICON(@"MKLoRaWAN-PB", @"MKPBGeneralController", @"pb_slotSaveIcon.png") forState:UIControlStateNormal];
+    [self.rightButton setImage:LOADICON(@"MKLoRaWAN-PB", @"MKPBGeneralController", @"pb_slotSaveIcon@2x.png") forState:UIControlStateNormal];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);

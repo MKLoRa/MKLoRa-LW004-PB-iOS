@@ -437,7 +437,7 @@ MKPBTabBarControllerDelegate>
 #pragma mark - UI
 - (void)loadSubViews {
     [self.view setBackgroundColor:RGBCOLOR(237, 243, 250)];
-    [self.rightButton setImage:LOADICON(@"MKLoRaWAN-PB", @"MKPBScanController", @"pb_scanRightAboutIcon.png") forState:UIControlStateNormal];
+    [self.rightButton setImage:LOADICON(@"MKLoRaWAN-PB", @"MKPBScanController", @"pb_scanRightAboutIcon@2x.png") forState:UIControlStateNormal];
     self.defaultTitle = @"DEVICE(0)";
     UIView *topView = [[UIView alloc] init];
     topView.backgroundColor = RGBCOLOR(237, 243, 250);

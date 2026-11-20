@@ -36,7 +36,6 @@
     self = [super init];
     if (self) {
         _pageTitle = @"Bluetooth Fix";
-        _saveIconName = @"pb_slotSaveIcon";
         // PB 硬件不支持 priority / phy，固定默认值
         _priority = 0;
         _phy = 0;
