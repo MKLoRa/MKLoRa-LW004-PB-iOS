@@ -73,8 +73,6 @@ let package = Package(
                 .headerSearchPath("Classes/Functions/GeneralPage/Model"),
                 .headerSearchPath("Classes/Functions/GpsFixPage/Controller"),
                 .headerSearchPath("Classes/Functions/GpsFixPage/Model"),
-                .headerSearchPath("Classes/Functions/LoRaPage/Controller"),
-                .headerSearchPath("Classes/Functions/LoRaPage/Model"),
                 .headerSearchPath("Classes/Functions/ManDownPage/Controller"),
                 .headerSearchPath("Classes/Functions/ManDownPage/Model"),
                 .headerSearchPath("Classes/Functions/ONOFFSettingsPage/Controller"),
@@ -89,6 +87,7 @@ let package = Package(
                 .headerSearchPath("Classes/Functions/SelftestPage/Model"),
                 .headerSearchPath("Classes/Functions/SelftestPage/View"),
                 .headerSearchPath("Classes/Functions/TabBarPage/Controller"),
+                .headerSearchPath("Classes/Functions/TabBarPage/Model"),
 
             ],
             linkerSettings: [
