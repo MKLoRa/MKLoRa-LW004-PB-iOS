@@ -221,7 +221,7 @@ MKPBExitAlarmTypeCellDelegate>
 #pragma mark - UI
 - (void)loadSubViews {
     self.defaultTitle = @"Alarm Function";
-    [self.rightButton setImage:LOADICON(@"MKLoRaWAN-PB", @"MKPBAlarmFunctionController", @"pb_slotSaveIcon.png") forState:UIControlStateNormal];
+    [self.rightButton setImage:LOADICON(@"MKLoRaWAN-PB", @"MKPBAlarmFunctionController", @"pb_slotSaveIcon@2x.png") forState:UIControlStateNormal];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);

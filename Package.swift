@@ -17,7 +17,7 @@ let package = Package(
         .package(url: "https://github.com/MOKO-iOS-Base-Library/MKCustomUIModule.git", from: "2.1.17"),
         .package(url: "git@120.27.8.241:MokoTest/MKIoTDM_iOS.git", from: "0.1.9"),
         .package(url: "https://github.com/MOKO-iOS-Base-Library/MKFilterPagesModule.git", from: "0.0.19"),
-        .package(url: "https://github.com/MOKO-iOS-Base-Library/LoRaCommonModule.git", from: "0.1.0"),
+        .package(url: "https://github.com/MOKO-iOS-Base-Library/LoRaCommonModule.git", from: "0.1.28"),
     ],
     targets: [
         .target(
@@ -54,8 +54,6 @@ let package = Package(
                 .headerSearchPath("Classes/Functions/AlarmFunctionPage/View"),
                 .headerSearchPath("Classes/Functions/AlertSettingsPage/Controller"),
                 .headerSearchPath("Classes/Functions/AlertSettingsPage/Model"),
-                .headerSearchPath("Classes/Functions/AuxiliaryPage/Controller"),
-                .headerSearchPath("Classes/Functions/AuxiliaryPage/Model"),
                 .headerSearchPath("Classes/Functions/AxisSettingsPage/Controller"),
                 .headerSearchPath("Classes/Functions/AxisSettingsPage/Model"),
                 .headerSearchPath("Classes/Functions/BleFixPageModel"),
@@ -75,11 +73,6 @@ let package = Package(
                 .headerSearchPath("Classes/Functions/GeneralPage/Model"),
                 .headerSearchPath("Classes/Functions/GpsFixPage/Controller"),
                 .headerSearchPath("Classes/Functions/GpsFixPage/Model"),
-                .headerSearchPath("Classes/Functions/LoRaPage/Controller"),
-                .headerSearchPath("Classes/Functions/LoRaPage/Model"),
-                .headerSearchPath("Classes/Functions/LoRaSettingPage/Controller"),
-                .headerSearchPath("Classes/Functions/LoRaSettingPage/Model"),
-                .headerSearchPath("Classes/Functions/LoRaSettingPage/View"),
                 .headerSearchPath("Classes/Functions/ManDownPage/Controller"),
                 .headerSearchPath("Classes/Functions/ManDownPage/Model"),
                 .headerSearchPath("Classes/Functions/ONOFFSettingsPage/Controller"),
@@ -94,6 +87,7 @@ let package = Package(
                 .headerSearchPath("Classes/Functions/SelftestPage/Model"),
                 .headerSearchPath("Classes/Functions/SelftestPage/View"),
                 .headerSearchPath("Classes/Functions/TabBarPage/Controller"),
+                .headerSearchPath("Classes/Functions/TabBarPage/Model"),
 
             ],
             linkerSettings: [

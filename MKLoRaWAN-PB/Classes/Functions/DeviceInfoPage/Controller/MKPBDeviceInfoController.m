@@ -29,6 +29,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.protocol = [[MKPBDeviceInfoModel alloc] init];
+        self.hideBatteryConsumption = YES;
     }
     return self;
 }

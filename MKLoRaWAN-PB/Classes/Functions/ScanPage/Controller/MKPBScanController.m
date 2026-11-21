@@ -256,6 +256,10 @@ MKPBTabBarControllerDelegate>
             }
             timeInterval = currentInterval;
             if (self.isNeedRefresh) {
+                [self.dataList sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"rssi" ascending:NO]]];
+                [self.dataList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    [obj setIndex:idx];
+                }];
                 [self.tableView reloadData];
                 self.defaultTitle = [NSString stringWithFormat:@"DEVICE(%@)",[NSString stringWithFormat:@"%ld",(long)self.dataList.count]];
                 self.isNeedRefresh = NO;
@@ -433,7 +437,7 @@ MKPBTabBarControllerDelegate>
 #pragma mark - UI
 - (void)loadSubViews {
     [self.view setBackgroundColor:RGBCOLOR(237, 243, 250)];
-    [self.rightButton setImage:LOADICON(@"MKLoRaWAN-PB", @"MKPBScanController", @"pb_scanRightAboutIcon.png") forState:UIControlStateNormal];
+    [self.rightButton setImage:LOADICON(@"MKLoRaWAN-PB", @"MKPBScanController", @"pb_scanRightAboutIcon@2x.png") forState:UIControlStateNormal];
     self.defaultTitle = @"DEVICE(0)";
     UIView *topView = [[UIView alloc] init];
     topView.backgroundColor = RGBCOLOR(237, 243, 250);

@@ -13,7 +13,8 @@
 
 #import "MKAlertView.h"
 
-#import "MKPBLoRaController.h"
+#import "MKLoRaController.h"
+#import "MKPBLoRaPageModel.h"
 #import "MKPBPositionController.h"
 #import "MKPBGeneralController.h"
 #import "MKPBDeviceSettingController.h"
@@ -180,7 +181,8 @@
 }
 
 - (void)loadSubPages {
-    MKPBLoRaController *loraPage = [[MKPBLoRaController alloc] init];
+    MKLoRaController *loraPage = [[MKLoRaController alloc] init];
+    loraPage.protocol = [[MKPBLoRaPageModel alloc] init];
     loraPage.tabBarItem.title = @"LORA";
     loraPage.tabBarItem.image = LOADICON(@"MKLoRaWAN-PB", @"MKPBTabBarController", @"pb_lora_tabBarUnselected.png");
     loraPage.tabBarItem.selectedImage = LOADICON(@"MKLoRaWAN-PB", @"MKPBTabBarController", @"pb_lora_tabBarSelected.png");

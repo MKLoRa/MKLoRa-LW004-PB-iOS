@@ -13,6 +13,13 @@
 #import "MKPBInterface.h"
 #import "MKPBInterface+MKPBConfig.h"
 
+#import "MKIDMLoginManager.h"
+#import "MKIDMNetWorkRequest.h"
+#import "MKIDMUrlDefinition.h"
+
+#import "MKPBConnectModel.h"
+#import "MKPBCreateLoRaDeviceModel.h"
+
 @implementation MKPBLoRaSettingConfigModel
 
 - (instancetype)init {
@@ -20,7 +27,8 @@
         _supportClassType = NO;
         _supportMessageType = YES;
         _supportServerPlatform = YES;
-        _supportMaxRetransmissionTimes = NO;
+        _supportMaxRetransmissionTimes = YES;
+        _supportADRACK = YES;
     }
     return self;
 }
@@ -415,11 +423,29 @@
     return success;
 }
 
+- (NSInteger)regionListIndex {
+    //region 即 RegionList 的下标（DM 模式下为 DM 列表下标）
+    return self.region;
+}
+
 - (BOOL)readRegion {
     __block BOOL success = NO;
     [MKPBInterface pb_readLorawanRegionWithSucBlock:^(id  _Nonnull returnData) {
         success = YES;
-        self.region = [returnData[@"result"][@"region"] integerValue];
+        NSInteger region = [returnData[@"result"][@"region"] integerValue];
+        if (self.platform == 1) {
+            //MOKO IoT DM：设备返回通用 region，需要换算成 DM 列表下标
+            if (region == 5) {
+                region = 1;
+            }else if (region == 8) {
+                region = 2;
+            }else if (region == 1) {
+                region = 4;
+            }else if (region != 0) {
+                region = 0;
+            }
+        }
+        self.region = region;
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);
@@ -925,6 +951,80 @@
         _configModel = [[MKPBLoRaSettingConfigModel alloc] init];
     }
     return _configModel;
+}
+
+#pragma mark - MKLoRaFullSettingPageProtocol
+- (BOOL)supportClassType {
+    return self.configModel.supportClassType;
+}
+
+- (BOOL)supportMessageType {
+    return self.configModel.supportMessageType;
+}
+
+- (BOOL)supportServerPlatform {
+    return self.configModel.supportServerPlatform;
+}
+
+- (BOOL)supportMaxRetransmissionTimes {
+    return self.configModel.supportMaxRetransmissionTimes;
+}
+
+- (BOOL)supportADRACK {
+    return self.configModel.supportADRACK;
+}
+
+- (NSArray <NSString *>*)retransmissionValueList {
+    return @[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7"];
+}
+
+- (NSString *)mokoDevEUI {
+    NSString *macAddress = [[MKPBConnectModel shared].macAddress stringByReplacingOccurrencesOfString:@":" withString:@""];
+    NSString *eui = [NSString stringWithFormat:@"%@%@%@",[macAddress substringToIndex:6],@"FFFF",[macAddress substringFromIndex:6]];
+    return [eui uppercaseString];
+}
+
+- (NSString *)account {
+    return [MKIDMLoginManager sharedManager].userInfo[@"username"] ?: @"";
+}
+
+- (BOOL)isLoggedIn {
+    return [MKIDMLoginManager sharedManager].isLoggedIn;
+}
+
+- (void)showLoginFromViewController:(UIViewController *)viewController completion:(void (^)(void))completion {
+    [[MKIDMLoginManager sharedManager] showLoginFromViewController:viewController navigateToTabBar:NO completion:completion];
+}
+
+- (void)showLogoutFromViewController:(UIViewController *)viewController completion:(void (^)(void))completion {
+    [[MKIDMLoginManager sharedManager] showExitAlertFromViewController:viewController completion:completion];
+}
+
+- (void)addDeviceToCloudWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *))failedBlock {
+    MKPBCreateLoRaDeviceModel *createModel = [[MKPBCreateLoRaDeviceModel alloc] init];
+    createModel.macAddress = [MKPBConnectModel shared].macAddress;
+    createModel.gwId = self.gatewayEUI;
+    createModel.region = self.region;
+    createModel.username = self.account;
+
+    NSDictionary *params = [createModel params];
+    if (ValidStr(params[@"error"])) {
+        [self operationFailedBlockWithMsg:params[@"error"] block:failedBlock];
+        return;
+    }
+
+    NSString *urlString = MKIDMRequstUrl(@"/mqtt/lora/createLoraFromApp");
+    [[MKIDMNetWorkRequest shared] POST:urlString
+                            parameters:params
+                          successBlock:^(id returnData) {
+        if (sucBlock) {
+            sucBlock();
+        }
+    } failureBlock:^(NSError *error) {
+        if (failedBlock) {
+            failedBlock(error);
+        }
+    }];
 }
 
 @end

@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)NSString *intervalPlaceholder;
 @property (nonatomic, copy)NSString *intervalUnit;
 
+@property (nonatomic, assign)NSInteger strategy;
+@property (nonatomic, copy)NSString *interval;
+
 @end
 
 NS_ASSUME_NONNULL_END

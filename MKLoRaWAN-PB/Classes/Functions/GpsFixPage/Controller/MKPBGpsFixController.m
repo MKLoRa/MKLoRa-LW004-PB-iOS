@@ -153,7 +153,7 @@ MKTextFieldCellDelegate>
 #pragma mark - UI
 - (void)loadSubViews {
     self.defaultTitle = @"GPS Fix";
-    [self.rightButton setImage:LOADICON(@"MKLoRaWAN-PB", @"MKPBGpsFixController", @"pb_slotSaveIcon.png") forState:UIControlStateNormal];
+    [self.rightButton setImage:LOADICON(@"MKLoRaWAN-PB", @"MKPBGpsFixController", @"pb_slotSaveIcon@2x.png") forState:UIControlStateNormal];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
