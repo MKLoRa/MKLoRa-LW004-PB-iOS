@@ -54,8 +54,6 @@ let package = Package(
                 .headerSearchPath("Classes/Functions/AlarmFunctionPage/View"),
                 .headerSearchPath("Classes/Functions/AlertSettingsPage/Controller"),
                 .headerSearchPath("Classes/Functions/AlertSettingsPage/Model"),
-                .headerSearchPath("Classes/Functions/AuxiliaryPage/Controller"),
-                .headerSearchPath("Classes/Functions/AuxiliaryPage/Model"),
                 .headerSearchPath("Classes/Functions/AxisSettingsPage/Controller"),
                 .headerSearchPath("Classes/Functions/AxisSettingsPage/Model"),
                 .headerSearchPath("Classes/Functions/BleFixPageModel"),
