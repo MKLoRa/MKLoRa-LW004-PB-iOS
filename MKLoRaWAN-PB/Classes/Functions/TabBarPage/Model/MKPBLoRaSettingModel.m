@@ -423,11 +423,29 @@
     return success;
 }
 
+- (NSInteger)regionListIndex {
+    //region 即 RegionList 的下标（DM 模式下为 DM 列表下标）
+    return self.region;
+}
+
 - (BOOL)readRegion {
     __block BOOL success = NO;
     [MKPBInterface pb_readLorawanRegionWithSucBlock:^(id  _Nonnull returnData) {
         success = YES;
-        self.region = [returnData[@"result"][@"region"] integerValue];
+        NSInteger region = [returnData[@"result"][@"region"] integerValue];
+        if (self.platform == 1) {
+            //MOKO IoT DM：设备返回通用 region，需要换算成 DM 列表下标
+            if (region == 5) {
+                region = 1;
+            }else if (region == 8) {
+                region = 2;
+            }else if (region == 1) {
+                region = 4;
+            }else if (region != 0) {
+                region = 0;
+            }
+        }
+        self.region = region;
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);
