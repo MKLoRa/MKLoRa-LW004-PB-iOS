@@ -25,9 +25,14 @@
 #import "MKPBGeneralPageModel.h"
 
 #import "MKPBDeviceModeController.h"
-#import "MKPBAuxiliaryController.h"
+#import "MKLoRaAuxiliaryController.h"
 #import "MKPBAxisSettingsController.h"
 #import "MKPBBleSettingsController.h"
+
+#import "MKLoRaDownlinkController.h"
+#import "MKPBDownlinkForPositionModel.h"
+#import "MKPBManDownController.h"
+#import "MKPBAlarmFunctionController.h"
 
 @interface MKPBGeneralController ()<UITableViewDelegate,
 UITableViewDataSource>
@@ -103,7 +108,22 @@ UITableViewDataSource>
     }
     if (indexPath.section == 1 && indexPath.row == 0) {
         //Auxiliary Operation
-        MKPBAuxiliaryController *vc = [[MKPBAuxiliaryController alloc] init];
+        NSArray *rows = @[
+            [MKLoRaAuxiliaryRowModel rowWithTitle:@"Donwlink  For Position" tapHandler:^(UIViewController *fromViewController) {
+                MKLoRaDownlinkController *vc = [[MKLoRaDownlinkController alloc] init];
+                vc.protocol = [[MKPBDownlinkForPositionModel alloc] init];
+                [fromViewController.navigationController pushViewController:vc animated:YES];
+            }],
+            [MKLoRaAuxiliaryRowModel rowWithTitle:@"ManDown Detection" tapHandler:^(UIViewController *fromViewController) {
+                MKPBManDownController *vc = [[MKPBManDownController alloc] init];
+                [fromViewController.navigationController pushViewController:vc animated:YES];
+            }],
+            [MKLoRaAuxiliaryRowModel rowWithTitle:@"Alarm Function" tapHandler:^(UIViewController *fromViewController) {
+                MKPBAlarmFunctionController *vc = [[MKPBAlarmFunctionController alloc] init];
+                [fromViewController.navigationController pushViewController:vc animated:YES];
+            }],
+        ];
+        MKLoRaAuxiliaryController *vc = [[MKLoRaAuxiliaryController alloc] initWithRows:rows];
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
