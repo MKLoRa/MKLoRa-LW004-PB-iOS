@@ -15,6 +15,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.appName = @"LW004-PB";
+        self.appVersionLabel = @"APP Version:1.0.2";
         self.firmwareLabel = @"FW Version:V3.1";
     }
     return self;
