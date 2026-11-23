@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *appName;
 
+@property (nonatomic, copy) NSString *appVersionLabel;
+
 @property (nonatomic, copy) NSString *firmwareLabel;
 
 @property (nonatomic, strong, nullable) UIImage *aboutIcon;
