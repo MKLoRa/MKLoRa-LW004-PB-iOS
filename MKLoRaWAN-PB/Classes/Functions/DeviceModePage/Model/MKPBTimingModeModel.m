@@ -158,6 +158,11 @@
     return 10;
 }
 
+#pragma mark - MKLoRaTimingModePageProtocol optional
+- (NSArray<NSString *> *)timePointMinuteGearList {
+    return @[@"00", @"15", @"30", @"45"];
+}
+
 - (NSArray<NSString *> *)strategyDataList {
     return @[@"BLE",@"GPS",@"BLE&GPS"];
 }
