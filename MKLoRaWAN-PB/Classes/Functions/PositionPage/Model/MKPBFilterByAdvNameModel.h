@@ -1,5 +1,5 @@
 //
-//  MKPBFilterByMacModel.h
+//  MKPBFilterByAdvNameModel.h
 //  MKLoRaWAN-PB_Example
 //
 //  Created by aa on 2022/3/17.
@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MKFilterByAdvNameProtocol.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBFilterByMacModel : NSObject
+@interface MKPBFilterByAdvNameModel : NSObject <MKFilterByAdvNameProtocol>
 
 @property (nonatomic, copy) NSString *pageTitle;
 
@@ -18,13 +20,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign)BOOL filter;
 
-@property (nonatomic, strong)NSArray *macList;
+@property (nonatomic, strong)NSArray *nameList;
 
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
-- (void)configDataWithMacList:(NSArray <NSString *>*)macList
-                     sucBlock:(void (^)(void))sucBlock
-                  failedBlock:(void (^)(NSError *error))failedBlock;
+- (void)configDataWithNameList:(NSArray <NSString *>*)nameList
+                      sucBlock:(void (^)(void))sucBlock
+                   failedBlock:(void (^)(NSError *error))failedBlock;
 
 @end
 

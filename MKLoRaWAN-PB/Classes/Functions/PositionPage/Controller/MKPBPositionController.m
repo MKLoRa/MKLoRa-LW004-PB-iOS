@@ -16,8 +16,9 @@
 #import "MKNormalTextCell.h"
 
 #import "MKFilterBleFixController.h"
+#import "MKLoRaLCGpsFixController.h"
 #import "MKPBBleFixDataModel.h"
-#import "MKPBGpsFixController.h"
+#import "MKPBGpsFixDataModel.h"
 
 @interface MKPBPositionController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -59,7 +60,8 @@
     }
     if (indexPath.row == 1) {
         //GPS Fix
-        MKPBGpsFixController *vc = [[MKPBGpsFixController alloc] init];
+        MKLoRaLCGpsFixController *vc = [[MKLoRaLCGpsFixController alloc] init];
+        vc.protocol = [[MKPBGpsFixDataModel alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }

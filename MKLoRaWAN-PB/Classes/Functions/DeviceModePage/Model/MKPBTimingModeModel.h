@@ -13,13 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBTimingModeTimePointModel : NSObject<mk_pb_timingModeReportingTimePointProtocol>
-
-/// 0~23
-@property (nonatomic, assign)NSInteger hour;
-
-/// 0:00   1:15   2:30   3:45
-@property (nonatomic, assign)NSInteger minuteGear;
+@interface MKPBTimingModeTimePointModel : MKLoRaTimingModeTimePointModel<mk_pb_timingModeReportingTimePointProtocol>
 
 @end
 
@@ -32,11 +26,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign)NSInteger strategy;
 
-@property (nonatomic, strong)NSArray <MKPBTimingModeTimePointModel *>*pointList;
+@property (nonatomic, strong)NSArray <MKLoRaTimingModeTimePointModel *>*pointList;
 
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
-- (void)configData:(NSArray <MKPBTimingModeTimePointModel *>*)pointList
+- (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
+
+- (void)configData:(NSArray <MKLoRaTimingModeTimePointModel *>*)pointList
           sucBlock:(void (^)(void))sucBlock
        failedBlock:(void (^)(NSError *error))failedBlock;
 

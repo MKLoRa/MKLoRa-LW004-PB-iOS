@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "MKPBSDKNormalDefines.h"
+#import "MKLoRaMotionModePageProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface MKPBMotionModeModel : NSObject
+@interface MKPBMotionModeModel : NSObject<MKLoRaMotionModePageProtocol>
 
 @property (nonatomic, assign)BOOL fixOnStart;
 
@@ -53,6 +54,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign)NSInteger posStrategyInTrip;
 
 @property (nonatomic, assign)BOOL fixOnEnd;
+
+@property (nonatomic, assign)BOOL fixOnStationary;
+
+@property (nonatomic, copy)NSString *reportIntervalOnStationary;
+
+/*
+ 0:BLE
+ 1:GPS
+ 2:GPS+BLE
+ */
+@property (nonatomic, assign)NSInteger posStrategyOnStationary;
 
 @property (nonatomic, copy)NSString *tripEndTimeout;
 

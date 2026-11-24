@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "MKPBSDKNormalDefines.h"
+#import "MKFilterByOtherProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -29,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface MKPBFilterByOtherModel : NSObject
+@interface MKPBFilterByOtherModel : NSObject <MKFilterByOtherProtocol>
 
 @property (nonatomic, copy) NSString *pageTitle;
 

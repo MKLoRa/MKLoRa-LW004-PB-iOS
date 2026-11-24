@@ -1,5 +1,5 @@
 //
-//  MKPBFilterByUIDModel.h
+//  MKPBFilterByURLModel.h
 //  MKLoRaWAN-PB_Example
 //
 //  Created by aa on 2021/11/30.
@@ -8,17 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MKFilterByURLProtocol.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBFilterByUIDModel : NSObject
+@interface MKPBFilterByURLModel : NSObject <MKFilterByURLProtocol>
 
 @property (nonatomic, copy) NSString *pageTitle;
 
 @property (nonatomic, assign)BOOL isOn;
 
-@property (nonatomic, copy)NSString *namespaceID;
-
-@property (nonatomic, copy)NSString *instanceID;
+@property (nonatomic, copy)NSString *url;
 
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 

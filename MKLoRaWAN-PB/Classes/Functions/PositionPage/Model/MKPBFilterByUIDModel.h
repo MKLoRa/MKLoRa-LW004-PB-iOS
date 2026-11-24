@@ -1,5 +1,5 @@
 //
-//  MKPBFilterByTLMModel.h
+//  MKPBFilterByUIDModel.h
 //  MKLoRaWAN-PB_Example
 //
 //  Created by aa on 2021/11/30.
@@ -8,16 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MKFilterByUIDProtocol.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBFilterByTLMModel : NSObject
+@interface MKPBFilterByUIDModel : NSObject <MKFilterByUIDProtocol>
 
 @property (nonatomic, copy) NSString *pageTitle;
 
 @property (nonatomic, assign)BOOL isOn;
 
-/// 0:过滤所有TLM  1:过滤非加密类型TLM 2:过滤加密类型TLM
-@property (nonatomic, assign)NSInteger tlm;
+@property (nonatomic, copy)NSString *namespaceID;
+
+@property (nonatomic, copy)NSString *instanceID;
 
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 

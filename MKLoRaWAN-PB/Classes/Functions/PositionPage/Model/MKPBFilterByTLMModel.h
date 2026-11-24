@@ -1,5 +1,5 @@
 //
-//  MKPBFilterByURLModel.h
+//  MKPBFilterByTLMModel.h
 //  MKLoRaWAN-PB_Example
 //
 //  Created by aa on 2021/11/30.
@@ -8,15 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MKFilterByTLMProtocol.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBFilterByURLModel : NSObject
+@interface MKPBFilterByTLMModel : NSObject <MKFilterByTLMProtocol>
 
 @property (nonatomic, copy) NSString *pageTitle;
 
 @property (nonatomic, assign)BOOL isOn;
 
-@property (nonatomic, copy)NSString *url;
+/// 0:过滤所有TLM  1:过滤非加密类型TLM 2:过滤加密类型TLM
+@property (nonatomic, assign)NSInteger tlm;
 
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 

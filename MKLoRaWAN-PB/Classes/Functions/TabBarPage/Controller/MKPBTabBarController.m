@@ -38,6 +38,8 @@
 
 @implementation MKPBTabBarController
 
+@dynamic delegate;
+
 - (void)dealloc {
     NSLog(@"MKPBTabBarController销毁");
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -93,7 +95,7 @@
     [self dismissViewControllerAnimated:YES completion:^{
         @strongify(self);
         if ([self.delegate respondsToSelector:@selector(mk_pb_needResetScanDelegate:)]) {
-            [self.delegate mk_pb_needResetScanDelegate:NO];
+            [(id<MKPBTabBarControllerDelegate>)self.delegate mk_pb_needResetScanDelegate:NO];
         }
     }];
 }
@@ -103,7 +105,7 @@
     [self dismissViewControllerAnimated:YES completion:^{
         @strongify(self);
         if ([self.delegate respondsToSelector:@selector(mk_pb_needResetScanDelegate:)]) {
-            [self.delegate mk_pb_needResetScanDelegate:YES];
+            [(id<MKPBTabBarControllerDelegate>)self.delegate mk_pb_needResetScanDelegate:YES];
         }
     }];
 }

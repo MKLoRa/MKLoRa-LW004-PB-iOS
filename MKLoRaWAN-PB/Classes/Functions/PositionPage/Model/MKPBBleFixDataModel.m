@@ -20,7 +20,8 @@
 
 #import "MKPBFilterByMacModel.h"
 #import "MKPBFilterByAdvNameModel.h"
-#import "MKPBFilterByRawDataController.h"
+#import "MKPBFilterByRawDataModel.h"
+#import "MKFilterByRawDataController.h"
 
 @interface MKPBBleFixDataModel ()
 
@@ -109,7 +110,8 @@
 }
 
 - (void)pushFilterByRawDataControllerWithNav:(UINavigationController *)nav {
-    MKPBFilterByRawDataController *vc = [[MKPBFilterByRawDataController alloc] init];
+    MKPBFilterByRawDataModel *model = [[MKPBFilterByRawDataModel alloc] init];
+    MKFilterByRawDataController *vc = [[MKFilterByRawDataController alloc] initWithProtocol:model];
     [nav pushViewController:vc animated:YES];
 }
 

@@ -35,7 +35,8 @@
 #import "MKPBAlarmFunctionController.h"
 
 @interface MKPBGeneralController ()<UITableViewDelegate,
-UITableViewDataSource>
+UITableViewDataSource,
+MKTextFieldCellDelegate>
 
 @property (nonatomic, strong)MKBaseTableView *tableView;
 

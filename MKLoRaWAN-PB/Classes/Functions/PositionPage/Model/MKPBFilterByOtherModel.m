@@ -180,7 +180,7 @@
 
 - (BOOL)configConditions:(NSArray <MKPBFilterRawAdvDataModel *>*)list {
     __block BOOL success = NO;
-    [MKPBInterface pb_configFilterByOtherConditions:list sucBlock:^{
+    [MKPBInterface pb_configFilterByOtherConditions:(NSArray<mk_pb_BLEFilterRawDataProtocol> *)list sucBlock:^{
         success = YES;
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {

@@ -49,7 +49,7 @@
         gwName = [NSString stringWithFormat:@"%@_%@",self.username,[[gwId substringFromIndex:(gwId.length - 4)] uppercaseString]];
     }
     NSString *joinEui = @"70b3d57ed0026b87";
-    NSString *nwkKey = [@"2b7e151628aed2a6abf7" stringByAppendingFormat:self.macAddress];
+    NSString *nwkKey = [@"2b7e151628aed2a6abf7" stringByAppendingFormat:@"%@",self.macAddress];
     NSString *regionString = @"AS923";
     if (self.region == 1) {
         regionString = @"EU868";

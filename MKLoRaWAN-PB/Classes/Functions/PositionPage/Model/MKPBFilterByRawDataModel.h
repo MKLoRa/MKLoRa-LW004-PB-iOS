@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MKPBFilterByRawDataProtocol.h"
+#import "MKFilterByRawDataProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBFilterByRawDataModel : NSObject <MKPBFilterByRawDataProtocol>
+@interface MKPBFilterByRawDataModel : NSObject <MKFilterByRawDataProtocol>
 
 @property (nonatomic, copy) NSString *pageTitle;
 

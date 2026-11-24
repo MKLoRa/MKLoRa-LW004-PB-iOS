@@ -44,7 +44,11 @@
     });
 }
 
-- (void)configData:(NSArray <MKPBTimingModeTimePointModel *>*)pointList
+- (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
+    [self configData:self.pointList sucBlock:sucBlock failedBlock:failedBlock];
+}
+
+- (void)configData:(NSArray <MKLoRaTimingModeTimePointModel *>*)pointList
           sucBlock:(void (^)(void))sucBlock
        failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.readQueue, ^{
@@ -112,9 +116,9 @@
     return success;
 }
 
-- (BOOL)configReportingTimePoint:(NSArray <MKPBTimingModeTimePointModel *>*)pointList {
+- (BOOL)configReportingTimePoint:(NSArray <MKLoRaTimingModeTimePointModel *>*)pointList {
     __block BOOL success = NO;
-    [MKPBInterface pb_configTimingModeReportingTimePoint:pointList sucBlock:^{
+    [MKPBInterface pb_configTimingModeReportingTimePoint:(NSArray<mk_pb_timingModeReportingTimePointProtocol> *)pointList sucBlock:^{
         success = YES;
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {

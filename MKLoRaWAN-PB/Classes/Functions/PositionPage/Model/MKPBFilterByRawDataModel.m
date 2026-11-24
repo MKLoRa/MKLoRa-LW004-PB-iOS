@@ -145,15 +145,12 @@
 - (void)configBXPAccStatus:(BOOL)isOn
                   sucBlock:(void (^)(void))sucBlock
                failedBlock:(void (^)(NSError *error))failedBlock {
-    [[MKHudManager share] showHUDWithTitle:@"Config..." inView:[UIApplication sharedApplication].keyWindow isPenetration:NO];
     [MKPBInterface pb_configBXPAccFilterStatus:isOn sucBlock:^{
-        [[MKHudManager share] hide];
         self.bxpAcc = isOn;
         moko_dispatch_main_safe(^{
             if (sucBlock) sucBlock();
         });
     } failedBlock:^(NSError * _Nonnull error) {
-        [[MKHudManager share] hide];
         moko_dispatch_main_safe(^{
             if (failedBlock) failedBlock(error);
         });
@@ -163,15 +160,12 @@
 - (void)configBXPTHStatus:(BOOL)isOn
                  sucBlock:(void (^)(void))sucBlock
               failedBlock:(void (^)(NSError *error))failedBlock {
-    [[MKHudManager share] showHUDWithTitle:@"Config..." inView:[UIApplication sharedApplication].keyWindow isPenetration:NO];
     [MKPBInterface pb_configBXPTHFilterStatus:isOn sucBlock:^{
-        [[MKHudManager share] hide];
         self.bxpTH = isOn;
         moko_dispatch_main_safe(^{
             if (sucBlock) sucBlock();
         });
     } failedBlock:^(NSError * _Nonnull error) {
-        [[MKHudManager share] hide];
         moko_dispatch_main_safe(^{
             if (failedBlock) failedBlock(error);
         });

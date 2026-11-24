@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MKLoRaLCGpsFixPageProtocol.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBGpsFixDataModel : NSObject
+@interface MKPBGpsFixDataModel : NSObject <MKLoRaLCGpsFixPageProtocol>
 
 @property (nonatomic, copy)NSString *timeout;
 

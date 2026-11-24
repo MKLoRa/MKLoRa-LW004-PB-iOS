@@ -59,6 +59,40 @@
     });
 }
 
+- (void)configFilterStatus:(BOOL)isOn
+                  sucBlock:(void (^)(void))sucBlock
+               failedBlock:(void (^)(NSError *error))failedBlock {
+    self.isOn = isOn;
+    dispatch_async(self.readQueue, ^{
+        if (![self configFilterStatus]) {
+            [self operationFailedBlockWithMsg:@"Config Filter Status Error" block:failedBlock];
+            return;
+        }
+        moko_dispatch_main_safe(^{
+            if (sucBlock) {
+                sucBlock();
+            }
+        });
+    });
+}
+
+- (void)configTLMVersion:(NSInteger)version
+                sucBlock:(void (^)(void))sucBlock
+             failedBlock:(void (^)(NSError *error))failedBlock {
+    self.tlm = version;
+    dispatch_async(self.readQueue, ^{
+        if (![self configTLMVersion]) {
+            [self operationFailedBlockWithMsg:@"Config TLM Version Error" block:failedBlock];
+            return;
+        }
+        moko_dispatch_main_safe(^{
+            if (sucBlock) {
+                sucBlock();
+            }
+        });
+    });
+}
+
 #pragma mark - interface
 - (BOOL)readFilterStatus {
     __block BOOL success = NO;
