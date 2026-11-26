@@ -63,6 +63,11 @@
     });
 }
 
+#pragma mark - MKLoRaLCGpsFixPageProtocol
+- (NSString *)pdopRangeText {
+    return @"25~100";
+}
+
 #pragma mark - interface
 - (BOOL)readGpsPositioningTimeout {
     __block BOOL success = NO;

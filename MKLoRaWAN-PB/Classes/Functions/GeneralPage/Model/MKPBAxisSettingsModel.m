@@ -23,7 +23,7 @@
 
 @implementation MKPBAxisSettingsModel
 
-- (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
+- (void)readWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.readQueue, ^{
         if (![self readWakeupThreshold]) {
             [self operationFailedBlockWithMsg:@"Read Wakeup Threshold Errro" block:failedBlock];
@@ -49,7 +49,7 @@
     });
 }
 
-- (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
+- (void)configWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.readQueue, ^{
         if (![self validParams]) {
             [self operationFailedBlockWithMsg:@"Opps！Save failed. Please check the input characters and try again." block:failedBlock];

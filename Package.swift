@@ -16,8 +16,8 @@ let package = Package(
         .package(url: "https://github.com/ccgus/fmdb.git", from: "2.7.0"),
         .package(url: "https://github.com/MOKO-iOS-Base-Library/MKCustomUIModule.git", from: "2.1.17"),
         .package(url: "git@120.27.8.241:MokoTest/MKIoTDM_iOS.git", from: "0.1.9"),
-        .package(url: "https://github.com/MOKO-iOS-Base-Library/MKFilterPagesModule.git", from: "0.0.19"),
-        .package(url: "https://github.com/MOKO-iOS-Base-Library/LoRaCommonModule.git", from: "0.1.60"),
+        .package(url: "https://github.com/MOKO-iOS-Base-Library/MKFilterPagesModule.git", from: "0.0.22"),
+        .package(url: "https://github.com/MOKO-iOS-Base-Library/LoRaCommonModule.git", from: "0.1.71"),
     ],
     targets: [
         .target(
@@ -54,8 +54,6 @@ let package = Package(
                 .headerSearchPath("Classes/Functions/AlarmFunctionPage/View"),
                 .headerSearchPath("Classes/Functions/AlertSettingsPage/Controller"),
                 .headerSearchPath("Classes/Functions/AlertSettingsPage/Model"),
-                .headerSearchPath("Classes/Functions/AxisSettingsPage/Controller"),
-                .headerSearchPath("Classes/Functions/AxisSettingsPage/Model"),
                 .headerSearchPath("Classes/Functions/BleSettingPage/Controller"),
                 .headerSearchPath("Classes/Functions/BleSettingPage/Model"),
                 .headerSearchPath("Classes/Functions/BleSettingPage/View"),

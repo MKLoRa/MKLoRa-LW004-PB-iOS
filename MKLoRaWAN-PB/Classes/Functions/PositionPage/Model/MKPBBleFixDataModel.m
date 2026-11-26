@@ -37,9 +37,6 @@
     self = [super init];
     if (self) {
         _pageTitle = @"Bluetooth Fix";
-        // PB 硬件不支持 priority / phy，固定默认值
-        _priority = 0;
-        _phy = 0;
     }
     return self;
 }
@@ -52,26 +49,6 @@
 
 - (void)numberOfMACTextFieldValueChanged:(NSString *)value {
     self.number = value;
-}
-
-#pragma mark - MKFilterBleFixProtocol: section1 FilterRelationship（priority / phy）
-
-- (NSArray<NSString *> *)priorityDataList {
-    // PB 硬件不支持，返回单选项
-    return @[@"Time Priority"];
-}
-
-- (NSArray<NSString *> *)phyDataList {
-    // PB 硬件不支持，返回单选项
-    return @[@"1M PHY(BLE 4.x)"];
-}
-
-- (void)priorityChanged:(NSInteger)dataListIndex {
-    self.priority = dataListIndex;
-}
-
-- (void)phyChanged:(NSInteger)dataListIndex {
-    self.phy = dataListIndex;
 }
 
 #pragma mark - MKFilterBleFixProtocol: section2 Slider 回调

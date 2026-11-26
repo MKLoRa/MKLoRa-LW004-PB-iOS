@@ -19,9 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *timeout;
 @property (nonatomic, copy) NSString *number;
 
-@property (nonatomic, assign) NSInteger priority;
-@property (nonatomic, assign) NSInteger phy;
-
 @property (nonatomic, assign) NSInteger rssi;
 @property (nonatomic, assign) NSInteger relationship;
 

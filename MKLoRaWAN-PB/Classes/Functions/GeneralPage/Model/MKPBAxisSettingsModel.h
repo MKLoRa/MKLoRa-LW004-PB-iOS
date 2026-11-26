@@ -8,21 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MKLoRaAxisSettingPageProtocol.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPBAxisSettingsModel : NSObject
+@interface MKPBAxisSettingsModel : NSObject<MKLoRaAxisSettingPageProtocol>
 
+/// Motion Wakeup Threshold
 @property (nonatomic, copy)NSString *wakeupThreshold;
 
+/// Motion Wakeup Duration
 @property (nonatomic, copy)NSString *wakeupDuration;
 
+/// Motion Threshold
 @property (nonatomic, copy)NSString *motionThreshold;
 
+/// Motion Duration
 @property (nonatomic, copy)NSString *motionDuration;
 
-- (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
+- (void)readWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
-- (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
+- (void)configWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
 @end
 

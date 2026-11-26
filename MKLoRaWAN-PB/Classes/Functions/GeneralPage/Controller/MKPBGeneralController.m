@@ -23,10 +23,11 @@
 #import "MKTableSectionLineHeader.h"
 
 #import "MKPBGeneralPageModel.h"
+#import "MKPBAxisSettingsModel.h"
 
 #import "MKPBDeviceModeController.h"
 #import "MKLoRaAuxiliaryController.h"
-#import "MKPBAxisSettingsController.h"
+#import "MKLoRaAxisSettingController.h"
 #import "MKPBBleSettingsController.h"
 
 #import "MKLoRaDownlinkController.h"
@@ -130,7 +131,8 @@ MKTextFieldCellDelegate>
     }
     if (indexPath.section == 2 && indexPath.row == 0) {
         //3-Axis Settings
-        MKPBAxisSettingsController *vc = [[MKPBAxisSettingsController alloc] init];
+        MKLoRaAxisSettingController *vc = [[MKLoRaAxisSettingController alloc] init];
+        vc.protocol = [[MKPBAxisSettingsModel alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
